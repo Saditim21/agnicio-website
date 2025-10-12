@@ -170,19 +170,27 @@ export function AIDrivenMaintenance() {
       </section>
 
       {/* What is SSP Platform Section */}
-      <section className="py-24 bg-neutral-surface">
-        <div className="container mx-auto px-4">
+      <section className="py-24 bg-neutral-surface relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-hover rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <SmoothScrollReveal animation="slide-up">
+            <SmoothScrollReveal animation="slide-up" distance={60}>
               <h2 className="text-h2 font-heading font-bold text-neutral-text-primary mb-6 text-center">
                 What is the <span className="text-primary">SSP Platform</span>?
               </h2>
             </SmoothScrollReveal>
 
             <SmoothScrollReveal animation="fade" distance={40}>
-              <p className="text-body-lg font-body text-neutral-text-secondary leading-relaxed mb-8">
-                The Agnicio SSP platform revolutionizes asset maintenance by transitioning from a reactive, isolated approach to a proactive, data-driven system. By incorporating AI-powered sensing, problem-solving, and planning capabilities, it effectively addresses critical challenges in maintenance operations: dismantling data silos, preempting failures, extending asset lifecycles, enhancing safety, optimizing planning, and systematizing expert knowledge.
-              </p>
+              <div className="bg-white rounded-xl p-8 shadow-lg border-l-4 border-primary mb-8 transform hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                <p className="text-body-lg font-body text-neutral-text-secondary leading-relaxed">
+                  The Agnicio SSP platform revolutionizes asset maintenance by transitioning from a reactive, isolated approach to a proactive, data-driven system. By incorporating AI-powered sensing, problem-solving, and planning capabilities, it effectively addresses critical challenges in maintenance operations: dismantling data silos, preempting failures, extending asset lifecycles, enhancing safety, optimizing planning, and systematizing expert knowledge.
+                </p>
+              </div>
             </SmoothScrollReveal>
 
             <SmoothScrollReveal animation="slide-up" distance={50}>
@@ -304,86 +312,139 @@ export function AIDrivenMaintenance() {
       </section>
 
       {/* The Challenge Section */}
-      <section className="py-24 bg-neutral-surface">
-        <div className="container mx-auto px-4">
+      <section className="py-24 bg-neutral-surface relative overflow-hidden">
+        {/* Decorative background */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-40 right-20 w-64 h-64 bg-red-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 left-20 w-80 h-80 bg-primary rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <SmoothScrollReveal animation="fade">
-              <h2 className="text-h2 font-heading font-bold text-neutral-text-primary mb-12 text-center">
-                The <span className="text-primary">Challenge</span> of Modern Maintenance
-              </h2>
+            <SmoothScrollReveal animation="slide-up" distance={60}>
+              <div className="text-center mb-16">
+                <h2 className="text-h2 font-heading font-bold text-neutral-text-primary mb-4">
+                  The <span className="text-primary">Challenge</span> of Modern Maintenance
+                </h2>
+                <p className="text-body-lg font-body text-neutral-text-secondary max-w-3xl mx-auto">
+                  Traditional vs. AI-Powered: Two approaches to maintenance planning
+                </p>
+              </div>
             </SmoothScrollReveal>
 
             <SmoothStaggeredGrid
               staggerDelay={0.1}
-              animation="fade-up"
-              distance={40}
+              animation="slide-right"
+              distance={60}
               className="grid grid-cols-1 md:grid-cols-2 gap-8"
             >
-              <div className="bg-white rounded-xl p-8 border-l-4 border-red-500">
-                <h3 className="text-h5 font-heading font-bold text-neutral-text-primary mb-4">
-                  ❌ Traditional Approach
-                </h3>
-                <ul className="space-y-3 text-body font-body text-neutral-text-secondary">
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">•</span>
-                    <span>Static planning methods that struggle to adapt</span>
+              <div className="bg-white rounded-xl p-8 border-l-4 border-red-500 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 h-full flex flex-col">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">❌</span>
+                  </div>
+                  <h3 className="text-h5 font-heading font-bold text-neutral-text-primary">
+                    Traditional Approach
+                  </h3>
+                </div>
+                <ul className="space-y-4 text-body font-body text-neutral-text-secondary flex-grow">
+                  <li className="flex items-start gap-3 group">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mt-0.5 group-hover:bg-red-200 transition-colors">
+                      <span className="text-red-500 text-sm">✗</span>
+                    </div>
+                    <span className="group-hover:text-neutral-text-primary transition-colors">Static planning methods that struggle to adapt</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">•</span>
-                    <span>Reactive rather than strategic approach</span>
+                  <li className="flex items-start gap-3 group">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mt-0.5 group-hover:bg-red-200 transition-colors">
+                      <span className="text-red-500 text-sm">✗</span>
+                    </div>
+                    <span className="group-hover:text-neutral-text-primary transition-colors">Reactive rather than strategic approach</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">•</span>
-                    <span>Isolated systems and data silos</span>
+                  <li className="flex items-start gap-3 group">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mt-0.5 group-hover:bg-red-200 transition-colors">
+                      <span className="text-red-500 text-sm">✗</span>
+                    </div>
+                    <span className="group-hover:text-neutral-text-primary transition-colors">Isolated systems and data silos</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">•</span>
-                    <span>Limited visibility across operations</span>
+                  <li className="flex items-start gap-3 group">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mt-0.5 group-hover:bg-red-200 transition-colors">
+                      <span className="text-red-500 text-sm">✗</span>
+                    </div>
+                    <span className="group-hover:text-neutral-text-primary transition-colors">Limited visibility across operations</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">•</span>
-                    <span>Difficulty balancing costs and risk</span>
+                  <li className="flex items-start gap-3 group">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mt-0.5 group-hover:bg-red-200 transition-colors">
+                      <span className="text-red-500 text-sm">✗</span>
+                    </div>
+                    <span className="group-hover:text-neutral-text-primary transition-colors">Difficulty balancing costs and risk</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-8 border-l-4 border-primary">
-                <h3 className="text-h5 font-heading font-bold text-primary mb-4">
-                  ✓ AI-Powered Solution
-                </h3>
-                <ul className="space-y-3 text-body font-body text-neutral-text-secondary">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>Dynamic, data-driven planning that adapts in real-time</span>
+              <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-8 border-l-4 border-primary shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 h-full flex flex-col">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">✓</span>
+                  </div>
+                  <h3 className="text-h5 font-heading font-bold text-primary">
+                    AI-Powered Solution
+                  </h3>
+                </div>
+                <ul className="space-y-4 text-body font-body text-neutral-text-secondary flex-grow">
+                  <li className="flex items-start gap-3 group">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 group-hover:bg-primary/30 transition-colors">
+                      <span className="text-primary text-sm">✓</span>
+                    </div>
+                    <span className="group-hover:text-neutral-text-primary transition-colors">Dynamic, data-driven planning that adapts in real-time</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>Proactive, strategic maintenance approach</span>
+                  <li className="flex items-start gap-3 group">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 group-hover:bg-primary/30 transition-colors">
+                      <span className="text-primary text-sm">✓</span>
+                    </div>
+                    <span className="group-hover:text-neutral-text-primary transition-colors">Proactive, strategic maintenance approach</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>Integrated systems with unified data view</span>
+                  <li className="flex items-start gap-3 group">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 group-hover:bg-primary/30 transition-colors">
+                      <span className="text-primary text-sm">✓</span>
+                    </div>
+                    <span className="group-hover:text-neutral-text-primary transition-colors">Integrated systems with unified data view</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>Cross-functional visibility and optimization</span>
+                  <li className="flex items-start gap-3 group">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 group-hover:bg-primary/30 transition-colors">
+                      <span className="text-primary text-sm">✓</span>
+                    </div>
+                    <span className="group-hover:text-neutral-text-primary transition-colors">Cross-functional visibility and optimization</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>Intelligent balancing of demand, resources, costs, and risk</span>
+                  <li className="flex items-start gap-3 group">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 group-hover:bg-primary/30 transition-colors">
+                      <span className="text-primary text-sm">✓</span>
+                    </div>
+                    <span className="group-hover:text-neutral-text-primary transition-colors">Intelligent balancing of demand, resources, costs, and risk</span>
                   </li>
                 </ul>
               </div>
             </SmoothStaggeredGrid>
 
             <SmoothScrollReveal animation="slide-up" distance={60}>
-              <div className="mt-12 bg-white rounded-xl p-8">
-                <p className="text-body-lg font-body text-neutral-text-secondary leading-relaxed mb-6">
-                  Maintenance is fundamentally about foresight—anticipating needs, efficiently allocating resources, and minimizing downtime. However, many companies still depend on static planning methods that struggle to balance demand, costs, and risk. Without an intelligent, data-driven approach, maintenance planning can quickly become reactive rather than strategic.
-                </p>
-                <p className="text-body-lg font-body text-neutral-text-secondary leading-relaxed">
-                  Traditional planning methods are inadequate in today's complex operational environment. To ensure efficiency, compliance, and cost control, companies require a dynamic approach—one that adapts to shifting constraints and optimizes every decision.
-                </p>
+              <div className="mt-12 bg-gradient-to-br from-white to-primary/5 rounded-2xl p-10 shadow-xl border-2 border-primary/10 transform hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="flex-shrink-0 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                    <span className="text-3xl">💡</span>
+                  </div>
+                  <div>
+                    <h3 className="text-h4 font-heading font-bold text-neutral-text-primary mb-4">
+                      The Key Insight
+                    </h3>
+                    <p className="text-body-lg font-body text-neutral-text-secondary leading-relaxed mb-6">
+                      Maintenance is fundamentally about foresight—anticipating needs, efficiently allocating resources, and minimizing downtime. However, many companies still depend on static planning methods that struggle to balance demand, costs, and risk. Without an intelligent, data-driven approach, maintenance planning can quickly become reactive rather than strategic.
+                    </p>
+                  </div>
+                </div>
+                <div className="bg-white rounded-xl p-6 border-l-4 border-primary">
+                  <p className="text-body-lg font-body text-neutral-text-secondary leading-relaxed">
+                    Traditional planning methods are inadequate in today's complex operational environment. To ensure efficiency, compliance, and cost control, companies require a dynamic approach—one that adapts to shifting constraints and optimizes every decision.
+                  </p>
+                </div>
               </div>
             </SmoothScrollReveal>
           </div>
@@ -391,66 +452,112 @@ export function AIDrivenMaintenance() {
       </section>
 
       {/* The Solution Section */}
-      <section className="py-24 bg-neutral-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <SmoothScrollReveal animation="fade">
-              <h2 className="text-h2 font-heading font-bold text-neutral-text-primary mb-8 text-center">
-                AI-Powered Maintenance <span className="text-primary">Planning Solution</span>
-              </h2>
-            </SmoothScrollReveal>
+      <section className="py-24 bg-gradient-to-b from-neutral-background via-primary/5 to-neutral-background relative overflow-hidden">
+        {/* Decorative background */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-cyan-500 rounded-full blur-3xl"></div>
+        </div>
 
-            <SmoothScrollReveal animation="slide-up" distance={50}>
-              <p className="text-body-lg font-body text-neutral-text-secondary leading-relaxed mb-12 text-center max-w-4xl mx-auto">
-                Many key insights necessary for creating the optimal maintenance plan are not captured in standard planning tools. Leveraging AI-driven algorithms and data-driven logic enables smarter, cross-functional planning—ensuring that shutdowns, turnarounds, and outages are optimized across the entire value chain.
-              </p>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <SmoothScrollReveal animation="slide-up" distance={60}>
+              <div className="text-center mb-12">
+                <h2 className="text-h2 font-heading font-bold text-neutral-text-primary mb-6">
+                  AI-Powered Maintenance <span className="text-primary">Planning Solution</span>
+                </h2>
+                <p className="text-body-lg font-body text-neutral-text-secondary leading-relaxed max-w-4xl mx-auto">
+                  Many key insights necessary for creating the optimal maintenance plan are not captured in standard planning tools. Leveraging AI-driven algorithms and data-driven logic enables smarter, cross-functional planning—ensuring that shutdowns, turnarounds, and outages are optimized across the entire value chain.
+                </p>
+              </div>
             </SmoothScrollReveal>
 
             <SmoothStaggeredGrid
-              staggerDelay={0.1}
+              staggerDelay={0.12}
               animation="zoom"
               distance={30}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
             >
-              <div className="bg-white rounded-xl p-6 shadow-lg border-t-4 border-primary h-full flex flex-col">
-                <div className="text-4xl mb-4">🎯</div>
-                <h3 className="text-h5 font-heading font-bold text-neutral-text-primary mb-3">
+              <div className="group bg-white rounded-2xl p-8 shadow-lg border-t-4 border-primary h-full flex flex-col transform hover:scale-105 hover:shadow-2xl transition-all duration-300 hover:border-t-8">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                  <span className="text-4xl">🎯</span>
+                </div>
+                <h3 className="text-h5 font-heading font-bold text-neutral-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
                   Intelligent Generation
                 </h3>
-                <p className="text-body font-body text-neutral-text-secondary flex-grow">
+                <p className="text-body font-body text-neutral-text-secondary flex-grow group-hover:text-neutral-text-primary transition-colors duration-300">
                   Automatically generates optimized maintenance plans based on real-time data and constraints
                 </p>
+                <div className="mt-6 pt-6 border-t border-neutral-border">
+                  <div className="flex items-center gap-2 text-primary font-semibold text-body-sm">
+                    <span>Learn more</span>
+                    <svg className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                      <path d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-lg border-t-4 border-primary h-full flex flex-col">
-                <div className="text-4xl mb-4">⚖️</div>
-                <h3 className="text-h5 font-heading font-bold text-neutral-text-primary mb-3">
+              <div className="group bg-white rounded-2xl p-8 shadow-lg border-t-4 border-primary h-full flex flex-col transform hover:scale-105 hover:shadow-2xl transition-all duration-300 hover:border-t-8">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                  <span className="text-4xl">⚖️</span>
+                </div>
+                <h3 className="text-h5 font-heading font-bold text-neutral-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
                   Smart Balancing
                 </h3>
-                <p className="text-body font-body text-neutral-text-secondary flex-grow">
+                <p className="text-body font-body text-neutral-text-secondary flex-grow group-hover:text-neutral-text-primary transition-colors duration-300">
                   Balances demand, resources, costs, and risk across all operations
                 </p>
+                <div className="mt-6 pt-6 border-t border-neutral-border">
+                  <div className="flex items-center gap-2 text-primary font-semibold text-body-sm">
+                    <span>Learn more</span>
+                    <svg className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                      <path d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-lg border-t-4 border-primary h-full flex flex-col">
-                <div className="text-4xl mb-4">🔮</div>
-                <h3 className="text-h5 font-heading font-bold text-neutral-text-primary mb-3">
+              <div className="group bg-white rounded-2xl p-8 shadow-lg border-t-4 border-primary h-full flex flex-col transform hover:scale-105 hover:shadow-2xl transition-all duration-300 hover:border-t-8">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                  <span className="text-4xl">🔮</span>
+                </div>
+                <h3 className="text-h5 font-heading font-bold text-neutral-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
                   Scenario Planning
                 </h3>
-                <p className="text-body font-body text-neutral-text-secondary flex-grow">
+                <p className="text-body font-body text-neutral-text-secondary flex-grow group-hover:text-neutral-text-primary transition-colors duration-300">
                   Built-in scenario planning for budget control and operational excellence
                 </p>
+                <div className="mt-6 pt-6 border-t border-neutral-border">
+                  <div className="flex items-center gap-2 text-primary font-semibold text-body-sm">
+                    <span>Learn more</span>
+                    <svg className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                      <path d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
               </div>
             </SmoothStaggeredGrid>
 
-            <SmoothScrollReveal animation="slide-up" distance={60}>
-              <div className="bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-12 text-center text-white">
-                <h3 className="text-h3 font-heading font-bold mb-6">
-                  A Complete Ecosystem
-                </h3>
-                <p className="text-body-lg font-body leading-relaxed max-w-3xl mx-auto">
-                  Together with predictive and augmented maintenance, our planning solution forms a complete ecosystem—helping you <strong>sense</strong>, <strong>solve</strong>, and <strong>plan</strong> for every maintenance challenge.
-                </p>
+            <SmoothScrollReveal animation="zoom" distance={40}>
+              <div className="relative bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-12 text-center text-white shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300">
+                {/* Animated background effect */}
+                <div className="absolute inset-0 opacity-20">
+                  <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse"></div>
+                  <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-400 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+                </div>
+
+                <div className="relative z-10">
+                  <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-full mb-6">
+                    <span className="text-5xl">🎯</span>
+                  </div>
+                  <h3 className="text-h3 font-heading font-bold mb-6">
+                    A Complete Ecosystem
+                  </h3>
+                  <p className="text-body-lg font-body leading-relaxed max-w-3xl mx-auto">
+                    Together with predictive and augmented maintenance, our planning solution forms a complete ecosystem—helping you <strong>sense</strong>, <strong>solve</strong>, and <strong>plan</strong> for every maintenance challenge.
+                  </p>
+                </div>
               </div>
             </SmoothScrollReveal>
 
