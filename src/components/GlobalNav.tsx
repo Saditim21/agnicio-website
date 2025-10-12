@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 interface DropdownItem {
   label: string;
@@ -39,6 +39,32 @@ export function GlobalNav() {
   const [activeLink, setActiveLink] = useState<string>('');
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const closeTimeoutRef = useRef<number | null>(null);
+
+  const handleMouseEnter = (label: string) => {
+    // Clear any pending close timeout
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setOpenDropdown(label);
+  };
+
+  const handleMouseLeave = () => {
+    // Add a delay before closing to allow mouse movement to dropdown
+    closeTimeoutRef.current = window.setTimeout(() => {
+      setOpenDropdown(null);
+    }, 300); // 300ms delay
+  };
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-neutral-surface/95 backdrop-blur-sm border-b border-neutral-border">
@@ -60,8 +86,8 @@ export function GlobalNav() {
               <div
                 key={link.label}
                 className="relative"
-                onMouseEnter={() => link.dropdown && setOpenDropdown(link.label)}
-                onMouseLeave={() => setOpenDropdown(null)}
+                onMouseEnter={() => link.dropdown && handleMouseEnter(link.label)}
+                onMouseLeave={handleMouseLeave}
               >
                 <a
                   href={link.href}
@@ -112,6 +138,8 @@ export function GlobalNav() {
                       animate-slide-in
                     "
                     style={{ animationDuration: '150ms' }}
+                    onMouseEnter={() => handleMouseEnter(link.label)}
+                    onMouseLeave={handleMouseLeave}
                   >
                     {link.dropdown.map((item) => (
                       <a
