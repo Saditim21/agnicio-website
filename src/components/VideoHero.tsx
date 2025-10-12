@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useScrollProgress } from '../hooks/useScrollProgress';
 import videoSrc from '../assets/home-page/185631-876210585_small.mp4';
 
 interface VideoHeroProps {
@@ -18,16 +18,18 @@ export function VideoHero({
   secondaryCtaText = 'Learn More',
   secondaryCtaHref = '#services',
 }: VideoHeroProps) {
-  const [isLoaded, setIsLoaded] = useState(false);
+  // Use scroll-based animations instead of mount-based
+  const { ref, progress } = useScrollProgress({
+    persist: false,
+    easing: 'ease-out',
+    threshold: 0.3 // Trigger faster since it's at the top
+  });
 
-  useEffect(() => {
-    // Trigger animations after component mount
-    const timer = setTimeout(() => setIsLoaded(true), 100);
-    return () => clearTimeout(timer);
-  }, []);
+  // Convert progress (0-1) to isLoaded-like boolean for smooth transitions
+  const isLoaded = progress > 0.1; // Start animations when 10% scrolled into view
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -73,14 +75,13 @@ export function VideoHero({
                           key={charIndex}
                           className="inline-block"
                           style={{
-                            opacity: isLoaded ? 1 : 0,
-                            transform: isLoaded
-                              ? 'translateY(0) scale(1) rotateX(0deg)'
-                              : 'translateY(40px) scale(0.8) rotateX(-90deg)',
-                            filter: isLoaded ? 'blur(0px)' : 'blur(4px)',
+                            opacity: progress,
+                            transform:
+                              `translateY(${(1 - progress) * 40}px) scale(${0.8 + progress * 0.2}) rotateX(${(1 - progress) * -90}deg)`,
+                            filter: `blur(${(1 - progress) * 4}px)`,
                             background: 'linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #06b6d4 100%)',
                             WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: isLoaded ? 'transparent' : '#ffffff',
+                            WebkitTextFillColor: progress > 0.5 ? 'transparent' : '#ffffff',
                             backgroundClip: 'text',
                             transition: `all 250ms cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}ms`,
                           }}
@@ -100,21 +101,21 @@ export function VideoHero({
             <div
               className="h-1 rounded-full relative overflow-hidden"
               style={{
-                width: isLoaded ? '200px' : '0px',
+                width: `${progress * 200}px`,
                 background: 'linear-gradient(90deg, transparent, #373e98, #06b6d4, #373e98, transparent)',
                 backgroundSize: '200% 100%',
-                animation: isLoaded ? 'shimmerLine 3s linear infinite' : 'none',
-                transition: 'width 300ms cubic-bezier(0.4, 0, 0.2, 1) 2000ms',
+                animation: progress > 0.8 ? 'shimmerLine 3s linear infinite' : 'none',
+                transition: 'width 300ms cubic-bezier(0.4, 0, 0.2, 1)',
               }}
             >
               {/* Glowing dot at center */}
               <div
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-cyan-400 rounded-full"
                 style={{
-                  opacity: isLoaded ? 1 : 0,
+                  opacity: progress,
                   boxShadow: '0 0 10px #06b6d4, 0 0 20px #06b6d4',
-                  animation: isLoaded ? 'pulse 2s ease-in-out infinite' : 'none',
-                  transition: 'opacity 250ms ease-in-out 2200ms',
+                  animation: progress > 0.9 ? 'pulse 2s ease-in-out infinite' : 'none',
+                  transition: 'opacity 250ms ease-in-out',
                 }}
               />
             </div>
@@ -125,9 +126,9 @@ export function VideoHero({
             <p
               className="text-body-lg font-body text-white/90 max-w-3xl mx-auto mb-12"
               style={{
-                opacity: isLoaded ? 1 : 0,
-                transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 800ms, transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 800ms',
+                opacity: progress,
+                transform: `translateY(${(1 - progress) * 20}px)`,
+                transition: 'opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1)',
               }}
             >
               {subheadline}
@@ -138,9 +139,9 @@ export function VideoHero({
           <div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             style={{
-              opacity: isLoaded ? 1 : 0,
-              transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
-              transition: 'opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 1000ms, transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 1000ms',
+              opacity: progress,
+              transform: `translateY(${(1 - progress) * 20}px)`,
+              transition: 'opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1)',
             }}
           >
             {/* Primary CTA */}
@@ -201,8 +202,8 @@ export function VideoHero({
           <div
             className="mt-20"
             style={{
-              opacity: isLoaded ? 1 : 0,
-              transition: 'opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 1200ms',
+              opacity: progress,
+              transition: 'opacity 250ms cubic-bezier(0.4, 0, 0.2, 1)',
             }}
           >
             <a

@@ -4,8 +4,8 @@ import {
   ParallaxDivider,
   Statistics,
   Metrics,
-  ScrollReveal,
-  StaggeredGrid,
+  SmoothScrollReveal,
+  SmoothStaggeredGrid,
 } from '../components';
 
 // Industry Images
@@ -14,6 +14,10 @@ import retailImg from '../assets/home-page/retail.png';
 import energyPowerImg from '../assets/home-page/energy-power.jpg';
 import logisticsImg from '../assets/home-page/logistics.jpg';
 import supplyChainImg from '../assets/home-page/supply-chain.jpg';
+import aboutUsImg from '../assets/home-page/about-us.jpeg';
+import blogImage1 from '../assets/home-page/blog-image-1.png';
+import blogImage2 from '../assets/home-page/blog-image-2.jpg';
+import blogImage3 from '../assets/home-page/blog-image-3.jpg';
 
 export function Home() {
   return (
@@ -50,27 +54,28 @@ export function Home() {
       <section id="services" className="py-24 bg-neutral-surface relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <ScrollReveal animation="slide-up">
+            <SmoothScrollReveal animation="slide-up">
               <p className="text-body-lg font-body text-primary font-semibold mb-4 uppercase tracking-wide">
                 What We Do
               </p>
-            </ScrollReveal>
-            <ScrollReveal animation="fade" delay={100}>
+            </SmoothScrollReveal>
+            <SmoothScrollReveal animation="fade">
               <h2 className="text-h2 font-heading font-bold text-neutral-text-primary mb-6">
                 We breathe data and AI: From strategy to actionable insights
               </h2>
-            </ScrollReveal>
-            <ScrollReveal animation="fade" delay={150}>
+            </SmoothScrollReveal>
+            <SmoothScrollReveal animation="fade">
               <p className="text-body-lg font-body text-neutral-text-secondary max-w-3xl mx-auto">
                 Data Analytics with Impact and Value
               </p>
-            </ScrollReveal>
+            </SmoothScrollReveal>
           </div>
 
           {/* Services Grid */}
-          <StaggeredGrid
-            staggerDelay={80}
+          <SmoothStaggeredGrid
+            staggerDelay={0.08}
             animation="zoom"
+            distance={30}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
           >
             {/* AI Service */}
@@ -152,7 +157,7 @@ export function Home() {
                 </svg>
               </a>
             </div>
-          </StaggeredGrid>
+          </SmoothStaggeredGrid>
         </div>
       </section>
 
@@ -167,21 +172,21 @@ export function Home() {
       <section id="products" className="py-24 bg-neutral-background relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <ScrollReveal animation="zoom">
+            <SmoothScrollReveal animation="zoom">
               <h2 className="text-h2 font-heading font-bold text-neutral-text-primary mb-4">
                 Industry Solutions
               </h2>
-            </ScrollReveal>
-            <ScrollReveal animation="fade" delay={100}>
+            </SmoothScrollReveal>
+            <SmoothScrollReveal animation="fade">
               <p className="text-body-lg font-body text-neutral-text-secondary max-w-3xl mx-auto">
                 Tailored solutions for your industry's unique challenges
               </p>
-            </ScrollReveal>
+            </SmoothScrollReveal>
           </div>
 
           <div className="max-w-7xl mx-auto space-y-12">
             {/* Asset Maintenance */}
-            <ScrollReveal animation="slide-right">
+            <SmoothScrollReveal animation="slide-right" distance={80}>
             <div className="group bg-neutral-surface rounded-xl p-8 border-2 border-neutral-border hover:border-primary border-glow transition-all duration-250 shadow-sm hover:shadow-xl overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
@@ -198,10 +203,10 @@ export function Home() {
                 </div>
               </div>
             </div>
-            </ScrollReveal>
+            </SmoothScrollReveal>
 
             {/* Retail */}
-            <ScrollReveal animation="slide-left" delay={100}>
+            <SmoothScrollReveal animation="slide-left" distance={80}>
             <div className="group bg-neutral-surface rounded-xl p-8 border-2 border-neutral-border hover:border-primary transition-all duration-250 shadow-sm hover:shadow-xl overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="order-2 lg:order-1 h-64 rounded-lg overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-250">
@@ -218,10 +223,10 @@ export function Home() {
                 </div>
               </div>
             </div>
-            </ScrollReveal>
+            </SmoothScrollReveal>
 
             {/* Energy & Power */}
-            <ScrollReveal animation="slide-right" delay={100}>
+            <SmoothScrollReveal animation="slide-right" distance={80}>
             <div className="group bg-neutral-surface rounded-xl p-8 border-2 border-neutral-border hover:border-primary transition-all duration-250 shadow-sm hover:shadow-xl overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
@@ -238,10 +243,10 @@ export function Home() {
                 </div>
               </div>
             </div>
-            </ScrollReveal>
+            </SmoothScrollReveal>
 
             {/* Logistics */}
-            <ScrollReveal animation="slide-left" delay={100}>
+            <SmoothScrollReveal animation="slide-left" distance={80}>
             <div className="group bg-neutral-surface rounded-xl p-8 border-2 border-neutral-border hover:border-primary border-glow transition-all duration-250 shadow-sm hover:shadow-xl overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="order-2 lg:order-1 h-64 rounded-lg overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-250">
@@ -258,10 +263,10 @@ export function Home() {
                 </div>
               </div>
             </div>
-            </ScrollReveal>
+            </SmoothScrollReveal>
 
             {/* Supply Chain */}
-            <ScrollReveal animation="slide-right" delay={100}>
+            <SmoothScrollReveal animation="slide-right" distance={80}>
             <div className="group bg-neutral-surface rounded-xl p-8 border-2 border-neutral-border hover:border-primary transition-all duration-250 shadow-sm hover:shadow-xl overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
@@ -278,7 +283,7 @@ export function Home() {
                 </div>
               </div>
             </div>
-            </ScrollReveal>
+            </SmoothScrollReveal>
           </div>
         </div>
       </section>
@@ -291,21 +296,26 @@ export function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <ScrollReveal animation="slide-up">
+              <SmoothScrollReveal animation="slide-up">
                 <h2 className="text-h2 font-heading font-bold text-neutral-text-primary mb-6">
                   About Us
                 </h2>
-              </ScrollReveal>
+              </SmoothScrollReveal>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-              <ScrollReveal animation="slide-right">
-                <div className="h-96 bg-neutral-border/30 rounded-xl flex items-center justify-center">
-                  <span className="text-body text-neutral-text-tertiary">Company Image</span>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch mb-16">
+              <SmoothScrollReveal animation="slide-right" distance={60}>
+                <div className="w-full h-full rounded-xl overflow-hidden shadow-lg flex items-center justify-center bg-neutral-surface">
+                  <img
+                    src={aboutUsImg}
+                    alt="Agnicio Team"
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
                 </div>
-              </ScrollReveal>
+              </SmoothScrollReveal>
 
-              <ScrollReveal animation="slide-left" delay={100}>
+              <SmoothScrollReveal animation="slide-left" distance={60}>
                 <p className="text-body-lg font-body text-neutral-text-secondary leading-relaxed mb-6">
                   Agnicio is a data analytics and strategy company founded in 2018. More than 2000 years after Aristoteles, Agnicio will help you gain new insights and – as a result – sparkle your company to make that decisive turn.
                 </p>
@@ -321,11 +331,11 @@ export function Home() {
                     <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </a>
-              </ScrollReveal>
+              </SmoothScrollReveal>
             </div>
 
             {/* CEO Quote */}
-            <ScrollReveal animation="blur" delay={200}>
+            <SmoothScrollReveal animation="blur">
             <div className="bg-white rounded-xl p-8 md:p-12 shadow-lg border-l-4 border-primary">
               <p className="text-body-lg md:text-h5 font-body text-neutral-text-primary italic leading-relaxed mb-6">
                 "For over two decades I have been helping international brands to drive growth, achieve competitive agility and operational excellence through data driven strategy and solutions."
@@ -340,50 +350,98 @@ export function Home() {
                 </div>
               </div>
             </div>
-            </ScrollReveal>
+            </SmoothScrollReveal>
+
+            {/* CEO Video */}
+            <SmoothScrollReveal animation="slide-up" distance={60}>
+              <div className="mt-12">
+                <div className="relative rounded-xl overflow-hidden shadow-2xl bg-neutral-surface">
+                  {/* Video container with 16:9 aspect ratio */}
+                  <div className="relative" style={{ paddingBottom: '56.25%' }}>
+                    <iframe
+                      className="absolute inset-0 w-full h-full"
+                      src="https://www.youtube.com/embed/yJjp6QaG5lo"
+                      title="CEO Message - Hicham El Arfaoui"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </SmoothScrollReveal>
           </div>
         </div>
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className="py-24 bg-neutral-surface">
-        <div className="container mx-auto px-4">
+      <section id="blog" className="py-24 bg-gradient-to-b from-neutral-surface via-neutral-background to-neutral-surface relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-hover rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <ScrollReveal animation="fade">
+            <SmoothScrollReveal animation="fade">
               <h2 className="text-h2 font-heading font-bold text-neutral-text-primary mb-4">
-                Recent Insights
+                Recent <span className="text-primary">Insights</span>
               </h2>
-            </ScrollReveal>
-            <ScrollReveal animation="fade" delay={100}>
-              <p className="text-body-lg font-body text-neutral-text-secondary max-w-3xl mx-auto">
-                Analytics tips, Data strategies, Industry insights, BI best practices, and all the resources you need to do more with your data.
+            </SmoothScrollReveal>
+            <SmoothScrollReveal animation="fade">
+              <p className="text-body-lg font-body text-neutral-text-secondary max-w-3xl mx-auto leading-relaxed">
+                Analytics tips, Data strategies, Industry insights, BI best practices, and all the resources you need to <span className="font-semibold text-neutral-text-primary">do more with your data</span>.
               </p>
-            </ScrollReveal>
+            </SmoothScrollReveal>
           </div>
 
-          <StaggeredGrid
-            staggerDelay={100}
+          <SmoothStaggeredGrid
+            staggerDelay={0.12}
             animation="fade-up"
+            distance={40}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
           >
             {/* Event Post */}
-            <article className="bg-neutral-background rounded-xl overflow-hidden border-2 border-neutral-border hover:border-primary transition-all duration-200 shadow-sm hover:shadow-lg hover:-translate-y-1">
-              <div className="h-48 bg-neutral-border/30 flex items-center justify-center">
-                <span className="text-body-sm text-neutral-text-tertiary">Event Image</span>
+            <article className="group bg-neutral-background rounded-2xl overflow-hidden border border-neutral-border hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2 relative h-full flex flex-col">
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
+
+              <div className="relative h-56 overflow-hidden flex-shrink-0">
+                <img
+                  src={blogImage1}
+                  alt="Maintenance NEXT Expo"
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                {/* Category badge on image */}
+                <div className="absolute top-4 left-4">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/95 backdrop-blur-sm text-primary text-body-sm font-bold rounded-full shadow-lg">
+                    <span className="text-lg">🎯</span>
+                    EVENTS
+                  </span>
+                </div>
+                {/* Date badge */}
+                <div className="absolute top-4 right-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 text-center shadow-lg">
+                    <div className="text-body-sm font-bold text-primary">APR</div>
+                    <div className="text-h5 font-heading font-bold text-neutral-text-primary leading-none">8-10</div>
+                  </div>
+                </div>
               </div>
-              <div className="p-6">
-                <span className="inline-block px-3 py-1 bg-primary-lightest text-primary text-body-sm font-medium rounded-full mb-3">
-                  EVENTS
-                </span>
-                <h3 className="text-h5 font-heading font-semibold text-neutral-text-primary mb-3">
+
+              <div className="p-6 relative z-20 flex-grow flex flex-col">
+                <h3 className="text-h5 font-heading font-bold text-neutral-text-primary mb-3 group-hover:text-primary transition-colors duration-300">
                   Agnicio at Maintenance NEXT expo
                 </h3>
-                <p className="text-body font-body text-neutral-text-secondary mb-4">
+                <p className="text-body font-body text-neutral-text-secondary mb-4 leading-relaxed flex-grow">
                   We're excited to announce that Agnicio will be exhibiting at the Maintenance NEXT Expo from April 8th to 10th!
                 </p>
                 <a
                   href="/blog/maintenance-next-expo"
-                  className="inline-flex items-center gap-2 text-primary font-body font-medium hover:text-primary-hover transition-colors duration-200"
+                  className="inline-flex items-center gap-2 text-primary font-body font-semibold hover:gap-3 transition-all duration-300 mt-auto"
                 >
                   Continue reading
                   <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -394,23 +452,49 @@ export function Home() {
             </article>
 
             {/* AI Blog Post 1 */}
-            <article className="bg-neutral-background rounded-xl overflow-hidden border-2 border-neutral-border hover:border-primary transition-all duration-200 shadow-sm hover:shadow-lg hover:-translate-y-1">
-              <div className="h-48 bg-neutral-border/30 flex items-center justify-center">
-                <span className="text-body-sm text-neutral-text-tertiary">Blog Image</span>
+            <article className="group bg-neutral-background rounded-2xl overflow-hidden border border-neutral-border hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2 relative h-full flex flex-col">
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
+
+              <div className="relative h-56 overflow-hidden flex-shrink-0">
+                <img
+                  src={blogImage2}
+                  alt="Demand Sensing Analytics"
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                {/* Category badge on image */}
+                <div className="absolute top-4 left-4">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/95 backdrop-blur-sm text-primary text-body-sm font-bold rounded-full shadow-lg">
+                    <span className="text-lg">🤖</span>
+                    AI BLOG
+                  </span>
+                </div>
+                {/* Reading time badge */}
+                <div className="absolute top-4 right-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
+                    <div className="text-body-sm font-semibold text-neutral-text-primary flex items-center gap-1">
+                      <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      5 min
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="p-6">
-                <span className="inline-block px-3 py-1 bg-primary-lightest text-primary text-body-sm font-medium rounded-full mb-3">
-                  AI BLOG
-                </span>
-                <h3 className="text-h5 font-heading font-semibold text-neutral-text-primary mb-3">
+
+              <div className="p-6 relative z-20 flex-grow flex flex-col">
+                <h3 className="text-h5 font-heading font-bold text-neutral-text-primary mb-3 group-hover:text-primary transition-colors duration-300">
                   Explainability in DSA: Agnicio's Glass-Box Approach
                 </h3>
-                <p className="text-body font-body text-neutral-text-secondary mb-4">
+                <p className="text-body font-body text-neutral-text-secondary mb-4 leading-relaxed flex-grow">
                   What is Demand Sensing? Well, it is all about capturing the Demand Signal. This means predicting who wants what product, where and at what...
                 </p>
                 <a
                   href="/blog/explainability-dsa"
-                  className="inline-flex items-center gap-2 text-primary font-body font-medium hover:text-primary-hover transition-colors duration-200"
+                  className="inline-flex items-center gap-2 text-primary font-body font-semibold hover:gap-3 transition-all duration-300 mt-auto"
                 >
                   Continue reading
                   <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -421,23 +505,49 @@ export function Home() {
             </article>
 
             {/* AI Blog Post 2 */}
-            <article className="bg-neutral-background rounded-xl overflow-hidden border-2 border-neutral-border hover:border-primary transition-all duration-200 shadow-sm hover:shadow-lg hover:-translate-y-1">
-              <div className="h-48 bg-neutral-border/30 flex items-center justify-center">
-                <span className="text-body-sm text-neutral-text-tertiary">Blog Image</span>
+            <article className="group bg-neutral-background rounded-2xl overflow-hidden border border-neutral-border hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2 relative h-full flex flex-col">
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
+
+              <div className="relative h-56 overflow-hidden flex-shrink-0">
+                <img
+                  src={blogImage3}
+                  alt="Business Planning Analytics"
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                {/* Category badge on image */}
+                <div className="absolute top-4 left-4">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/95 backdrop-blur-sm text-primary text-body-sm font-bold rounded-full shadow-lg">
+                    <span className="text-lg">📊</span>
+                    AI BLOG
+                  </span>
+                </div>
+                {/* Reading time badge */}
+                <div className="absolute top-4 right-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
+                    <div className="text-body-sm font-semibold text-neutral-text-primary flex items-center gap-1">
+                      <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      4 min
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="p-6">
-                <span className="inline-block px-3 py-1 bg-primary-lightest text-primary text-body-sm font-medium rounded-full mb-3">
-                  AI BLOG
-                </span>
-                <h3 className="text-h5 font-heading font-semibold text-neutral-text-primary mb-3">
+
+              <div className="p-6 relative z-20 flex-grow flex flex-col">
+                <h3 className="text-h5 font-heading font-bold text-neutral-text-primary mb-3 group-hover:text-primary transition-colors duration-300">
                   How to use events' data for effective business planning
                 </h3>
-                <p className="text-body font-body text-neutral-text-secondary mb-4">
+                <p className="text-body font-body text-neutral-text-secondary mb-4 leading-relaxed flex-grow">
                   Organizations of all sizes are involved in business planning. This includes setting ambitious targets on sales and other KPIs to drive growth and...
                 </p>
                 <a
                   href="/blog/events-data-business-planning"
-                  className="inline-flex items-center gap-2 text-primary font-body font-medium hover:text-primary-hover transition-colors duration-200"
+                  className="inline-flex items-center gap-2 text-primary font-body font-semibold hover:gap-3 transition-all duration-300 mt-auto"
                 >
                   Continue reading
                   <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -446,9 +556,9 @@ export function Home() {
                 </a>
               </div>
             </article>
-          </StaggeredGrid>
+          </SmoothStaggeredGrid>
 
-          <ScrollReveal animation="zoom" delay={300}>
+          <SmoothScrollReveal animation="zoom">
           <div className="text-center mt-12">
             <a
               href="/blog"
@@ -460,12 +570,12 @@ export function Home() {
               </svg>
             </a>
           </div>
-          </ScrollReveal>
+          </SmoothScrollReveal>
         </div>
       </section>
 
       {/* Final CTA Banner */}
-      <ScrollReveal animation="slide-up">
+      <SmoothScrollReveal animation="slide-up" distance={80}>
       <section id="contact" className="py-24 bg-primary relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
@@ -491,7 +601,7 @@ export function Home() {
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary-light rounded-full blur-3xl opacity-30" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-hover rounded-full blur-3xl opacity-30" />
       </section>
-      </ScrollReveal>
+      </SmoothScrollReveal>
 
       {/* Footer */}
       <footer className="bg-neutral-text-primary text-white py-16">

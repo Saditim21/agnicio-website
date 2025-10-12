@@ -23,3 +23,5 @@ export { AnimatedGrid } from './AnimatedGrid';
 export { ScrollReveal } from './ScrollReveal';
 export { StaggeredGrid } from './StaggeredGrid';
 export { ParallaxText } from './ParallaxText';
+export { SmoothScrollReveal } from './SmoothScrollReveal';
+export { SmoothStaggeredGrid } from './SmoothStaggeredGrid';
