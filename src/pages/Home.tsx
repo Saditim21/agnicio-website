@@ -305,7 +305,7 @@ export function Home() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch mb-16">
               <SmoothScrollReveal animation="slide-right" distance={60}>
-                <div className="w-full h-full rounded-xl overflow-hidden shadow-lg flex items-center justify-center bg-neutral-surface">
+                <div className="w-full h-full flex items-center justify-center">
                   <img
                     src={aboutUsImg}
                     alt="Agnicio Team"
