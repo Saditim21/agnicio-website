@@ -4,6 +4,7 @@ import { AIDrivenMaintenance } from './pages/AIDrivenMaintenance';
 import { DemandSensing } from './pages/DemandSensing';
 import { AIService } from './pages/AIService';
 import { DataStrategy } from './pages/DataStrategy';
+import { DataEngineering } from './pages/DataEngineering';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/products/demand-sensing" element={<DemandSensing />} />
         <Route path="/services/ai" element={<AIService />} />
         <Route path="/services/data-strategy" element={<DataStrategy />} />
+        <Route path="/services/data-engineering" element={<DataEngineering />} />
       </Routes>
     </Router>
   );
