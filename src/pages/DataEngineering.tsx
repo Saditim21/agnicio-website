@@ -172,119 +172,401 @@ export function DataEngineering() {
         </div>
       </section>
 
-      {/* Data Pipelines Section */}
-      <section className="py-24 bg-neutral-surface relative overflow-hidden">
-        {/* Decorative background elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-hover rounded-full blur-3xl"></div>
+      {/* 3D Parallax Data Flow Visualization */}
+      <section className="relative min-h-screen py-32 overflow-hidden bg-gradient-to-br from-slate-900 via-primary/10 to-slate-900">
+        {/* Animated 3D background layers for parallax */}
+        <div className="absolute inset-0">
+          {/* Layer 1 - Far background */}
+          <div className="absolute inset-0 parallax-layer-1">
+            <div className="absolute top-20 left-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float-slow"></div>
+            <div className="absolute bottom-20 right-20 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl animate-float-slower"></div>
+          </div>
+
+          {/* Layer 2 - Mid background with grid */}
+          <div className="absolute inset-0 parallax-layer-2 opacity-10">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `linear-gradient(rgba(55, 62, 152, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(55, 62, 152, 0.5) 1px, transparent 1px)`,
+              backgroundSize: '50px 50px',
+              transform: 'perspective(1000px) rotateX(60deg)',
+              transformOrigin: 'center top'
+            }}></div>
+          </div>
+
+          {/* Floating particles */}
+          <div className="absolute inset-0 parallax-layer-3">
+            {[...Array(30)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-1 h-1 bg-cyan-400/40 rounded-full"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animation: `floatParticle ${10 + Math.random() * 20}s ease-in-out infinite`,
+                  animationDelay: `${Math.random() * 5}s`,
+                }}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <SmoothScrollReveal animation="slide-up" distance={60}>
-              <h2 className="text-h2 font-heading font-bold text-neutral-text-primary mb-12 text-center">
-                We help you build and orchestrate <span className="text-primary">data pipelines...</span>
-              </h2>
-            </SmoothScrollReveal>
+          <SmoothScrollReveal animation="slide-up" distance={60}>
+            <h2 className="text-5xl lg:text-7xl font-heading font-black text-center mb-6 bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent">
+              The Data Journey
+            </h2>
+            <p className="text-xl text-white/80 text-center max-w-3xl mx-auto mb-24">
+              From chaos to clarity - we transform your data into actionable intelligence
+            </p>
+          </SmoothScrollReveal>
+
+          {/* 3D Interactive Pipeline Visualization */}
+          <div className="max-w-7xl mx-auto relative" style={{ perspective: '2000px' }}>
+            {/* SVG Connections Layer */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none hidden md:block" style={{ zIndex: 0 }}>
+              <defs>
+                <linearGradient id="lineGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style={{ stopColor: '#373e98', stopOpacity: 0 }} />
+                  <stop offset="50%" style={{ stopColor: '#06b6d4', stopOpacity: 1 }} />
+                  <stop offset="100%" style={{ stopColor: '#373e98', stopOpacity: 0 }} />
+                </linearGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+
+              {/* Animated connecting curves */}
+              <path d="M 150 150 Q 300 100 450 150" stroke="url(#lineGradient1)" strokeWidth="2" fill="none" filter="url(#glow)" className="animate-draw-line" />
+              <path d="M 450 150 Q 600 200 750 150" stroke="url(#lineGradient1)" strokeWidth="2" fill="none" filter="url(#glow)" className="animate-draw-line" style={{ animationDelay: '0.5s' }} />
+              <path d="M 750 150 Q 900 100 1050 150" stroke="url(#lineGradient1)" strokeWidth="2" fill="none" filter="url(#glow)" className="animate-draw-line" style={{ animationDelay: '1s' }} />
+            </svg>
+
+            {/* Pipeline Steps with 3D transforms */}
+            <SmoothStaggeredGrid
+              staggerDelay={0.15}
+              animation="zoom"
+              className="grid grid-cols-1 md:grid-cols-5 gap-8 relative"
+              style={{ zIndex: 1 }}
+            >
+              {[
+                { icon: '📥', title: 'Ingest', desc: 'Multi-source data collection', color: 'from-violet-500 to-purple-600', rotate: -2 },
+                { icon: '⚙️', title: 'Transform', desc: 'Real-time processing', color: 'from-cyan-500 to-blue-600', rotate: 3 },
+                { icon: '💾', title: 'Store', desc: 'Scalable infrastructure', color: 'from-primary to-indigo-600', rotate: -1 },
+                { icon: '🔍', title: 'Analyze', desc: 'AI-powered insights', color: 'from-emerald-500 to-teal-600', rotate: 2 },
+                { icon: '📊', title: 'Visualize', desc: 'Beautiful dashboards', color: 'from-pink-500 to-rose-600', rotate: -3 },
+              ].map((step, i) => (
+                <div key={i} className="group relative transform-gpu" style={{ transform: `rotateY(${step.rotate}deg)` }}>
+                  {/* Glassmorphism card */}
+                  <div className="relative glassmorphism rounded-3xl p-8 border border-white/20 overflow-hidden transition-all duration-500 hover:scale-110 hover:rotate-0 hover:-translate-y-6" style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    backdropFilter: 'blur(20px)',
+                    boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+                  }}>
+                    {/* Gradient glow on hover */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-3xl`}></div>
+
+                    {/* 3D floating icon */}
+                    <div className="relative mb-6 transform group-hover:scale-125 group-hover:rotate-[360deg] transition-all duration-700">
+                      <div className={`w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-2xl relative`} style={{
+                        transform: 'translateZ(50px)',
+                      }}>
+                        <span className="text-4xl filter drop-shadow-lg">{step.icon}</span>
+                        {/* Pulsing ring */}
+                        <div className="absolute inset-0 rounded-2xl border-2 border-white/40 animate-ping-slow"></div>
+                      </div>
+                    </div>
+
+                    <h3 className="text-2xl font-heading font-bold text-white text-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                      {step.title}
+                    </h3>
+                    <p className="text-sm text-white/70 text-center group-hover:text-white/90 transition-colors duration-300">
+                      {step.desc}
+                    </p>
+
+                    {/* Data flow particles */}
+                    <div className="absolute inset-0 overflow-hidden rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      {[...Array(5)].map((_, j) => (
+                        <div
+                          key={j}
+                          className="absolute w-1 h-1 bg-cyan-400 rounded-full animate-particle-flow"
+                          style={{
+                            left: `${Math.random() * 100}%`,
+                            top: `${Math.random() * 100}%`,
+                            animationDelay: `${j * 0.2}s`,
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Connection indicator */}
+                  {i < 4 && (
+                    <div className="hidden md:block absolute top-1/2 -right-4 z-20">
+                      <div className="w-8 h-0.5 bg-gradient-to-r from-cyan-400 to-transparent animate-flow-right"></div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </SmoothStaggeredGrid>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-24 bg-neutral-background relative overflow-hidden">
-        {/* Decorative background */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-80 h-80 bg-cyan-500 rounded-full blur-3xl"></div>
+      {/* Scrapbook-Style Services Collage */}
+      <section className="relative py-40 bg-gradient-to-b from-white via-neutral-surface/50 to-white overflow-hidden">
+        {/* Textured background overlay */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+        }}></div>
+
+        {/* Scattered decorative elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl animate-float-slow"></div>
+          <div className="absolute bottom-40 right-20 w-40 h-40 bg-cyan-500/5 rounded-full blur-2xl animate-float-slower"></div>
+          <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-violet-500/5 rounded-full blur-2xl animate-float-slow"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
+          <SmoothScrollReveal animation="slide-up" distance={60}>
+            <div className="text-center mb-20">
+              <h2 className="text-5xl lg:text-7xl font-heading font-black text-neutral-text-primary mb-6 relative inline-block">
+                Our Expertise
+                {/* Hand-drawn underline */}
+                <svg className="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 10C50 5 150 2 298 8" stroke="#373e98" strokeWidth="3" strokeLinecap="round" className="animate-draw-underline"/>
+                </svg>
+              </h2>
+              <p className="text-xl text-neutral-text-secondary mt-8 max-w-2xl mx-auto">
+                Crafting data solutions that don't just work—they transform
+              </p>
+            </div>
+          </SmoothScrollReveal>
+
+          {/* Scrapbook collage layout with rotated, overlapping cards */}
           <div className="max-w-7xl mx-auto">
-            <SmoothStaggeredGrid
-              staggerDelay={0.15}
-              animation="zoom"
-              distance={40}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8"
-            >
-              {/* Data & Analytics Architecture */}
-              <div className="group bg-white rounded-2xl p-8 shadow-lg border-t-4 border-primary h-full flex flex-col transform hover:scale-105 hover:shadow-2xl transition-all duration-300 hover:border-t-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                  <span className="text-4xl">🏗️</span>
-                </div>
-                <h3 className="text-h4 font-heading font-bold text-neutral-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
-                  Data & Analytics Architecture
-                </h3>
-                <p className="text-body font-body text-neutral-text-secondary flex-grow group-hover:text-neutral-text-primary transition-colors duration-300 leading-relaxed">
-                  Unlock the power of your data through advanced analytics and insights. Discover how our team architects and builds robust data pipelines tailored to your business needs. We ensure seamless data flow and integration across systems, optimizing for efficiency and scalability.
-                </p>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+              {/* Card 1 - Data Architecture - Large, top-left, slightly rotated */}
+              <SmoothScrollReveal animation="slide-up" distance={80} delay={0}>
+                <div className="relative w-full transform md:-rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-500 hover:z-20 group md:-mt-8">
+                <div className="relative" style={{
+                  background: 'rgba(255, 255, 255, 0.7)',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 20px 60px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05)',
+                  borderRadius: '24px',
+                  padding: '40px',
+                }}>
+                  {/* Washi tape effect */}
+                  <div className="absolute -top-4 left-12 w-32 h-8 bg-primary/20 transform -rotate-2" style={{
+                    clipPath: 'polygon(0% 0%, 100% 0%, 98% 100%, 2% 100%)',
+                  }}></div>
 
-              {/* Unified Data platform */}
-              <div className="group bg-white rounded-2xl p-8 shadow-lg border-t-4 border-primary h-full flex flex-col transform hover:scale-105 hover:shadow-2xl transition-all duration-300 hover:border-t-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                  <span className="text-4xl">🔄</span>
-                </div>
-                <h3 className="text-h4 font-heading font-bold text-neutral-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
-                  Unified Data Platform
-                </h3>
-                <p className="text-body font-body text-neutral-text-secondary flex-grow group-hover:text-neutral-text-primary transition-colors duration-300 leading-relaxed">
-                  Explore our Extract, Transform, Load (ETL) solutions designed to streamline data processing. Learn how we transform raw data into actionable insights, enabling informed decision-making and driving business growth.
-                </p>
-              </div>
+                  <div className="flex items-start gap-6 mb-6">
+                    <div className="w-24 h-24 bg-gradient-to-br from-violet-500 to-purple-600 rounded-3xl flex items-center justify-center transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 shadow-2xl">
+                      <span className="text-5xl">🏗️</span>
+                    </div>
+                    <div className="flex-1">
+                      <span className="inline-block px-3 py-1 bg-violet-100 text-violet-700 text-xs font-bold rounded-full mb-3">FOUNDATION</span>
+                      <h3 className="text-3xl font-heading font-black text-neutral-text-primary mb-2">
+                        Data & Analytics Architecture
+                      </h3>
+                    </div>
+                  </div>
 
-              {/* Unified Data Processing */}
-              <div className="group bg-white rounded-2xl p-8 shadow-lg border-t-4 border-primary h-full flex flex-col transform hover:scale-105 hover:shadow-2xl transition-all duration-300 hover:border-t-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                  <span className="text-4xl">⚡</span>
-                </div>
-                <h3 className="text-h4 font-heading font-bold text-neutral-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
-                  Unified Data Processing
-                </h3>
-                <p className="text-body font-body text-neutral-text-secondary flex-grow group-hover:text-neutral-text-primary transition-colors duration-300 leading-relaxed">
-                  Discover our advanced, secure, and highly efficient data storage systems, to manage and protect vast volumes of information. Gain insights into our scalable, accessible storage infrastructure, tailored to meet the diverse and evolving needs of modern businesses.
-                </p>
-              </div>
+                  <p className="text-lg text-neutral-text-secondary leading-relaxed mb-6">
+                    Build robust, scalable data pipelines that grow with your business. From concept to cloud, we architect systems that turn data chaos into strategic advantage.
+                  </p>
 
-              {/* Platform Governance & Security */}
-              <div className="group bg-white rounded-2xl p-8 shadow-lg border-t-4 border-primary h-full flex flex-col transform hover:scale-105 hover:shadow-2xl transition-all duration-300 hover:border-t-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                  <span className="text-4xl">🔒</span>
-                </div>
-                <h3 className="text-h4 font-heading font-bold text-neutral-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
-                  Platform Governance & Security
-                </h3>
-                <p className="text-body font-body text-neutral-text-secondary flex-grow group-hover:text-neutral-text-primary transition-colors duration-300 leading-relaxed">
-                  Safeguard your data integrity and ensure regulatory compliance through our robust governance and security practices. Discover how we implement frameworks and technologies to maintain data accuracy, privacy, and security across the entire data lifecycle.
-                </p>
-              </div>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <span className="px-3 py-1 bg-violet-50 text-violet-600 rounded-lg text-sm font-medium">Data Modeling</span>
+                    <span className="px-3 py-1 bg-violet-50 text-violet-600 rounded-lg text-sm font-medium">Pipeline Design</span>
+                    <span className="px-3 py-1 bg-violet-50 text-violet-600 rounded-lg text-sm font-medium">Cloud Migration</span>
+                  </div>
 
-              {/* Data Quality Management */}
-              <div className="group bg-white rounded-2xl p-8 shadow-lg border-t-4 border-primary h-full flex flex-col transform hover:scale-105 hover:shadow-2xl transition-all duration-300 hover:border-t-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                  <span className="text-4xl">✅</span>
+                  {/* Decorative sticker element */}
+                  <div className="absolute bottom-6 right-6 w-16 h-16 bg-yellow-200 rounded-full flex items-center justify-center transform rotate-12 shadow-lg border-4 border-yellow-300">
+                    <span className="text-2xl">⭐</span>
+                  </div>
                 </div>
-                <h3 className="text-h4 font-heading font-bold text-neutral-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
-                  Data Quality Management
-                </h3>
-                <p className="text-body font-body text-neutral-text-secondary flex-grow group-hover:text-neutral-text-primary transition-colors duration-300 leading-relaxed">
-                  Learn how we prioritize and maintain high data quality standards throughout the data lifecycle. Explore our strategies for data cleansing, validation, and enrichment to ensure that your analytics and decision-making processes are built on accurate and reliable data.
-                </p>
               </div>
+              </SmoothScrollReveal>
 
-              {/* BI & Visualization */}
-              <div className="group bg-white rounded-2xl p-8 shadow-lg border-t-4 border-primary h-full flex flex-col transform hover:scale-105 hover:shadow-2xl transition-all duration-300 hover:border-t-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                  <span className="text-4xl">📊</span>
+              {/* Card 2 - Unified Platform - Medium, top-right, rotated opposite */}
+              <SmoothScrollReveal animation="slide-up" distance={80} delay={100}>
+                <div className="relative w-full transform md:rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 hover:z-20 group md:mt-12">
+                <div className="relative" style={{
+                  background: 'rgba(255, 255, 255, 0.7)',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 20px 60px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05)',
+                  borderRadius: '24px',
+                  padding: '32px',
+                }}>
+                  <div className="absolute -top-3 right-20 w-28 h-8 bg-cyan-500/20 transform rotate-3"></div>
+
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-500 shadow-xl">
+                      <span className="text-4xl">🔄</span>
+                    </div>
+                    <div>
+                      <span className="inline-block px-3 py-1 bg-cyan-100 text-cyan-700 text-xs font-bold rounded-full mb-2">TRANSFORM</span>
+                      <h3 className="text-2xl font-heading font-black text-neutral-text-primary">
+                        Unified Data Platform
+                      </h3>
+                    </div>
+                  </div>
+
+                  <p className="text-base text-neutral-text-secondary leading-relaxed">
+                    Break down silos with ETL/ELT solutions that bring all your data together. Real-time or batch, structured or unstructured—we make it work seamlessly.
+                  </p>
                 </div>
-                <h3 className="text-h4 font-heading font-bold text-neutral-text-primary mb-4 group-hover:text-primary transition-colors duration-300">
-                  BI & Visualization
-                </h3>
-                <p className="text-body font-body text-neutral-text-secondary flex-grow group-hover:text-neutral-text-primary transition-colors duration-300 leading-relaxed">
-                  Gain insights at a glance with our intuitive business intelligence (BI) and visualization solutions. See how we empower businesses with real-time data processing capabilities, enabling immediate decision-making based on live data streams.
-                </p>
               </div>
-            </SmoothStaggeredGrid>
+              </SmoothScrollReveal>
+
+              {/* Card 3 - Data Processing - Small card, middle-left */}
+              <SmoothScrollReveal animation="slide-up" distance={80} delay={200}>
+                <div className="relative w-full transform md:-rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-500 hover:z-20 group md:-mt-4">
+                <div className="relative" style={{
+                  background: 'rgba(255, 255, 255, 0.7)',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 20px 60px rgba(0,0,0,0.15)',
+                  borderRadius: '20px',
+                  padding: '28px',
+                }}>
+                  <div className="flex gap-4 items-start">
+                    <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-500 shadow-lg flex-shrink-0">
+                      <span className="text-3xl">⚡</span>
+                    </div>
+                    <div>
+                      <span className="inline-block px-2 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full mb-2">SPEED</span>
+                      <h3 className="text-xl font-heading font-black text-neutral-text-primary mb-2">
+                        Unified Data Processing
+                      </h3>
+                      <p className="text-sm text-neutral-text-secondary">
+                        Lightning-fast data processing that scales effortlessly with your needs.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </SmoothScrollReveal>
+
+              {/* Card 4 - Security - Large feature card, middle-center */}
+              <SmoothScrollReveal animation="slide-up" distance={80} delay={300}>
+                <div className="relative w-full transform md:rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-500 hover:z-20 group md:mt-8">
+                <div className="relative" style={{
+                  background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,240,255,0.9) 100%)',
+                  backdropFilter: 'blur(15px)',
+                  boxShadow: '0 25px 70px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.05)',
+                  borderRadius: '28px',
+                  padding: '40px',
+                  border: '3px solid rgba(55, 62, 152, 0.1)',
+                }}>
+                  {/* Corner fold effect */}
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-primary/10 transform origin-top-right" style={{
+                    clipPath: 'polygon(100% 0, 100% 100%, 0 0)',
+                  }}></div>
+
+                  <div className="flex items-start gap-6 mb-6">
+                    <div className="w-24 h-24 bg-gradient-to-br from-rose-500 to-pink-600 rounded-3xl flex items-center justify-center transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-700 shadow-2xl relative">
+                      <span className="text-5xl">🔒</span>
+                      <div className="absolute inset-0 rounded-3xl border-4 border-white/30 animate-ping-slow"></div>
+                    </div>
+                    <div className="flex-1">
+                      <span className="inline-block px-3 py-1 bg-rose-100 text-rose-700 text-xs font-bold rounded-full mb-3">CRITICAL</span>
+                      <h3 className="text-3xl font-heading font-black text-neutral-text-primary mb-2">
+                        Platform Governance & Security
+                      </h3>
+                    </div>
+                  </div>
+
+                  <p className="text-lg text-neutral-text-secondary leading-relaxed mb-6">
+                    Enterprise-grade security and compliance that protects your data at every layer. From encryption to access control, we've got you covered.
+                  </p>
+
+                  <div className="flex gap-3">
+                    <span className="px-4 py-2 bg-rose-50 text-rose-600 rounded-xl text-sm font-semibold shadow-sm">GDPR Ready</span>
+                    <span className="px-4 py-2 bg-rose-50 text-rose-600 rounded-xl text-sm font-semibold shadow-sm">SOC 2</span>
+                    <span className="px-4 py-2 bg-rose-50 text-rose-600 rounded-xl text-sm font-semibold shadow-sm">ISO 27001</span>
+                  </div>
+                </div>
+              </div>
+              </SmoothScrollReveal>
+
+              {/* Card 5 - Data Quality - Medium, bottom-left */}
+              <SmoothScrollReveal animation="slide-up" distance={80} delay={400}>
+                <div className="relative w-full transform md:-rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-500 hover:z-20 group md:-mt-12">
+                <div className="relative" style={{
+                  background: 'rgba(255, 255, 255, 0.75)',
+                  backdropFilter: 'blur(12px)',
+                  boxShadow: '0 20px 60px rgba(0,0,0,0.15)',
+                  borderRadius: '24px',
+                  padding: '32px',
+                }}>
+                  <div className="absolute -top-3 left-16 w-24 h-8 bg-amber-300/30 transform -rotate-6"></div>
+
+                  <div className="flex items-start gap-5">
+                    <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-500 shadow-xl flex-shrink-0">
+                      <span className="text-4xl">✅</span>
+                    </div>
+                    <div>
+                      <span className="inline-block px-3 py-1 bg-amber-100 text-amber-700 text-xs font-bold rounded-full mb-3">PRECISION</span>
+                      <h3 className="text-2xl font-heading font-black text-neutral-text-primary mb-3">
+                        Data Quality Management
+                      </h3>
+                      <p className="text-base text-neutral-text-secondary leading-relaxed">
+                        Clean, validated, enriched data you can trust. Our quality frameworks ensure every decision is backed by accurate information.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Decorative doodle */}
+                  <svg className="absolute bottom-4 right-4 w-12 h-12 text-amber-300 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" />
+                  </svg>
+                </div>
+              </div>
+              </SmoothScrollReveal>
+
+              {/* Card 6 - BI & Visualization - Bottom-right, dynamic card */}
+              <SmoothScrollReveal animation="slide-up" distance={80} delay={500}>
+                <div className="relative w-full transform md:rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-500 hover:z-20 group md:-mt-8">
+                <div className="relative" style={{
+                  background: 'linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(250,250,255,0.85) 100%)',
+                  backdropFilter: 'blur(12px)',
+                  boxShadow: '0 20px 60px rgba(0,0,0,0.18)',
+                  borderRadius: '24px',
+                  padding: '36px',
+                }}>
+                  <div className="flex items-start gap-5 mb-4">
+                    <div className="w-22 h-22 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl flex items-center justify-center transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 shadow-2xl flex-shrink-0">
+                      <span className="text-5xl">📊</span>
+                    </div>
+                    <div className="flex-1">
+                      <span className="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-bold rounded-full mb-3">INSIGHTS</span>
+                      <h3 className="text-3xl font-heading font-black text-neutral-text-primary mb-3">
+                        BI & Visualization
+                      </h3>
+                    </div>
+                  </div>
+
+                  <p className="text-base text-neutral-text-secondary leading-relaxed mb-4">
+                    Transform data into stunning visual stories. Interactive dashboards that make complex data instantly understandable and actionable.
+                  </p>
+
+                  {/* Fake mini chart visualization */}
+                  <div className="flex gap-2 items-end h-16 mt-6">
+                    <div className="flex-1 bg-gradient-to-t from-indigo-500 to-indigo-300 rounded-t h-12 animate-pulse-slow"></div>
+                    <div className="flex-1 bg-gradient-to-t from-purple-500 to-purple-300 rounded-t h-16"></div>
+                    <div className="flex-1 bg-gradient-to-t from-indigo-500 to-indigo-300 rounded-t h-10 animate-pulse-slower"></div>
+                    <div className="flex-1 bg-gradient-to-t from-purple-500 to-purple-300 rounded-t h-14"></div>
+                    <div className="flex-1 bg-gradient-to-t from-indigo-500 to-indigo-300 rounded-t h-8 animate-pulse-slow"></div>
+                  </div>
+                </div>
+              </div>
+              </SmoothScrollReveal>
+            </div>
           </div>
         </div>
       </section>
@@ -407,6 +689,204 @@ export function DataEngineering() {
             transform: translate(-50%, -50%) scale(1.5);
             opacity: 0.5;
           }
+        }
+
+        /* New advanced animations for 2025 design */
+        .animate-pulse-slow {
+          animation: pulse-slow 4s ease-in-out infinite;
+        }
+
+        .animate-pulse-slower {
+          animation: pulse-slower 6s ease-in-out infinite;
+        }
+
+        @keyframes pulse-slow {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 0.3;
+          }
+          50% {
+            transform: scale(1.1);
+            opacity: 0.5;
+          }
+        }
+
+        @keyframes pulse-slower {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 0.3;
+          }
+          50% {
+            transform: scale(1.15);
+            opacity: 0.6;
+          }
+        }
+
+        .animate-flow-right {
+          animation: flow-right 2s ease-in-out infinite;
+        }
+
+        @keyframes flow-right {
+          0% {
+            transform: translateX(0);
+            opacity: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateX(12px);
+            opacity: 0;
+          }
+        }
+
+        /* Floating particles */
+        @keyframes floatParticle {
+          0%, 100% {
+            transform: translateY(0) translateX(0) scale(1);
+            opacity: 0.2;
+          }
+          25% {
+            opacity: 0.6;
+          }
+          50% {
+            transform: translateY(-80px) translateX(40px) scale(1.5);
+            opacity: 0.4;
+          }
+          75% {
+            opacity: 0.8;
+          }
+        }
+
+        .animate-float-slow {
+          animation: float-slow 8s ease-in-out infinite;
+        }
+
+        .animate-float-slower {
+          animation: float-slower 12s ease-in-out infinite;
+        }
+
+        @keyframes float-slow {
+          0%, 100% {
+            transform: translateY(0) translateX(0);
+          }
+          50% {
+            transform: translateY(-20px) translateX(10px);
+          }
+        }
+
+        @keyframes float-slower {
+          0%, 100% {
+            transform: translateY(0) translateX(0);
+          }
+          50% {
+            transform: translateY(-30px) translateX(-15px);
+          }
+        }
+
+        /* SVG line drawing animation */
+        .animate-draw-line {
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: draw-line 3s ease-in-out forwards;
+        }
+
+        @keyframes draw-line {
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+
+        /* Hand-drawn underline */
+        .animate-draw-underline {
+          stroke-dasharray: 300;
+          stroke-dashoffset: 300;
+          animation: draw-underline 1.5s ease-out forwards;
+          animation-delay: 0.5s;
+        }
+
+        @keyframes draw-underline {
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+
+        /* Particle flow animation */
+        .animate-particle-flow {
+          animation: particle-flow 2s ease-in-out infinite;
+        }
+
+        @keyframes particle-flow {
+          0% {
+            transform: translate(0, 0);
+            opacity: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            transform: translate(50px, -50px);
+            opacity: 0;
+          }
+        }
+
+        /* Pinging ring effect */
+        .animate-ping-slow {
+          animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes ping-slow {
+          0% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          75%, 100% {
+            transform: scale(1.5);
+            opacity: 0;
+          }
+        }
+
+        /* Glassmorphism helper */
+        .glassmorphism {
+          position: relative;
+        }
+
+        .glassmorphism::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          padding: 1px;
+          background: linear-gradient(145deg, rgba(255,255,255,0.3), rgba(255,255,255,0.05));
+          -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          pointer-events: none;
+        }
+
+        /* Parallax layers */
+        .parallax-layer-1 {
+          transform: translateZ(-100px) scale(1.5);
+        }
+
+        .parallax-layer-2 {
+          transform: translateZ(-50px) scale(1.25);
+        }
+
+        .parallax-layer-3 {
+          transform: translateZ(0);
+        }
+
+        /* Transform GPU acceleration */
+        .transform-gpu {
+          transform: translate3d(0, 0, 0);
+          will-change: transform;
+        }
+
+        /* Smooth hover transitions */
+        * {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
       `}</style>
     </div>
