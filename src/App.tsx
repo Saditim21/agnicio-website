@@ -5,6 +5,7 @@ import { DemandSensing } from './pages/DemandSensing';
 import { AIService } from './pages/AIService';
 import { DataStrategy } from './pages/DataStrategy';
 import { DataEngineering } from './pages/DataEngineering';
+import { AzureCC } from './pages/AzureCC';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/services/ai" element={<AIService />} />
         <Route path="/services/data-strategy" element={<DataStrategy />} />
         <Route path="/services/data-engineering" element={<DataEngineering />} />
+        <Route path="/services/azure-cc" element={<AzureCC />} />
       </Routes>
     </Router>
   );
