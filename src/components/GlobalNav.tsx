@@ -30,8 +30,8 @@ const navLinks: NavLink[] = [
       { label: 'Azure CC', href: '/services/azure-cc' },
     ],
   },
-  { label: 'Blog', href: '#blog' },
-  { label: 'About Us', href: '#about' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'About Us', href: '/about' },
   { label: 'Contact', href: '#contact' },
 ];
 

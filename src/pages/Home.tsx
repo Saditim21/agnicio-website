@@ -403,7 +403,7 @@ export function Home() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
           >
             {/* Event Post */}
-            <article className="group bg-neutral-background rounded-2xl overflow-hidden border border-neutral-border hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2 relative h-full flex flex-col">
+            <a href="/blog/maintenance-next-expo" className="group bg-neutral-background rounded-2xl overflow-hidden border border-neutral-border hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2 relative h-full flex flex-col cursor-pointer">
               {/* Gradient overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
 
@@ -439,20 +439,17 @@ export function Home() {
                 <p className="text-body font-body text-neutral-text-secondary mb-4 leading-relaxed flex-grow">
                   We're excited to announce that Agnicio will be exhibiting at the Maintenance NEXT Expo from April 8th to 10th!
                 </p>
-                <a
-                  href="/blog/maintenance-next-expo"
-                  className="inline-flex items-center gap-2 text-primary font-body font-semibold hover:gap-3 transition-all duration-300 mt-auto"
-                >
+                <span className="inline-flex items-center gap-2 text-primary font-body font-semibold group-hover:gap-3 transition-all duration-300 mt-auto">
                   Continue reading
                   <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                     <path d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
+                </span>
               </div>
-            </article>
+            </a>
 
             {/* AI Blog Post 1 */}
-            <article className="group bg-neutral-background rounded-2xl overflow-hidden border border-neutral-border hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2 relative h-full flex flex-col">
+            <a href="/blog/explainability-dsa" className="group bg-neutral-background rounded-2xl overflow-hidden border border-neutral-border hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2 relative h-full flex flex-col cursor-pointer">
               {/* Gradient overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
 
@@ -492,20 +489,17 @@ export function Home() {
                 <p className="text-body font-body text-neutral-text-secondary mb-4 leading-relaxed flex-grow">
                   What is Demand Sensing? Well, it is all about capturing the Demand Signal. This means predicting who wants what product, where and at what...
                 </p>
-                <a
-                  href="/blog/explainability-dsa"
-                  className="inline-flex items-center gap-2 text-primary font-body font-semibold hover:gap-3 transition-all duration-300 mt-auto"
-                >
+                <span className="inline-flex items-center gap-2 text-primary font-body font-semibold group-hover:gap-3 transition-all duration-300 mt-auto">
                   Continue reading
                   <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                     <path d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
+                </span>
               </div>
-            </article>
+            </a>
 
             {/* AI Blog Post 2 */}
-            <article className="group bg-neutral-background rounded-2xl overflow-hidden border border-neutral-border hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2 relative h-full flex flex-col">
+            <a href="/blog/events-data-business-planning" className="group bg-neutral-background rounded-2xl overflow-hidden border border-neutral-border hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2 relative h-full flex flex-col cursor-pointer">
               {/* Gradient overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
 
@@ -545,17 +539,14 @@ export function Home() {
                 <p className="text-body font-body text-neutral-text-secondary mb-4 leading-relaxed flex-grow">
                   Organizations of all sizes are involved in business planning. This includes setting ambitious targets on sales and other KPIs to drive growth and...
                 </p>
-                <a
-                  href="/blog/events-data-business-planning"
-                  className="inline-flex items-center gap-2 text-primary font-body font-semibold hover:gap-3 transition-all duration-300 mt-auto"
-                >
+                <span className="inline-flex items-center gap-2 text-primary font-body font-semibold group-hover:gap-3 transition-all duration-300 mt-auto">
                   Continue reading
                   <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                     <path d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
+                </span>
               </div>
-            </article>
+            </a>
           </SmoothStaggeredGrid>
 
           <SmoothScrollReveal animation="zoom">
