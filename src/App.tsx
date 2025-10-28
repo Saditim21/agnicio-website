@@ -9,6 +9,7 @@ import { PostLockdownWorkshop } from './pages/PostLockdownWorkshop';
 import { AgniciocubewiseWebinar } from './pages/AgniciocubewiseWebinar';
 import { DynamicPricingDisruption } from './pages/DynamicPricingDisruption';
 import { AboutUs } from './pages/AboutUs';
+import { Contact } from './pages/Contact';
 import { AIDrivenMaintenance } from './pages/AIDrivenMaintenance';
 import { DemandSensing } from './pages/DemandSensing';
 import { AIService } from './pages/AIService';
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/maintenance-next-expo" element={<MaintenanceNextExpo />} />
         <Route path="/blog/explainability-dsa" element={<ExplainabilityDSA />} />

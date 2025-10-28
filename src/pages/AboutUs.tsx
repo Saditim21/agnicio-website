@@ -8,23 +8,6 @@ export function AboutUs() {
     <div className="min-h-screen bg-neutral-background">
       <GlobalNav />
       
-      {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          controls
-          autoPlay
-          muted
-          loop
-        >
-          <source src="/src/assets/about-us/about-us-video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        
-        {/* Optional overlay for better text readability if needed */}
-        <div className="absolute inset-0 bg-black/20"></div>
-      </section>
-
       {/* Main Content */}
       <section className="py-24 bg-neutral-background">
         <div className="container mx-auto px-4">
@@ -141,6 +124,30 @@ export function AboutUs() {
                     We help companies to drive sustainable growth and achieve operational excellence through data analytics strategies & solutions
                   </p>
                 </div>
+              </div>
+            </SmoothScrollReveal>
+
+            {/* Location Section */}
+            <SmoothScrollReveal animation="fade">
+              <div className="text-center">
+                <h2 className="text-h3 font-heading font-bold text-neutral-text-primary mb-8">
+                  Visit Our Office
+                </h2>
+                <div className="bg-neutral-surface rounded-2xl overflow-hidden shadow-lg border border-neutral-border">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!4v1729629047449!6m8!1m7!1s1fvGtA5h_D9G7PIDSozQ-A!2m2!1d51.92305899999999!2d4.4714942!3f173.7!4f-34.14!5f0.7820865974627469"
+                    width="100%"
+                    height="450"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Agnicio Office Location - Millennium Tower, Rotterdam"
+                  ></iframe>
+                </div>
+                <p className="text-body font-body text-neutral-text-secondary mt-4">
+                  Millennium Tower, Weena 686, 3012 CN Rotterdam, Netherlands
+                </p>
               </div>
             </SmoothScrollReveal>
 
