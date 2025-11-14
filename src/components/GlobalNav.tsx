@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import agnicioLogo from '../assets/about-us/agnicio-logo.webp';
 
 interface DropdownItem {
   label: string;
@@ -30,9 +31,9 @@ const navLinks: NavLink[] = [
       { label: 'Azure CC', href: '/services/azure-cc' },
     ],
   },
-  { label: 'Blog', href: '#blog' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export function GlobalNav() {
@@ -74,9 +75,13 @@ export function GlobalNav() {
           <div className="flex-shrink-0">
             <a
               href="/"
-              className="text-h5 font-heading font-bold text-neutral-text-primary hover:text-primary transition-colors duration-250"
+              className="flex items-center hover:opacity-80 transition-opacity duration-250"
             >
-              Agnicio
+              <img
+                src={agnicioLogo}
+                alt="Agnicio"
+                className="h-8 w-auto"
+              />
             </a>
           </div>
 
@@ -165,7 +170,7 @@ export function GlobalNav() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <a
-              href="#contact"
+              href="/contact"
               className="
                 px-6 py-2.5
                 bg-primary text-white font-body font-medium rounded-lg
@@ -254,7 +259,7 @@ export function GlobalNav() {
 
             {/* Mobile CTA */}
             <a
-              href="#contact"
+              href="/contact"
               onClick={() => setMobileMenuOpen(false)}
               className="
                 block mx-4 mt-4 px-6 py-3
