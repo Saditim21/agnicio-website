@@ -1,5 +1,5 @@
-/* Google Fonts - Inter for Headings, Lora for Body */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&display=swap');
+/* Google Fonts - Inter for all typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,257 +8,63 @@
 @layer base {
   /* Base Typography */
   body {
-    @apply font-body text-body text-neutral-text-primary bg-neutral-background;
-    line-height: 1.5;
+    @apply font-sans text-base antialiased;
+    color: #0B2A4A;
+    background-color: #ffffff;
+    line-height: 1.6;
   }
 
-  /* Headings - Inter font family */
+  /* Headings - Inter font family, bold & spaced */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading text-neutral-text-primary;
-    line-height: 1.2;
+    @apply font-heading font-semibold tracking-tight leading-tight;
+    color: #0B2A4A;
   }
 
   h1 {
-    @apply text-h1 font-bold;
+    @apply text-5xl md:text-6xl font-semibold;
   }
 
   h2 {
-    @apply text-h2 font-semibold;
+    @apply text-4xl md:text-5xl font-semibold;
   }
 
   h3 {
-    @apply text-h3 font-semibold;
+    @apply text-3xl md:text-4xl font-semibold;
   }
 
   h4 {
-    @apply text-h4 font-medium;
+    @apply text-2xl md:text-3xl font-semibold;
   }
 
   h5 {
-    @apply text-h5 font-medium;
+    @apply text-xl md:text-2xl font-semibold;
   }
 
   h6 {
-    @apply text-h6 font-medium;
+    @apply text-lg md:text-xl font-semibold;
   }
 
-  /* Focus styles for accessibility (WCAG AA compliant) */
+  /* Focus styles for accessibility */
   *:focus-visible {
     @apply outline-none ring-2 ring-primary ring-offset-2;
   }
 }
 
 @layer components {
-  /* Animation utility classes with enforced duration constraints */
-  .animate-fade-in {
-    animation: fadeIn 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-md font-medium transition-colors duration-200;
   }
 
-  .animate-slide-in {
-    animation: slideIn 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  .btn-primary:hover {
+    @apply bg-primary-dark;
   }
 
-  .animate-scale-in {
-    animation: scaleIn 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  .btn-secondary {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-md font-medium transition-colors duration-200;
   }
 
-  /* Interactive element transitions (250ms default) */
-  .transition-default {
-    @apply transition-all duration-250 ease-in-out;
+  .btn-secondary:hover {
+    @apply text-primary-dark border-primary-dark;
   }
-
-  /* Accent color usage - restricted to interactive elements only */
-  .accent-interactive {
-    @apply text-accent-blue hover:text-primary-hover active:text-primary-active;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .accent-bg-interactive {
-    @apply bg-accent-blue hover:bg-primary-hover active:bg-primary-active;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-}
-
-@layer utilities {
-  /* Custom spacing utilities */
-  .spacing-xs {
-    @apply p-xs;
-  }
-
-  .spacing-sm {
-    @apply p-sm;
-  }
-
-  .spacing-md {
-    @apply p-md;
-  }
-
-  .spacing-lg {
-    @apply p-lg;
-  }
-
-  /* Text color utilities */
-  .text-primary-color {
-    @apply text-neutral-text-primary;
-  }
-
-  .text-secondary-color {
-    @apply text-neutral-text-secondary;
-  }
-
-  .text-tertiary-color {
-    @apply text-neutral-text-tertiary;
-  }
-}
-
-/* Keyframe animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateY(10px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    transform: scale(0.95);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* Futuristic Animations */
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 5px rgba(55, 62, 152, 0.5), 0 0 10px rgba(55, 62, 152, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(55, 62, 152, 0.8), 0 0 30px rgba(55, 62, 152, 0.4);
-  }
-}
-
-@keyframes glowCyan {
-  0%, 100% {
-    box-shadow: 0 0 5px rgba(6, 182, 212, 0.5), 0 0 10px rgba(6, 182, 212, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.8), 0 0 30px rgba(6, 182, 212, 0.4);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-@keyframes borderGlow {
-  0%, 100% {
-    border-color: rgba(55, 62, 152, 0.5);
-  }
-  50% {
-    border-color: rgba(55, 62, 152, 1);
-  }
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translateX(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
-  }
-  100% {
-    background-position: 1000px 0;
-  }
-}
-
-@keyframes rotateGlow {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
-  }
-}
-
-/* Utility classes for futuristic effects */
-.glow-primary {
-  animation: glow 2s ease-in-out infinite;
-}
-
-.glow-cyan {
-  animation: glowCyan 2s ease-in-out infinite;
-}
-
-.border-glow {
-  animation: borderGlow 2s ease-in-out infinite;
-}
-
-.gradient-animate {
-  background-size: 200% 200%;
-  animation: gradientShift 3s ease infinite;
-}
-
-.float-animate {
-  animation: float 3s ease-in-out infinite;
 }

@@ -7,31 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
+        background: '#ffffff',
+        ink: '#0B2A4A',
         primary: {
-          DEFAULT: '#373e98',
-          base: '#373e98',
-          hover: '#2d3279',
-          active: '#23275a',
-          light: '#5a62b8',
-          lighter: '#8f95d4',
-          lightest: '#e8e9f5',
+          DEFAULT: '#164CBA',
+          dark: '#153F94',
         },
-        neutral: {
-          background: '#F5F5F5',
-          surface: '#FFFFFF',
-          text: {
-            primary: '#202020',
-            secondary: '#4A4A4A',
-            tertiary: '#737373',
-          },
-          border: {
-            DEFAULT: '#E0E0E0',
-            hover: '#BDBDBD',
-          },
-        },
-        accent: {
-          blue: '#373e98',
-        },
+        accent: '#2AA2FF',
+        grayBg: '#F3F6FA',
+        grayLine: '#E6ECF5',
+        // Keep semantic colors for any alerts/notifications
         semantic: {
           success: '#10B981',
           warning: '#F59E0B',
@@ -40,8 +25,9 @@ export default {
         },
       },
       fontFamily: {
-        heading: ['Inter', 'sans-serif'],
-        body: ['Lora', 'serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        heading: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        body: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
         mono: ['Consolas', 'Monaco', 'Courier New', 'monospace'],
       },
       fontSize: {
