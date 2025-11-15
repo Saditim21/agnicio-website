@@ -184,7 +184,7 @@ export function AzureCC() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
               {/* Service 1 - Azure Solution Architecture */}
-              <SmoothScrollReveal animation="slide-up" distance={60} delay={0}>
+              <SmoothScrollReveal animation="slide-up" distance={60}>
                 <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-blue-300 hover:-translate-y-2">
                   {/* Gradient accent bar */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-t-2xl"></div>
@@ -224,7 +224,7 @@ export function AzureCC() {
               </SmoothScrollReveal>
 
               {/* Service 2 - Assessment & Migration */}
-              <SmoothScrollReveal animation="slide-up" distance={60} delay={100}>
+              <SmoothScrollReveal animation="slide-up" distance={60}>
                 <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-green-300 hover:-translate-y-2">
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500 to-green-600 rounded-t-2xl"></div>
 
@@ -257,7 +257,7 @@ export function AzureCC() {
               </SmoothScrollReveal>
 
               {/* Service 3 - Power BI */}
-              <SmoothScrollReveal animation="slide-up" distance={60} delay={200}>
+              <SmoothScrollReveal animation="slide-up" distance={60}>
                 <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-yellow-300 hover:-translate-y-2">
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-t-2xl"></div>
 
@@ -290,7 +290,7 @@ export function AzureCC() {
               </SmoothScrollReveal>
 
               {/* Service 4 - Fabric */}
-              <SmoothScrollReveal animation="slide-up" distance={60} delay={300}>
+              <SmoothScrollReveal animation="slide-up" distance={60}>
                 <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-purple-300 hover:-translate-y-2">
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-purple-600 rounded-t-2xl"></div>
 
@@ -324,7 +324,7 @@ export function AzureCC() {
               </SmoothScrollReveal>
 
               {/* Service 5 - Azure AI */}
-              <SmoothScrollReveal animation="slide-up" distance={60} delay={400}>
+              <SmoothScrollReveal animation="slide-up" distance={60}>
                 <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-cyan-300 hover:-translate-y-2">
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-t-2xl"></div>
 
@@ -357,7 +357,7 @@ export function AzureCC() {
               </SmoothScrollReveal>
 
               {/* Service 6 - Academy */}
-              <SmoothScrollReveal animation="slide-up" distance={60} delay={500}>
+              <SmoothScrollReveal animation="slide-up" distance={60}>
                 <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-indigo-300 hover:-translate-y-2">
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-t-2xl"></div>
 

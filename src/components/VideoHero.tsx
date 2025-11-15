@@ -26,7 +26,7 @@ export function VideoHero({
   });
 
   // Convert progress (0-1) to isLoaded-like boolean for smooth transitions
-  const isLoaded = progress > 0.1; // Start animations when 10% scrolled into view
+  // const isLoaded = progress > 0.1; // Start animations when 10% scrolled into view
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">

@@ -248,8 +248,7 @@ export function DataEngineering() {
             <SmoothStaggeredGrid
               staggerDelay={0.15}
               animation="zoom"
-              className="grid grid-cols-1 md:grid-cols-5 gap-8 relative"
-              style={{ zIndex: 1 }}
+              className="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-[1]"
             >
               {[
                 { icon: '📥', title: 'Ingest', desc: 'Multi-source data collection', color: 'from-violet-500 to-purple-600', rotate: -2 },
@@ -349,7 +348,7 @@ export function DataEngineering() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
               {/* Card 1 - Data Architecture - Large, top-left, slightly rotated */}
-              <SmoothScrollReveal animation="slide-up" distance={80} delay={0}>
+              <SmoothScrollReveal animation="slide-up" distance={80}>
                 <div className="relative w-full transform md:-rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-500 hover:z-20 group md:-mt-8">
                 <div className="relative" style={{
                   background: 'rgba(255, 255, 255, 0.7)',
@@ -394,7 +393,7 @@ export function DataEngineering() {
               </SmoothScrollReveal>
 
               {/* Card 2 - Unified Platform - Medium, top-right, rotated opposite */}
-              <SmoothScrollReveal animation="slide-up" distance={80} delay={100}>
+              <SmoothScrollReveal animation="slide-up" distance={80}>
                 <div className="relative w-full transform md:rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 hover:z-20 group md:mt-12">
                 <div className="relative" style={{
                   background: 'rgba(255, 255, 255, 0.7)',
@@ -425,7 +424,7 @@ export function DataEngineering() {
               </SmoothScrollReveal>
 
               {/* Card 3 - Data Processing - Small card, middle-left */}
-              <SmoothScrollReveal animation="slide-up" distance={80} delay={200}>
+              <SmoothScrollReveal animation="slide-up" distance={80}>
                 <div className="relative w-full transform md:-rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-500 hover:z-20 group md:-mt-4">
                 <div className="relative" style={{
                   background: 'rgba(255, 255, 255, 0.7)',
@@ -453,7 +452,7 @@ export function DataEngineering() {
               </SmoothScrollReveal>
 
               {/* Card 4 - Security - Large feature card, middle-center */}
-              <SmoothScrollReveal animation="slide-up" distance={80} delay={300}>
+              <SmoothScrollReveal animation="slide-up" distance={80}>
                 <div className="relative w-full transform md:rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-500 hover:z-20 group md:mt-8">
                 <div className="relative" style={{
                   background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,240,255,0.9) 100%)',
@@ -495,7 +494,7 @@ export function DataEngineering() {
               </SmoothScrollReveal>
 
               {/* Card 5 - Data Quality - Medium, bottom-left */}
-              <SmoothScrollReveal animation="slide-up" distance={80} delay={400}>
+              <SmoothScrollReveal animation="slide-up" distance={80}>
                 <div className="relative w-full transform md:-rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-500 hover:z-20 group md:-mt-12">
                 <div className="relative" style={{
                   background: 'rgba(255, 255, 255, 0.75)',
