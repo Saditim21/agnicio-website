@@ -1,4 +1,5 @@
-import { GlobalNav } from '../components';
+import { useEffect } from 'react';
+import { GlobalNav, Hero, Stats, SSPPlatform, Footer, Button } from '../components';
 
 // Hero & Platform Images
 import heroBackgroundImg from '../assets/home-page/Hero_industrial_AI_facility_10a53121.png';
@@ -14,323 +15,38 @@ import blogImage2 from '../assets/home-page/blog-image-2.jpg';
 import blogImage3 from '../assets/home-page/blog-image-3.jpg';
 
 export function Home() {
+  useEffect(() => {
+    // Handle hash navigation (e.g., /#contact)
+    const hash = window.location.hash;
+    if (hash) {
+      // Small delay to ensure the page has rendered
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Global Navigation */}
       <GlobalNav />
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src={heroBackgroundImg}
-            alt="Industrial AI Facility"
-            className="w-full h-full object-cover"
-          />
-          {/* Dark overlay for text readability - ABB-inspired */}
-          <div className="absolute inset-0 bg-black/75"></div>
-        </div>
-
-        {/* Content */}
-        <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10 py-20">
-          <div className="max-w-5xl">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8">
-              Break Data Barriers,<br />Unleash Business Power
-            </h1>
-            <div>
-              <a
-                href="#ssp-platform"
-                className="inline-flex items-center gap-3 bg-white text-ink px-8 py-4 text-lg font-medium transition-all duration-200 hover:bg-gray-100"
-              >
-                Explore our products
-                <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                  <path d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-          <a href="#stats" className="flex flex-col items-center text-white/70 hover:text-white transition-colors duration-200">
-            <span className="text-sm mb-2">Scroll to explore</span>
-            <svg className="w-6 h-6 animate-bounce" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-          </a>
-        </div>
-      </section>
+      <Hero backgroundImage={heroBackgroundImg} />
 
       {/* Stats Section */}
-      <section id="stats" className="py-20 bg-background border-b border-grayLine">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-ink tracking-tight leading-tight mb-4">
-              Driving Sustainable Growth and Operational Excellence
-            </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Proven results from our SSP Platform across manufacturing, energy, and industrial sectors
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white border border-grayLine rounded-lg p-6 text-center">
-              <div className="text-4xl font-bold text-ink mb-2">42%</div>
-              <h3 className="text-base font-semibold text-ink mb-2">Reduction in Unplanned Downtime</h3>
-              <p className="text-sm text-gray-600">Continuous AI-driven monitoring</p>
-            </div>
-            <div className="bg-white border border-grayLine rounded-lg p-6 text-center">
-              <div className="text-4xl font-bold text-ink mb-2">€2.8M</div>
-              <h3 className="text-base font-semibold text-ink mb-2">Average Annual Cost Savings</h3>
-              <p className="text-sm text-gray-600">Optimized maintenance planning</p>
-            </div>
-            <div className="bg-white border border-grayLine rounded-lg p-6 text-center">
-              <div className="text-4xl font-bold text-ink mb-2">99.8%</div>
-              <h3 className="text-base font-semibold text-ink mb-2">Failure Prediction Accuracy</h3>
-              <p className="text-sm text-gray-600">Advanced AI & LLM technology</p>
-            </div>
-            <div className="bg-white border border-grayLine rounded-lg p-6 text-center">
-              <div className="text-4xl font-bold text-ink mb-2">24/7</div>
-              <h3 className="text-base font-semibold text-ink mb-2">Continuous Monitoring</h3>
-              <p className="text-sm text-gray-600">Real-time problem detection</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Stats />
 
       {/* SSP Platform Section */}
-      <section id="ssp-platform" className="py-20 bg-grayBg border-b border-grayLine">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-ink tracking-tight leading-tight mb-4">
-              The SSP Platform
-            </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Sense, Solve, and Plan - A holistic approach to intelligent maintenance orchestration
-            </p>
-          </div>
-
-          <div className="space-y-8">
-            {/* SENSE */}
-            <div className="bg-white border border-grayLine rounded-lg p-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-semibold text-ink tracking-tight mb-4">SENSE - AI-Driven Problem Detection</h3>
-                  <p className="text-base text-gray-700 mb-6 leading-relaxed">
-                    24/7 continuous monitoring and failure prediction across your entire infrastructure. AI-generated maintenance schedules delivered in human language through advanced Large Language Models.
-                  </p>
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-700">Continuous monitoring across all assets</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-700">AI-powered failure prediction</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-700">LLM-generated insights in human language</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-700">Holistic problem detection</span>
-                    </li>
-                  </ul>
-                  <a
-                    href="/products/ssp-sense"
-                    className="inline-flex items-center gap-2 text-primary font-medium transition-colors duration-200 hover:text-primary-dark"
-                  >
-                    Learn More
-                    <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                      <path d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
-                <div className="h-80 rounded-lg overflow-hidden border border-grayLine">
-                  <img
-                    src={senseImg}
-                    alt="SENSE - AI-Driven Problem Detection Dashboard"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* SOLVE */}
-            <div className="bg-white border border-grayLine rounded-lg p-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="order-2 lg:order-1 h-80 rounded-lg overflow-hidden border border-grayLine">
-                  <img
-                    src={solveImg}
-                    alt="SOLVE - GenAI Solution Engineering Dashboard"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="order-1 lg:order-2">
-                  <h3 className="text-2xl md:text-3xl font-semibold text-ink tracking-tight mb-4">SOLVE - GenAI Solution Engineering</h3>
-                  <p className="text-base text-gray-700 mb-6 leading-relaxed">
-                    Tap into your enterprise knowledge with AI-powered insights. Transform from investigation mode to solution mode seamlessly with AI-augmented maintenance.
-                  </p>
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-700">AI-powered enterprise knowledge access</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-700">Intuitive chat functionality</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-700">Reduced learning curves for engineers</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-700">Intelligent onboarding support</span>
-                    </li>
-                  </ul>
-                  <a
-                    href="/products/ssp-solve"
-                    className="inline-flex items-center gap-2 text-primary font-medium transition-colors duration-200 hover:text-primary-dark"
-                  >
-                    Learn More
-                    <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                      <path d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* PLAN */}
-            <div className="bg-white border border-grayLine rounded-lg p-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-semibold text-ink tracking-tight mb-4">PLAN - AI-Driven Maintenance Planning</h3>
-                  <p className="text-base text-gray-700 mb-6 leading-relaxed">
-                    Enable cross-functional and chain-level planning. Generate and optimize plans that balance demand, resources, costs, and risk with complete budget control.
-                  </p>
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-700">Cross-functional planning optimization</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-700">AI solver for consensus building</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-700">Advanced scenario planning</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-700">Complete budget visibility</span>
-                    </li>
-                  </ul>
-                  <a
-                    href="/products/ssp-plan"
-                    className="inline-flex items-center gap-2 text-primary font-medium transition-colors duration-200 hover:text-primary-dark"
-                  >
-                    Learn More
-                    <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                      <path d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
-                <div className="h-80 rounded-lg overflow-hidden border border-grayLine">
-                  <img
-                    src={planImg}
-                    alt="PLAN - AI-Driven Maintenance Planning Dashboard"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* GENIX */}
-            <div className="bg-white border border-grayLine rounded-lg p-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="order-2 lg:order-1 h-80 rounded-lg overflow-hidden border border-grayLine">
-                  <img
-                    src={genixImg}
-                    alt="GENIX™ Unified Data Platform"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="order-1 lg:order-2">
-                  <h3 className="text-2xl md:text-3xl font-semibold text-ink tracking-tight mb-4">GENIX™ Unified Data Platform</h3>
-                  <p className="text-base text-gray-700 mb-6 leading-relaxed">
-                    Beyond traditional ODS - enterprise-wide asset information model that integrates all your data sources into a single, unified platform for intelligent decision-making.
-                  </p>
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-700">Enterprise asset information model</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-700">Multi-source data integration</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-700">Contextual data enrichment</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm text-gray-700">API connectors & consensus layer</span>
-                    </li>
-                  </ul>
-                  <a
-                    href="/products/genix"
-                    className="inline-flex items-center gap-2 text-primary font-medium transition-colors duration-200 hover:text-primary-dark"
-                  >
-                    Learn More
-                    <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                      <path d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SSPPlatform
+        senseImage={senseImg}
+        solveImage={solveImg}
+        planImage={planImg}
+        genixImage={genixImg}
+      />
 
       {/* Services Section */}
       <section id="services" className="py-20 bg-background border-b border-grayLine">
@@ -676,98 +392,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section id="contact" className="py-20 bg-grayBg border-b border-grayLine">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-ink tracking-tight leading-tight mb-4">
-              Get in Touch
-            </h2>
-            <p className="text-lg text-gray-700">
-              Ready to transform your maintenance operations? Contact us today
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Contact Form */}
-            <div className="bg-white border border-grayLine rounded-lg p-8">
-              <h3 className="text-xl font-semibold text-ink mb-4">Send us a message</h3>
-              <p className="text-sm text-gray-700 mb-6">
-                Fill out the form and our team will get back to you within 24 hours
-              </p>
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-ink mb-2">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    placeholder="John Doe"
-                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-ink mb-2">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="john@company.com"
-                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-ink mb-2">Company</label>
-                  <input
-                    type="text"
-                    id="company"
-                    placeholder="Your Company"
-                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-ink mb-2">Message</label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    placeholder="Tell us about your needs..."
-                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-primary text-white px-6 py-3 rounded-md font-medium transition-colors duration-200 hover:bg-primary-dark"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-
-            {/* Contact Information */}
-            <div className="space-y-6">
-              <div className="bg-white border border-grayLine rounded-lg p-6">
-                <h4 className="text-base font-semibold text-ink mb-4">Email</h4>
-                <p className="text-sm text-gray-700 mb-2">contact@agnicio.com</p>
-                <p className="text-sm text-gray-700">support@agnicio.com</p>
-              </div>
-              <div className="bg-white border border-grayLine rounded-lg p-6">
-                <h4 className="text-base font-semibold text-ink mb-4">Phone</h4>
-                <p className="text-sm text-gray-700 mb-2">+1 (555) 123-4567</p>
-                <p className="text-sm text-gray-700">+44 20 7123 4567</p>
-              </div>
-              <div className="bg-white border border-grayLine rounded-lg p-6">
-                <h4 className="text-base font-semibold text-ink mb-4">Headquarters</h4>
-                <p className="text-sm text-gray-700 mb-2">123 Industrial Drive</p>
-                <p className="text-sm text-gray-700">Tech Valley, CA 94025</p>
-              </div>
-              <div className="bg-white border border-grayLine rounded-lg p-6">
-                <h4 className="text-base font-semibold text-ink mb-4">Business Hours</h4>
-                <p className="text-sm text-gray-700 mb-2">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                <p className="text-sm text-gray-700">24/7 Emergency Support Available</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Blog Section */}
       <section id="blog" className="py-20 bg-background border-b border-grayLine">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
@@ -782,16 +406,8 @@ export function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Event Post */}
-<<<<<<< HEAD
             <article className="bg-white border border-grayLine rounded-lg overflow-hidden group">
               <div className="relative h-56 overflow-hidden">
-=======
-            <a href="/blog/maintenance-next-expo" className="group bg-neutral-background rounded-2xl overflow-hidden border border-neutral-border hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2 relative h-full flex flex-col cursor-pointer">
-              {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
-
-              <div className="relative h-56 overflow-hidden flex-shrink-0">
->>>>>>> 5c24cf34cb9109e58e6bc8ef2faba7407d0d33a4
                 <img
                   src={blogImage1}
                   alt="Maintenance NEXT Expo"
@@ -818,33 +434,21 @@ export function Home() {
                 <p className="text-sm text-gray-700 mb-4 leading-relaxed">
                   We're excited to announce that Agnicio will be exhibiting at the Maintenance NEXT Expo from April 8th to 10th!
                 </p>
-<<<<<<< HEAD
                 <a
                   href="/blog/maintenance-next-expo"
                   className="inline-flex items-center gap-2 text-primary font-medium transition-colors duration-200 hover:text-primary-dark"
                 >
-=======
-                <span className="inline-flex items-center gap-2 text-primary font-body font-semibold group-hover:gap-3 transition-all duration-300 mt-auto">
->>>>>>> 5c24cf34cb9109e58e6bc8ef2faba7407d0d33a4
                   Continue reading
                   <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                     <path d="M9 5l7 7-7 7" />
                   </svg>
-                </span>
+                </a>
               </div>
-            </a>
+            </article>
 
             {/* AI Blog Post 1 */}
-<<<<<<< HEAD
             <article className="bg-white border border-grayLine rounded-lg overflow-hidden group">
               <div className="relative h-56 overflow-hidden">
-=======
-            <a href="/blog/explainability-dsa" className="group bg-neutral-background rounded-2xl overflow-hidden border border-neutral-border hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2 relative h-full flex flex-col cursor-pointer">
-              {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
-
-              <div className="relative h-56 overflow-hidden flex-shrink-0">
->>>>>>> 5c24cf34cb9109e58e6bc8ef2faba7407d0d33a4
                 <img
                   src={blogImage2}
                   alt="Demand Sensing Analytics"
@@ -875,33 +479,21 @@ export function Home() {
                 <p className="text-sm text-gray-700 mb-4 leading-relaxed">
                   What is Demand Sensing? Well, it is all about capturing the Demand Signal. This means predicting who wants what product, where and at what...
                 </p>
-<<<<<<< HEAD
                 <a
                   href="/blog/explainability-dsa"
                   className="inline-flex items-center gap-2 text-primary font-medium transition-colors duration-200 hover:text-primary-dark"
                 >
-=======
-                <span className="inline-flex items-center gap-2 text-primary font-body font-semibold group-hover:gap-3 transition-all duration-300 mt-auto">
->>>>>>> 5c24cf34cb9109e58e6bc8ef2faba7407d0d33a4
                   Continue reading
                   <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                     <path d="M9 5l7 7-7 7" />
                   </svg>
-                </span>
+                </a>
               </div>
-            </a>
+            </article>
 
             {/* AI Blog Post 2 */}
-<<<<<<< HEAD
             <article className="bg-white border border-grayLine rounded-lg overflow-hidden group">
               <div className="relative h-56 overflow-hidden">
-=======
-            <a href="/blog/events-data-business-planning" className="group bg-neutral-background rounded-2xl overflow-hidden border border-neutral-border hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2 relative h-full flex flex-col cursor-pointer">
-              {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
-
-              <div className="relative h-56 overflow-hidden flex-shrink-0">
->>>>>>> 5c24cf34cb9109e58e6bc8ef2faba7407d0d33a4
                 <img
                   src={blogImage3}
                   alt="Business Planning Analytics"
@@ -932,38 +524,130 @@ export function Home() {
                 <p className="text-sm text-gray-700 mb-4 leading-relaxed">
                   Organizations of all sizes are involved in business planning. This includes setting ambitious targets on sales and other KPIs to drive growth and...
                 </p>
-<<<<<<< HEAD
                 <a
                   href="/blog/events-data-business-planning"
                   className="inline-flex items-center gap-2 text-primary font-medium transition-colors duration-200 hover:text-primary-dark"
                 >
-=======
-                <span className="inline-flex items-center gap-2 text-primary font-body font-semibold group-hover:gap-3 transition-all duration-300 mt-auto">
->>>>>>> 5c24cf34cb9109e58e6bc8ef2faba7407d0d33a4
                   Continue reading
                   <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                     <path d="M9 5l7 7-7 7" />
                   </svg>
-                </span>
+                </a>
               </div>
-<<<<<<< HEAD
             </article>
           </div>
-=======
-            </a>
-          </SmoothStaggeredGrid>
->>>>>>> 5c24cf34cb9109e58e6bc8ef2faba7407d0d33a4
 
           <div className="text-center mt-12">
-            <a
-              href="/blog"
-              className="inline-flex items-center gap-2 border-2 border-primary text-primary px-6 py-3 rounded-md font-medium transition-colors duration-200 hover:text-primary-dark hover:border-primary-dark"
-            >
-              View All Posts
-              <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </a>
+            <Button variant="outline" size="lg" asChild>
+              <a href="/blog">
+                View All Posts
+                <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section id="contact" className="py-20 bg-grayBg border-b border-grayLine">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-semibold text-ink tracking-tight leading-tight mb-4">
+              Get in Touch
+            </h2>
+            <p className="text-lg text-gray-700">
+              Have a question? Fill out the contact form. We'd love to hear from you
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Contact Form */}
+            <div className="bg-white border border-grayLine rounded-lg p-8">
+              <h3 className="text-xl font-semibold text-ink mb-4">Send us a message</h3>
+              <p className="text-sm text-gray-700 mb-6">
+                Fill out the form and our team will get back to you within 24 hours
+              </p>
+              <form className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-ink mb-2">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-ink mb-2">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-ink mb-2">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={6}
+                    placeholder="Enter your message"
+                    required
+                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200"
+                  ></textarea>
+                </div>
+                <Button type="submit" className="w-full">
+                  Send Message
+                </Button>
+              </form>
+            </div>
+
+            {/* Contact Information */}
+            <div className="space-y-6">
+              <div className="bg-white border border-grayLine rounded-lg p-6">
+                <h4 className="text-base font-semibold text-ink mb-4 flex items-center gap-3">
+                  <svg className="w-5 h-5 text-primary" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  Find Us
+                </h4>
+                <p className="text-sm text-gray-700">Millennium Tower, Weena, 3012 CN Rotterdam</p>
+              </div>
+              <div className="bg-white border border-grayLine rounded-lg p-6">
+                <h4 className="text-base font-semibold text-ink mb-4 flex items-center gap-3">
+                  <svg className="w-5 h-5 text-primary" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M3 8l7.89 3.26a2 2 0 001.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  Email Us
+                </h4>
+                <a
+                  href="mailto:info@agnicio.com"
+                  className="text-sm text-primary hover:text-primaryDark transition-colors duration-200 underline"
+                >
+                  info@agnicio.com
+                </a>
+              </div>
+              <div className="bg-white border border-grayLine rounded-lg overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2460.4457765394907!2d4.469163!3d51.9225002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c434a69dca8539%3A0xd4725d79fec8314a!2sMillennium%20Tower%2C%20Weena%20686%2C%203012%20CN%20Rotterdam%2C%20Netherlands!5e0!3m2!1sen!2sus!4v1729629047449!5m2!1sen!2sus"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Agnicio Office Location"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -978,75 +662,19 @@ export function Home() {
             Join 2,500+ enterprise clients who trust Agnicio for their AI and data solutions.
             Let's build something extraordinary together.
           </p>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-md font-medium transition-colors duration-200 hover:bg-gray-100"
-          >
-            Get in Touch
-            <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-              <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
+          <Button size="lg" className="bg-white text-primary hover:bg-gray-100" asChild>
+            <a href="#contact">
+              Get in Touch
+              <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </Button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-ink text-white py-16 border-t border-grayLine">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-            {/* Company */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4">AGNICIO</h3>
-              <p className="text-sm text-white/70">
-                Break data barriers, unleash business power. AI-powered asset management for sustainable growth.
-              </p>
-            </div>
-
-            {/* SSP Platform */}
-            <div>
-              <h4 className="text-base font-semibold mb-4">SSP Platform</h4>
-              <ul className="space-y-2">
-                <li><a href="/products/ssp-sense" className="text-sm text-white/70 hover:text-white transition-colors duration-200">SENSE - Problem Detection</a></li>
-                <li><a href="/products/ssp-solve" className="text-sm text-white/70 hover:text-white transition-colors duration-200">SOLVE - Solution Engineering</a></li>
-                <li><a href="/products/ssp-plan" className="text-sm text-white/70 hover:text-white transition-colors duration-200">PLAN - Maintenance Planning</a></li>
-                <li><a href="/products/genix" className="text-sm text-white/70 hover:text-white transition-colors duration-200">GENIX™ Data Platform</a></li>
-              </ul>
-            </div>
-
-            {/* Services */}
-            <div>
-              <h4 className="text-base font-semibold mb-4">Services</h4>
-              <ul className="space-y-2">
-                <li><a href="/services/ai-data-strategy" className="text-sm text-white/70 hover:text-white transition-colors duration-200">AI & Data Strategy</a></li>
-                <li><a href="/services/data-engineering" className="text-sm text-white/70 hover:text-white transition-colors duration-200">Data Engineering</a></li>
-                <li><a href="/services/training" className="text-sm text-white/70 hover:text-white transition-colors duration-200">Training Services</a></li>
-                <li><a href="/services/implementation" className="text-sm text-white/70 hover:text-white transition-colors duration-200">Implementation</a></li>
-              </ul>
-            </div>
-
-            {/* Company & Contact */}
-            <div>
-              <h4 className="text-base font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li><a href="/partners" className="hover:text-white transition-colors duration-200">Partners</a></li>
-                <li><a href="#contact" className="hover:text-white transition-colors duration-200">Contact</a></li>
-                <li className="pt-2">
-                  <a href="/privacy" className="hover:text-white transition-colors duration-200">Privacy Policy</a>
-                </li>
-                <li>
-                  <a href="/terms" className="hover:text-white transition-colors duration-200">Terms of Service</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-white/20 pt-8 text-center">
-            <p className="text-sm text-white/60">
-              © 2025 Agnicio. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

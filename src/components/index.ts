@@ -3,6 +3,16 @@
  * Central export file for all UI components
  */
 
+// UI Components (Shadcn/UI)
+export { Button } from './ui/button';
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from './ui/card';
+
+// Page Sections
+export { Hero } from './Hero';
+export { Stats } from './Stats';
+export { SSPPlatform } from './SSPPlatform';
+export { Footer } from './Footer';
+
 // Navigation & Layout
 export { GlobalNav } from './GlobalNav';
 export { HeroSection } from './HeroSection';

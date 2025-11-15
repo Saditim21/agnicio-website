@@ -25,9 +25,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        heading: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        body: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['IBM Plex Sans', 'Inter', 'Helvetica Neue', 'system-ui', '-apple-system', 'sans-serif'],
+        heading: ['IBM Plex Sans', 'Inter', 'Helvetica Neue', 'system-ui', '-apple-system', 'sans-serif'],
+        body: ['IBM Plex Sans', 'Inter', 'Helvetica Neue', 'system-ui', '-apple-system', 'sans-serif'],
         mono: ['Consolas', 'Monaco', 'Courier New', 'monospace'],
       },
       fontSize: {

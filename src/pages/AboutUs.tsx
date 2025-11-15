@@ -1,4 +1,4 @@
-import { GlobalNav, SmoothScrollReveal, SmoothStaggeredGrid } from '../components';
+import { GlobalNav, Footer, SmoothScrollReveal, SmoothStaggeredGrid } from '../components';
 import hichamImage from '../assets/about-us/hicham.jpg';
 import derekImage from '../assets/about-us/derek.jpg';
 import agnicioLogo from '../assets/about-us/agnicio-logo.webp';
@@ -156,58 +156,7 @@ export function AboutUs() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-neutral-text-primary text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-            {/* Company */}
-            <div>
-              <h3 className="text-h5 font-heading font-bold mb-4">Agnicio</h3>
-              <p className="text-body-sm text-neutral-background/70 mb-4">
-                Empowering organizations with intelligent solutions
-              </p>
-            </div>
-
-            {/* Useful Links */}
-            <div>
-              <h4 className="text-h6 font-heading font-semibold mb-4">Useful links</h4>
-              <ul className="space-y-2">
-                <li><a href="/about" className="text-body-sm text-neutral-background/70 hover:text-white transition-colors duration-200">About Us</a></li>
-                <li><a href="/contact" className="text-body-sm text-neutral-background/70 hover:text-white transition-colors duration-200">Contact Us</a></li>
-              </ul>
-            </div>
-
-            {/* Products */}
-            <div>
-              <h4 className="text-h6 font-heading font-semibold mb-4">Products</h4>
-              <ul className="space-y-2">
-                <li><a href="/products/ai-maintenance" className="text-body-sm text-neutral-background/70 hover:text-white transition-colors duration-200">AI Driven Maintenance</a></li>
-                <li><a href="/products/demand-sensing" className="text-body-sm text-neutral-background/70 hover:text-white transition-colors duration-200">Demand Sensing</a></li>
-              </ul>
-            </div>
-
-            {/* Our Contacts */}
-            <div>
-              <h4 className="text-h6 font-heading font-semibold mb-4">Our contacts</h4>
-              <ul className="space-y-2 text-body-sm text-neutral-background/70">
-                <li className="flex items-start gap-2">
-                  <span>☖</span>
-                  <span>Millennium Tower, Weena, 3012 CN Rotterdam</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span>✉</span>
-                  <a href="mailto:info@agnicio.com" className="hover:text-white transition-colors duration-200">info@agnicio.com</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-neutral-background/20 pt-8 text-center">
-            <p className="text-body-sm text-neutral-background/60">
-              © Agnicio. All Rights Reserved 2024.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
