@@ -1,4 +1,5 @@
 import { Button, Card } from './';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface PlatformFeature {
   title: string;
@@ -59,6 +60,8 @@ interface SSPPlatformProps {
 }
 
 export function SSPPlatform({ senseImage, solveImage, planImage, genixImage }: SSPPlatformProps) {
+  const platformAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
+
   const features: PlatformFeature[] = [
     {
       title: "SENSE - AI-Driven Problem Detection",
@@ -111,7 +114,13 @@ export function SSPPlatform({ senseImage, solveImage, planImage, genixImage }: S
   ];
 
   return (
-    <section id="ssp-platform" className="py-20 bg-grayBg border-b border-grayLine">
+    <section
+      id="ssp-platform"
+      ref={platformAnimation.ref}
+      className={`py-20 bg-grayBg border-b border-grayLine transition-all duration-1000 ${
+        platformAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold text-ink tracking-tight leading-tight mb-4">
@@ -124,7 +133,15 @@ export function SSPPlatform({ senseImage, solveImage, planImage, genixImage }: S
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {features.map((feature, index) => (
-            <FeatureCard key={index} {...feature} />
+            <div
+              key={index}
+              className="transition-all duration-700 hover:scale-[1.02]"
+              style={{
+                transitionDelay: `${index * 100}ms`
+              }}
+            >
+              <FeatureCard {...feature} />
+            </div>
           ))}
         </div>
       </div>

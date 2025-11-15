@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { GlobalNav, Hero, Stats, SSPPlatform, Footer, Button } from '../components';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 // Hero & Platform Images
 import heroBackgroundImg from '../assets/home-page/Hero_industrial_AI_facility_10a53121.png';
@@ -14,7 +15,14 @@ import blogImage1 from '../assets/home-page/blog-image-1.png';
 import blogImage2 from '../assets/home-page/blog-image-2.jpg';
 import blogImage3 from '../assets/home-page/blog-image-3.jpg';
 
+// Brochure PDF
+import brochurePdf from '../assets/home-page/Brochure_A4_Agnicio+ABB_2025rev3 (1).pdf';
+
 export function Home() {
+  const servicesAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
+  const partnershipAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
+  const blogAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
+
   useEffect(() => {
     // Handle hash navigation (e.g., /#contact)
     const hash = window.location.hash;
@@ -49,7 +57,13 @@ export function Home() {
       />
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-background border-b border-grayLine">
+      <section
+        id="services"
+        ref={servicesAnimation.ref}
+        className={`py-20 bg-background border-b border-grayLine transition-all duration-1000 ${
+          servicesAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-semibold text-ink tracking-tight leading-tight mb-4">
@@ -65,19 +79,19 @@ export function Home() {
             <div>
               <h3 className="text-2xl font-semibold text-ink mb-6">AI & Data Strategy Services</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="bg-white border border-grayLine rounded-lg p-6">
+                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <h4 className="text-lg font-semibold text-ink mb-3">AI & Data Strategy</h4>
                   <p className="text-sm text-gray-700">Strategic planning to break data barriers and align AI initiatives with your business objectives for sustainable operational growth.</p>
                 </div>
-                <div className="bg-white border border-grayLine rounded-lg p-6">
+                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <h4 className="text-lg font-semibold text-ink mb-3">Assessment Services</h4>
                   <p className="text-sm text-gray-700">Comprehensive evaluation of your current maintenance operations, data infrastructure, and readiness for intelligent asset management.</p>
                 </div>
-                <div className="bg-white border border-grayLine rounded-lg p-6">
+                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <h4 className="text-lg font-semibold text-ink mb-3">Use Case Development</h4>
                   <p className="text-sm text-gray-700">Design and validate high-impact use cases that address your specific challenges in asset maintenance and operational planning.</p>
                 </div>
-                <div className="bg-white border border-grayLine rounded-lg p-6">
+                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <h4 className="text-lg font-semibold text-ink mb-3">Data & Document Governance</h4>
                   <p className="text-sm text-gray-700">Implement MDM and governance frameworks to transform scattered information into enterprise-ready decision support.</p>
                 </div>
@@ -88,27 +102,27 @@ export function Home() {
             <div>
               <h3 className="text-2xl font-semibold text-ink mb-6">AI & Data Technical Services</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="bg-white border border-grayLine rounded-lg p-6">
+                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <h4 className="text-lg font-semibold text-ink mb-3">Data Engineering</h4>
                   <p className="text-sm text-gray-700">Build scalable data pipelines, ETL processes, and data warehousing solutions for industrial IoT.</p>
                 </div>
-                <div className="bg-white border border-grayLine rounded-lg p-6">
+                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <h4 className="text-lg font-semibold text-ink mb-3">PowerBI Training</h4>
                   <p className="text-sm text-gray-700">Empower your team with advanced analytics capabilities through comprehensive PowerBI training programs.</p>
                 </div>
-                <div className="bg-white border border-grayLine rounded-lg p-6">
+                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <h4 className="text-lg font-semibold text-ink mb-3">Cloud Migration</h4>
                   <p className="text-sm text-gray-700">Seamlessly migrate legacy systems to cloud infrastructure with minimal disruption and maximum efficiency.</p>
                 </div>
-                <div className="bg-white border border-grayLine rounded-lg p-6">
+                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <h4 className="text-lg font-semibold text-ink mb-3">Azure Data Platform Training</h4>
                   <p className="text-sm text-gray-700">Develop expertise in Azure data services, Synapse Analytics, and cloud-native architectures.</p>
                 </div>
-                <div className="bg-white border border-grayLine rounded-lg p-6">
+                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <h4 className="text-lg font-semibold text-ink mb-3">AI & Advanced Analytics</h4>
                   <p className="text-sm text-gray-700">Implement machine learning models for predictive maintenance, anomaly detection, and optimization.</p>
                 </div>
-                <div className="bg-white border border-grayLine rounded-lg p-6">
+                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <h4 className="text-lg font-semibold text-ink mb-3">Implementation Services</h4>
                   <p className="text-sm text-gray-700">End-to-end deployment, integration, and support for all our solutions and platforms.</p>
                 </div>
@@ -119,7 +133,12 @@ export function Home() {
       </section>
 
       {/* ABB Partnership Section */}
-      <section className="py-20 bg-grayBg border-b border-grayLine">
+      <section
+        ref={partnershipAnimation.ref}
+        className={`py-20 bg-grayBg border-b border-grayLine transition-all duration-1000 ${
+          partnershipAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-semibold text-ink tracking-tight leading-tight mb-4">
@@ -136,7 +155,7 @@ export function Home() {
               <p className="text-base text-gray-700 mb-6 leading-relaxed">
                 Our strategic partnership with ABB enables seamless integration with their industry-leading automation and electrification solutions, providing comprehensive asset management across the entire industrial ecosystem.
               </p>
-              <ul className="space-y-3">
+              <ul className="space-y-3 mb-8">
                 <li className="flex items-start gap-2">
                   <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                     <path d="M5 13l4 4L19 7" />
@@ -162,6 +181,19 @@ export function Home() {
                   <span className="text-sm text-gray-700">ISO 27001 certified data security</span>
                 </li>
               </ul>
+
+              <Button
+                size="lg"
+                className="bg-primary text-white hover:bg-primary-hover w-full md:w-auto"
+                asChild
+              >
+                <a href={brochurePdf} download="Agnicio_ABB_Brochure_2025.pdf" className="inline-flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Download Brochure
+                </a>
+              </Button>
             </div>
 
             <div className="rounded-lg overflow-hidden border border-grayLine">
@@ -393,7 +425,13 @@ export function Home() {
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className="py-20 bg-background border-b border-grayLine">
+      <section
+        id="blog"
+        ref={blogAnimation.ref}
+        className={`py-20 bg-background border-b border-grayLine transition-all duration-1000 ${
+          blogAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-semibold text-ink tracking-tight leading-tight mb-4">

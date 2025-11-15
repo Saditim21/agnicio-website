@@ -1,4 +1,5 @@
 import { Card, CardContent } from './ui/card';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface StatCardProps {
   value: string;
@@ -19,6 +20,8 @@ function StatCard({ value, title, description }: StatCardProps) {
 }
 
 export function Stats() {
+  const statsAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
+
   const stats = [
     {
       value: "42%",
@@ -43,7 +46,13 @@ export function Stats() {
   ];
 
   return (
-    <section id="stats" className="py-20 bg-background border-b border-grayLine">
+    <section
+      id="stats"
+      ref={statsAnimation.ref}
+      className={`py-20 bg-background border-b border-grayLine transition-all duration-1000 ${
+        statsAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold text-ink tracking-tight leading-tight mb-4">
@@ -56,7 +65,15 @@ export function Stats() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
-            <StatCard key={index} {...stat} />
+            <div
+              key={index}
+              className="transition-all duration-700"
+              style={{
+                transitionDelay: `${index * 100}ms`
+              }}
+            >
+              <StatCard {...stat} />
+            </div>
           ))}
         </div>
       </div>

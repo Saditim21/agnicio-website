@@ -1,4 +1,4 @@
-import { GlobalNav, SmoothScrollReveal } from '../components';
+import { GlobalNav, SmoothScrollReveal, Footer } from '../components';
 import blogImage4 from '../assets/blog-page/blog-4.png';
 
 export function AgnicioEnvisionEvent() {
@@ -174,62 +174,7 @@ export function AgnicioEnvisionEvent() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-neutral-text-primary text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-            {/* Company */}
-            <div>
-              <h3 className="text-h5 font-heading font-bold mb-4">Agnicio</h3>
-              <p className="text-body-sm text-neutral-background/70 mb-4">
-                Empowering organizations with intelligent solutions
-              </p>
-            </div>
-
-            {/* Products */}
-            <div>
-              <h4 className="text-h6 font-heading font-semibold mb-4">Products</h4>
-              <ul className="space-y-2">
-                <li><a href="/products/ai-maintenance" className="text-body-sm text-neutral-background/70 hover:text-white transition-colors duration-200">AI Driven Maintenance</a></li>
-                <li><a href="/products/demand-sensing" className="text-body-sm text-neutral-background/70 hover:text-white transition-colors duration-200">Demand Sensing</a></li>
-              </ul>
-            </div>
-
-            {/* Services */}
-            <div>
-              <h4 className="text-h6 font-heading font-semibold mb-4">Services</h4>
-              <ul className="space-y-2">
-                <li><a href="/services/ai" className="text-body-sm text-neutral-background/70 hover:text-white transition-colors duration-200">AI</a></li>
-                <li><a href="/services/data-strategy" className="text-body-sm text-neutral-background/70 hover:text-white transition-colors duration-200">Data Strategy</a></li>
-                <li><a href="/services/data-engineering" className="text-body-sm text-neutral-background/70 hover:text-white transition-colors duration-200">Data Engineering</a></li>
-                <li><a href="/services/azure-cc" className="text-body-sm text-neutral-background/70 hover:text-white transition-colors duration-200">Azure CC</a></li>
-              </ul>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h4 className="text-h6 font-heading font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2 text-body-sm text-neutral-background/70">
-                <li>hello@agnicio.com</li>
-                <li>+1 (555) 123-4567</li>
-                <li className="pt-2">
-                  <a href="/contact" className="text-white hover:text-primary-light transition-colors duration-200">Contact Form →</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-neutral-background/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-body-sm text-neutral-background/60">
-              © 2025 Agnicio. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <a href="/privacy" className="text-body-sm text-neutral-background/60 hover:text-white transition-colors duration-200">Privacy Policy</a>
-              <a href="/terms" className="text-body-sm text-neutral-background/60 hover:text-white transition-colors duration-200">Terms of Service</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

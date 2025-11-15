@@ -1,4 +1,5 @@
 import { GlobalNav, Footer, Button } from '../components';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 // Product Images
 import senseImage from '../assets/home-page/SSP_dashboard_interface_7891374e.png';
@@ -8,6 +9,11 @@ import genixImage from '../assets/home-page/UDP_data_foundation_platform_d050d38
 import heroBackgroundImg from '../assets/products-page/planning.jpeg';
 
 export function Products() {
+  const senseAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
+  const solveAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
+  const planAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
+  const genixAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
+
   return (
     <div className="min-h-screen bg-background">
       <GlobalNav />
@@ -41,7 +47,12 @@ export function Products() {
       </section>
 
       {/* SENSE Section */}
-      <section className="py-20 bg-background border-b border-grayLine">
+      <section
+        ref={senseAnimation.ref}
+        className={`py-20 bg-background border-b border-grayLine transition-all duration-1000 ${
+          senseAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
@@ -124,7 +135,12 @@ export function Products() {
       </section>
 
       {/* SOLVE Section */}
-      <section className="py-20 bg-grayBg border-b border-grayLine">
+      <section
+        ref={solveAnimation.ref}
+        className={`py-20 bg-grayBg border-b border-grayLine transition-all duration-1000 ${
+          solveAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
@@ -207,7 +223,12 @@ export function Products() {
       </section>
 
       {/* PLAN Section */}
-      <section className="py-20 bg-background border-b border-grayLine">
+      <section
+        ref={planAnimation.ref}
+        className={`py-20 bg-background border-b border-grayLine transition-all duration-1000 ${
+          planAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
@@ -290,7 +311,12 @@ export function Products() {
       </section>
 
       {/* GENIX Section */}
-      <section className="py-20 bg-grayBg border-b border-grayLine">
+      <section
+        ref={genixAnimation.ref}
+        className={`py-20 bg-grayBg border-b border-grayLine transition-all duration-1000 ${
+          genixAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
