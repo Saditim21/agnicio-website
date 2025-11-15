@@ -529,7 +529,7 @@ export function DataEngineering() {
               </SmoothScrollReveal>
 
               {/* Card 6 - BI & Visualization - Bottom-right, dynamic card */}
-              <SmoothScrollReveal animation="slide-up" distance={80} delay={500}>
+              <SmoothScrollReveal animation="slide-up" distance={80}>
                 <div className="relative w-full transform md:rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-500 hover:z-20 group md:-mt-8">
                 <div className="relative" style={{
                   background: 'linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(250,250,255,0.85) 100%)',
