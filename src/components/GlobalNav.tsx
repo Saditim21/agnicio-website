@@ -19,34 +19,24 @@ export function GlobalNav() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-grayLine">
-      {/* Logo - Positioned at top-left */}
-      <div className="absolute left-6 md:left-8 lg:left-12 top-1/2 -translate-y-1/2 z-10">
-        <a
-          href="/"
-          className="flex items-center hover:opacity-80 transition-opacity duration-200"
-        >
-          <img
-            src={agnicioLogo}
-            alt="Agnicio"
-            className="h-10 md:h-12 w-auto"
-          />
-        </a>
-      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          {/* Logo - Left side */}
+          <div className="flex-shrink-0">
+            <a
+              href="/"
+              className="flex items-center hover:opacity-80 transition-opacity duration-200"
+            >
+              <img
+                src={agnicioLogo}
+                alt="Agnicio"
+                className="h-8 sm:h-10 md:h-12 w-auto"
+              />
+            </a>
+          </div>
 
-      {/* CTA Button - Positioned at top-right */}
-      <div className="hidden lg:block absolute right-6 md:right-8 lg:right-12 top-1/2 -translate-y-1/2 z-10">
-        <a
-          href="/#contact"
-          className="px-8 py-3 bg-primary text-white text-base font-medium rounded-md hover:bg-primaryDark transition-colors duration-200"
-        >
-          Get Started
-        </a>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-16">
-        <div className="flex items-center h-20">
           {/* Desktop Navigation - Centered */}
-          <div className="hidden lg:flex items-center justify-center flex-1 space-x-10 w-full">
+          <div className="hidden lg:flex items-center justify-center flex-1 space-x-10">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -58,16 +48,26 @@ export function GlobalNav() {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden ml-auto">
+          {/* Desktop CTA Button - Right side */}
+          <div className="hidden lg:flex flex-shrink-0">
+            <a
+              href="/#contact"
+              className="px-6 sm:px-8 py-2.5 sm:py-3 bg-primary text-white text-sm sm:text-base font-medium rounded-md hover:bg-primaryDark transition-colors duration-200"
+            >
+              Get Started
+            </a>
+          </div>
+
+          {/* Mobile Menu Button - Right side */}
+          <div className="lg:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-ink hover:text-primary transition-colors duration-200"
+              className="p-2 text-ink hover:text-primary transition-colors duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label="Toggle menu"
               aria-expanded={mobileMenuOpen}
             >
               <svg
-                className="w-7 h-7"
+                className="w-6 h-6 sm:w-7 sm:h-7"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -84,16 +84,18 @@ export function GlobalNav() {
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-grayLine">
+      {/* Mobile Menu - Below the main nav bar */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-grayLine">
+          <div className="px-4 sm:px-6 py-4 space-y-1">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-6 py-4 text-base font-medium text-ink hover:text-primary hover:bg-grayBg transition-colors duration-200"
+                className="block px-4 py-3 text-base font-medium text-ink hover:text-primary hover:bg-grayBg transition-colors duration-200 rounded-md min-h-[44px] flex items-center"
               >
                 {link.label}
               </a>
@@ -103,13 +105,13 @@ export function GlobalNav() {
             <a
               href="/#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="block mx-6 mt-4 px-8 py-4 bg-primary text-white text-center text-base font-medium rounded-md hover:bg-primaryDark transition-colors duration-200"
+              className="block mt-4 px-6 py-3 bg-primary text-white text-center text-base font-medium rounded-md hover:bg-primaryDark transition-colors duration-200 min-h-[44px] flex items-center justify-center"
             >
               Get Started
             </a>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </nav>
   );
 }

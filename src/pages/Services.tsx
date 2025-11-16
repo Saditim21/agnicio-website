@@ -95,6 +95,24 @@ const serviceCategories = [
         ]
       },
       {
+        badge: "Governance",
+        title: "Data & Document Governance",
+        icon: "governance",
+        description: "Implement MDM and governance frameworks to transform scattered information into enterprise-ready decision support.",
+        whatWeDo: [
+          "Master Data Management (MDM) framework design",
+          "Data quality rules and monitoring",
+          "Document management system setup",
+          "Compliance and security protocols"
+        ],
+        outcomes: [
+          "Governed data architecture",
+          "Quality assurance processes",
+          "Compliance documentation",
+          "Audit trail capabilities"
+        ]
+      },
+      {
         badge: "Assessment",
         title: "Assessment Services",
         icon: "assessment",
@@ -129,24 +147,6 @@ const serviceCategories = [
           "Pilot project plan",
           "Success criteria framework"
         ]
-      },
-      {
-        badge: "Governance",
-        title: "Data & Document Governance",
-        icon: "governance",
-        description: "Implement MDM and governance frameworks to transform scattered information into enterprise-ready decision support.",
-        whatWeDo: [
-          "Master Data Management (MDM) framework design",
-          "Data quality rules and monitoring",
-          "Document management system setup",
-          "Compliance and security protocols"
-        ],
-        outcomes: [
-          "Governed data architecture",
-          "Quality assurance processes",
-          "Compliance documentation",
-          "Audit trail capabilities"
-        ]
       }
     ]
   },
@@ -154,6 +154,42 @@ const serviceCategories = [
     title: "AI & Data Technical Services",
     subtitle: "Comprehensive technical implementation, training, and ongoing support services for your AI-powered maintenance platform.",
     services: [
+      {
+        badge: "AI/ML",
+        title: "AI & Advanced Analytics",
+        icon: "ai",
+        description: "Implement machine learning models for predictive maintenance, anomaly detection, and optimization of asset performance.",
+        whatWeDo: [
+          "Predictive model development and training",
+          "Anomaly detection algorithm implementation",
+          "Optimization engine configuration",
+          "Model monitoring and maintenance"
+        ],
+        outcomes: [
+          "Production-ready ML models",
+          "Automated prediction pipelines",
+          "Continuous model improvement",
+          "Measurable accuracy gains"
+        ]
+      },
+      {
+        badge: "Implementation",
+        title: "Implementation Services",
+        icon: "implementation",
+        description: "End-to-end deployment, integration, and support for all SSP Platform components and related solutions.",
+        whatWeDo: [
+          "Solution architecture and design",
+          "System integration and configuration",
+          "User acceptance testing coordination",
+          "Go-live support and training"
+        ],
+        outcomes: [
+          "Fully operational system",
+          "Integrated workflows",
+          "Trained user base",
+          "Ongoing support plan"
+        ]
+      },
       {
         badge: "Engineering",
         title: "Data Engineering",
@@ -225,42 +261,6 @@ const serviceCategories = [
           "Best practices knowledge",
           "Reduced dependency on vendors"
         ]
-      },
-      {
-        badge: "AI/ML",
-        title: "AI & Advanced Analytics",
-        icon: "ai",
-        description: "Implement machine learning models for predictive maintenance, anomaly detection, and optimization of asset performance.",
-        whatWeDo: [
-          "Predictive model development and training",
-          "Anomaly detection algorithm implementation",
-          "Optimization engine configuration",
-          "Model monitoring and maintenance"
-        ],
-        outcomes: [
-          "Production-ready ML models",
-          "Automated prediction pipelines",
-          "Continuous model improvement",
-          "Measurable accuracy gains"
-        ]
-      },
-      {
-        badge: "Implementation",
-        title: "Implementation Services",
-        icon: "implementation",
-        description: "End-to-end deployment, integration, and support for all SSP Platform components and related solutions.",
-        whatWeDo: [
-          "Solution architecture and design",
-          "System integration and configuration",
-          "User acceptance testing coordination",
-          "Go-live support and training"
-        ],
-        outcomes: [
-          "Fully operational system",
-          "Integrated workflows",
-          "Trained user base",
-          "Ongoing support plan"
-        ]
       }
     ]
   }
@@ -288,13 +288,13 @@ export function Services() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 w-full px-8 md:px-12 lg:px-16 py-32">
+        <div className="relative z-10 w-full px-4 sm:px-6 md:px-12 lg:px-16 pt-32 sm:pt-40 md:pt-48 lg:pt-56 pb-16 sm:pb-20 md:pb-24">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-5xl">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-white leading-[1.1] tracking-tight mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-light text-white leading-[1.1] tracking-tight mb-6 sm:mb-8">
                 End-to-End Support for Your Journey
               </h1>
-              <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl">
+              <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl">
                 From strategy to implementation, our expert team guides you through every step of your AI-powered asset management transformation.
               </p>
             </div>
@@ -310,41 +310,41 @@ export function Services() {
           <section
             key={categoryIndex}
             ref={animation.ref}
-            className={`py-20 ${categoryIndex % 2 === 0 ? 'bg-background' : 'bg-grayBg'} border-b border-grayLine transition-all duration-1000 ${
+            className={`py-12 sm:py-16 md:py-20 ${categoryIndex % 2 === 0 ? 'bg-background' : 'bg-grayBg'} border-b border-grayLine transition-all duration-1000 ${
               animation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            <div className="max-w-7xl mx-auto px-6 md:px-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
               {/* Category Header */}
-              <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-semibold text-ink tracking-tight mb-4">
+              <div className="text-center mb-8 sm:mb-12 md:mb-16">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-ink tracking-tight mb-3 sm:mb-4 px-4">
                   {category.title}
                 </h2>
-                <p className="text-base text-gray-700 max-w-3xl mx-auto">
+                <p className="text-sm sm:text-base text-gray-700 max-w-3xl mx-auto px-4">
                   {category.subtitle}
                 </p>
               </div>
 
               {/* Services Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {category.services.map((service, serviceIndex) => (
                 <Card
                   key={serviceIndex}
-                  className="p-8 flex flex-col h-full transition-all duration-700 hover:shadow-lg hover:-translate-y-1"
+                  className="p-5 sm:p-6 md:p-8 flex flex-col h-full transition-all duration-700 hover:shadow-lg hover:-translate-y-1"
                   style={{
                     transitionDelay: `${serviceIndex * 100}ms`
                   }}
                 >
-                  <div className="mb-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="p-3 bg-primary/10 rounded-lg">
+                  <div className="mb-4 sm:mb-6">
+                    <div className="flex items-start justify-between mb-3 sm:mb-4">
+                      <div className="p-2 sm:p-3 bg-primary/10 rounded-lg">
                         <ServiceIcon type={service.icon} />
                       </div>
-                      <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-md">
+                      <span className="inline-block px-2 sm:px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-md">
                         {service.badge}
                       </span>
                     </div>
-                    <h3 className="text-xl font-semibold text-ink mb-3">
+                    <h3 className="text-lg sm:text-xl font-semibold text-ink mb-2 sm:mb-3">
                       {service.title}
                     </h3>
                     <p className="text-sm text-gray-700 leading-relaxed">
@@ -352,8 +352,8 @@ export function Services() {
                     </p>
                   </div>
 
-                  <div className="mb-6">
-                    <h4 className="text-base font-semibold text-ink mb-3">What We Do</h4>
+                  <div className="mb-4 sm:mb-6">
+                    <h4 className="text-sm sm:text-base font-semibold text-ink mb-2 sm:mb-3">What We Do</h4>
                     <ul className="space-y-2">
                       {service.whatWeDo.map((item, idx) => (
                         <li key={idx} className="flex items-start gap-2">
@@ -367,7 +367,7 @@ export function Services() {
                   </div>
 
                   <div className="mt-auto">
-                    <h4 className="text-base font-semibold text-ink mb-3">Expected Outcomes</h4>
+                    <h4 className="text-sm sm:text-base font-semibold text-ink mb-2 sm:mb-3">Expected Outcomes</h4>
                     <ul className="space-y-2">
                       {service.outcomes.map((outcome, idx) => (
                         <li key={idx} className="flex items-start gap-2">
@@ -388,16 +388,16 @@ export function Services() {
       })}
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-semibold text-white tracking-tight leading-tight mb-6">
+      <section className="py-12 sm:py-16 md:py-20 bg-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-tight mb-4 sm:mb-6 px-4">
             Let's Build Your Success Together
           </h2>
-          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
             Our expert team is ready to guide you through every phase of your AI-powered asset management transformation.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-primary hover:bg-gray-100" asChild>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <Button size="lg" className="bg-white text-primary hover:bg-gray-100 min-h-[44px]" asChild>
               <a href="/#contact">
                 Discuss Your Needs
                 <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -405,7 +405,7 @@ export function Services() {
                 </svg>
               </a>
             </Button>
-            <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary" asChild>
+            <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary min-h-[44px]" asChild>
               <a href="/">
                 Back to Home
                 <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">

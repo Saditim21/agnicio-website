@@ -13,9 +13,9 @@ interface FeatureCardProps extends PlatformFeature {}
 
 function FeatureCard({ title, description, features, image, link }: FeatureCardProps) {
   return (
-    <Card className="p-8 flex flex-col h-full">
+    <Card className="p-5 sm:p-6 md:p-8 flex flex-col h-full">
       {/* Image */}
-      <div className="h-64 rounded-lg overflow-hidden border border-grayLine mb-6">
+      <div className="h-48 sm:h-56 md:h-64 rounded-lg overflow-hidden border border-grayLine mb-4 sm:mb-6">
         <img
           src={image}
           alt={title}
@@ -25,11 +25,11 @@ function FeatureCard({ title, description, features, image, link }: FeatureCardP
 
       {/* Content */}
       <div className="flex-1 flex flex-col">
-        <h3 className="text-2xl font-semibold text-ink tracking-tight mb-4">{title}</h3>
-        <p className="text-base text-gray-700 mb-6 leading-relaxed">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-ink tracking-tight mb-3 sm:mb-4">{title}</h3>
+        <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed">
           {description}
         </p>
-        <ul className="space-y-3 mb-6 flex-1">
+        <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6 flex-1">
           {features.map((feature, index) => (
             <li key={index} className="flex items-start gap-2">
               <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -39,8 +39,8 @@ function FeatureCard({ title, description, features, image, link }: FeatureCardP
             </li>
           ))}
         </ul>
-        <Button variant="link" className="p-0 justify-start" asChild>
-          <a href={link}>
+        <Button variant="link" className="p-0 justify-start min-h-[44px]" asChild>
+          <a href={link} className="inline-flex items-center gap-2">
             Learn More
             <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M9 5l7 7-7 7" />
@@ -117,21 +117,21 @@ export function SSPPlatform({ senseImage, solveImage, planImage, genixImage }: S
     <section
       id="ssp-platform"
       ref={platformAnimation.ref}
-      className={`py-20 bg-grayBg border-b border-grayLine transition-all duration-1000 ${
+      className={`py-12 sm:py-16 md:py-20 bg-grayBg border-b border-grayLine transition-all duration-1000 ${
         platformAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-semibold text-ink tracking-tight leading-tight mb-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-ink tracking-tight leading-tight mb-3 sm:mb-4 px-4">
             The SSP Platform
           </h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto px-4">
             Sense, Solve, and Plan - A holistic approach to intelligent maintenance orchestration
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {features.map((feature, index) => (
             <div
               key={index}

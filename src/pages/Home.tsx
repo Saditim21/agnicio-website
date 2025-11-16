@@ -16,7 +16,7 @@ import blogImage2 from '../assets/home-page/blog-image-2.jpg';
 import blogImage3 from '../assets/home-page/blog-image-3.jpg';
 
 // Brochure PDF
-import brochurePdf from '../assets/home-page/Brochure_A4_Agnicio+ABB_2025rev3 (1).pdf';
+import brochurePdf from '../assets/home-page/Brochure_A4_Agnicio+ABB_2025rev3.pdf';
 
 export function Home() {
   const servicesAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
@@ -60,71 +60,71 @@ export function Home() {
       <section
         id="services"
         ref={servicesAnimation.ref}
-        className={`py-20 bg-background border-b border-grayLine transition-all duration-1000 ${
+        className={`py-12 sm:py-16 md:py-20 bg-background border-b border-grayLine transition-all duration-1000 ${
           servicesAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-ink tracking-tight leading-tight mb-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-ink tracking-tight leading-tight mb-3 sm:mb-4 px-4">
               Our Services
             </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto px-4">
               Comprehensive support from strategy to implementation
             </p>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-10 md:space-y-12">
             {/* AI & Data Strategy Services */}
             <div>
-              <h3 className="text-2xl font-semibold text-ink mb-6">AI & Data Strategy Services</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                  <h4 className="text-lg font-semibold text-ink mb-3">AI & Data Strategy</h4>
+              <h3 className="text-xl sm:text-2xl font-semibold text-ink mb-4 sm:mb-6 px-4">AI & Data Strategy Services</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                <div className="bg-white border border-grayLine rounded-lg p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <h4 className="text-base sm:text-lg font-semibold text-ink mb-2 sm:mb-3">AI & Data Strategy</h4>
                   <p className="text-sm text-gray-700">Strategic planning to break data barriers and align AI initiatives with your business objectives for sustainable operational growth.</p>
                 </div>
-                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                  <h4 className="text-lg font-semibold text-ink mb-3">Assessment Services</h4>
+                <div className="bg-white border border-grayLine rounded-lg p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <h4 className="text-base sm:text-lg font-semibold text-ink mb-2 sm:mb-3">Data & Document Governance</h4>
+                  <p className="text-sm text-gray-700">Implement MDM and governance frameworks to transform scattered information into enterprise-ready decision support.</p>
+                </div>
+                <div className="bg-white border border-grayLine rounded-lg p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <h4 className="text-base sm:text-lg font-semibold text-ink mb-2 sm:mb-3">Assessment Services</h4>
                   <p className="text-sm text-gray-700">Comprehensive evaluation of your current maintenance operations, data infrastructure, and readiness for intelligent asset management.</p>
                 </div>
-                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                  <h4 className="text-lg font-semibold text-ink mb-3">Use Case Development</h4>
+                <div className="bg-white border border-grayLine rounded-lg p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <h4 className="text-base sm:text-lg font-semibold text-ink mb-2 sm:mb-3">Use Case Development</h4>
                   <p className="text-sm text-gray-700">Design and validate high-impact use cases that address your specific challenges in asset maintenance and operational planning.</p>
-                </div>
-                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                  <h4 className="text-lg font-semibold text-ink mb-3">Data & Document Governance</h4>
-                  <p className="text-sm text-gray-700">Implement MDM and governance frameworks to transform scattered information into enterprise-ready decision support.</p>
                 </div>
               </div>
             </div>
 
             {/* AI & Data Technical Services */}
             <div>
-              <h3 className="text-2xl font-semibold text-ink mb-6">AI & Data Technical Services</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                  <h4 className="text-lg font-semibold text-ink mb-3">Data Engineering</h4>
-                  <p className="text-sm text-gray-700">Build scalable data pipelines, ETL processes, and data warehousing solutions for industrial IoT.</p>
-                </div>
-                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                  <h4 className="text-lg font-semibold text-ink mb-3">PowerBI Training</h4>
-                  <p className="text-sm text-gray-700">Empower your team with advanced analytics capabilities through comprehensive PowerBI training programs.</p>
-                </div>
-                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                  <h4 className="text-lg font-semibold text-ink mb-3">Cloud Migration</h4>
-                  <p className="text-sm text-gray-700">Seamlessly migrate legacy systems to cloud infrastructure with minimal disruption and maximum efficiency.</p>
-                </div>
-                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                  <h4 className="text-lg font-semibold text-ink mb-3">Azure Data Platform Training</h4>
-                  <p className="text-sm text-gray-700">Develop expertise in Azure data services, Synapse Analytics, and cloud-native architectures.</p>
-                </div>
-                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                  <h4 className="text-lg font-semibold text-ink mb-3">AI & Advanced Analytics</h4>
+              <h3 className="text-xl sm:text-2xl font-semibold text-ink mb-4 sm:mb-6 px-4">AI & Data Technical Services</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                <div className="bg-white border border-grayLine rounded-lg p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <h4 className="text-base sm:text-lg font-semibold text-ink mb-2 sm:mb-3">AI & Advanced Analytics</h4>
                   <p className="text-sm text-gray-700">Implement machine learning models for predictive maintenance, anomaly detection, and optimization.</p>
                 </div>
-                <div className="bg-white border border-grayLine rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                  <h4 className="text-lg font-semibold text-ink mb-3">Implementation Services</h4>
+                <div className="bg-white border border-grayLine rounded-lg p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <h4 className="text-base sm:text-lg font-semibold text-ink mb-2 sm:mb-3">Implementation Services</h4>
                   <p className="text-sm text-gray-700">End-to-end deployment, integration, and support for all our solutions and platforms.</p>
+                </div>
+                <div className="bg-white border border-grayLine rounded-lg p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <h4 className="text-base sm:text-lg font-semibold text-ink mb-2 sm:mb-3">Data Engineering</h4>
+                  <p className="text-sm text-gray-700">Build scalable data pipelines, ETL processes, and data warehousing solutions for industrial IoT.</p>
+                </div>
+                <div className="bg-white border border-grayLine rounded-lg p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <h4 className="text-base sm:text-lg font-semibold text-ink mb-2 sm:mb-3">PowerBI Training</h4>
+                  <p className="text-sm text-gray-700">Empower your team with advanced analytics capabilities through comprehensive PowerBI training programs.</p>
+                </div>
+                <div className="bg-white border border-grayLine rounded-lg p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <h4 className="text-base sm:text-lg font-semibold text-ink mb-2 sm:mb-3">Cloud Migration</h4>
+                  <p className="text-sm text-gray-700">Seamlessly migrate legacy systems to cloud infrastructure with minimal disruption and maximum efficiency.</p>
+                </div>
+                <div className="bg-white border border-grayLine rounded-lg p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <h4 className="text-base sm:text-lg font-semibold text-ink mb-2 sm:mb-3">Azure Data Platform Training</h4>
+                  <p className="text-sm text-gray-700">Develop expertise in Azure data services, Synapse Analytics, and cloud-native architectures.</p>
                 </div>
               </div>
             </div>
@@ -135,27 +135,27 @@ export function Home() {
       {/* ABB Partnership Section */}
       <section
         ref={partnershipAnimation.ref}
-        className={`py-20 bg-grayBg border-b border-grayLine transition-all duration-1000 ${
+        className={`py-12 sm:py-16 md:py-20 bg-grayBg border-b border-grayLine transition-all duration-1000 ${
           partnershipAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-ink tracking-tight leading-tight mb-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-ink tracking-tight leading-tight mb-3 sm:mb-4 px-4">
               ABB Certified Technology Partner
             </h2>
-            <p className="text-lg text-gray-700">
+            <p className="text-base sm:text-lg text-gray-700 px-4">
               Delivering world-class AI-powered asset management through strategic partnership with ABB
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
-            <div className="bg-white border border-grayLine rounded-lg p-8">
-              <h3 className="text-2xl font-semibold text-ink mb-6">ABB Partnership</h3>
-              <p className="text-base text-gray-700 mb-6 leading-relaxed">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center mb-8 sm:mb-12">
+            <div className="bg-white border border-grayLine rounded-lg p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-semibold text-ink mb-4 sm:mb-6">ABB Partnership</h3>
+              <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed">
                 Our strategic partnership with ABB enables seamless integration with their industry-leading automation and electrification solutions, providing comprehensive asset management across the entire industrial ecosystem.
               </p>
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                 <li className="flex items-start gap-2">
                   <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                     <path d="M5 13l4 4L19 7" />
@@ -184,10 +184,10 @@ export function Home() {
 
               <Button
                 size="lg"
-                className="bg-primary text-white hover:bg-primary-hover w-full md:w-auto"
+                className="bg-primary text-white hover:bg-primary-hover w-full sm:w-auto min-h-[44px]"
                 asChild
               >
-                <a href={brochurePdf} download="Agnicio_ABB_Brochure_2025.pdf" className="inline-flex items-center gap-2">
+                <a href={brochurePdf} download="Agnicio_ABB_Brochure_2025.pdf" className="inline-flex items-center justify-center gap-2 px-6">
                   <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                     <path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
@@ -196,7 +196,7 @@ export function Home() {
               </Button>
             </div>
 
-            <div className="rounded-lg overflow-hidden border border-grayLine">
+            <div className="rounded-lg overflow-hidden border border-grayLine aspect-video lg:aspect-auto">
               <img
                 src={abbPartnershipImg}
                 alt="ABB Industrial Partnership Collaboration"
@@ -205,9 +205,9 @@ export function Home() {
             </div>
           </div>
 
-          <div className="bg-white border border-grayLine rounded-lg p-8">
-            <h4 className="text-xl font-semibold text-ink mb-6 text-center">Partnership Benefits</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="bg-white border border-grayLine rounded-lg p-6 sm:p-8">
+            <h4 className="text-lg sm:text-xl font-semibold text-ink mb-4 sm:mb-6 text-center">Partnership Benefits</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               <div className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                   <path d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -244,26 +244,26 @@ export function Home() {
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-20 bg-background border-b border-grayLine">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-ink tracking-tight leading-tight mb-4">
+      <section className="py-12 sm:py-16 md:py-20 bg-background border-b border-grayLine">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-ink tracking-tight leading-tight mb-3 sm:mb-4 px-4">
               Transforming Maintenance Operations
             </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto px-4">
               Real-world impact across manufacturing, energy, and industrial sectors
             </p>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Automotive Manufacturing Case Study */}
-            <div className="bg-white border border-grayLine rounded-lg p-8">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="bg-white border border-grayLine rounded-lg p-5 sm:p-6 md:p-8">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
                 <div className="lg:col-span-2">
-                  <span className="inline-block px-3 py-1 bg-grayBg text-primary text-sm font-medium rounded-md mb-4">
+                  <span className="inline-block px-3 py-1 bg-grayBg text-primary text-xs sm:text-sm font-medium rounded-md mb-3 sm:mb-4">
                     Automotive Manufacturing
                   </span>
-                  <h3 className="text-xl md:text-2xl font-semibold text-ink mb-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-ink mb-3 sm:mb-4">
                     From Reactive to Predictive Maintenance
                   </h3>
                   <div className="mb-4">
@@ -302,9 +302,9 @@ export function Home() {
                     </ul>
                   </div>
                 </div>
-                <div className="flex items-center justify-center border-l border-grayLine pl-8">
+                <div className="flex items-center justify-center lg:border-l border-grayLine lg:pl-8 pt-6 lg:pt-0">
                   <div className="text-center">
-                    <div className="text-5xl font-bold text-ink mb-2">42%</div>
+                    <div className="text-4xl sm:text-5xl font-bold text-ink mb-2">42%</div>
                     <p className="text-sm text-gray-600">Downtime Reduced</p>
                   </div>
                 </div>
@@ -312,13 +312,13 @@ export function Home() {
             </div>
 
             {/* Power Generation Case Study */}
-            <div className="bg-white border border-grayLine rounded-lg p-8">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="bg-white border border-grayLine rounded-lg p-5 sm:p-6 md:p-8">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
                 <div className="lg:col-span-2">
-                  <span className="inline-block px-3 py-1 bg-grayBg text-primary text-sm font-medium rounded-md mb-4">
+                  <span className="inline-block px-3 py-1 bg-grayBg text-primary text-xs sm:text-sm font-medium rounded-md mb-3 sm:mb-4">
                     Power Generation
                   </span>
-                  <h3 className="text-xl md:text-2xl font-semibold text-ink mb-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-ink mb-3 sm:mb-4">
                     Breaking Siloed Systems for Holistic Planning
                   </h3>
                   <div className="mb-4">
@@ -357,9 +357,9 @@ export function Home() {
                     </ul>
                   </div>
                 </div>
-                <div className="flex items-center justify-center border-l border-grayLine pl-8">
+                <div className="flex items-center justify-center lg:border-l border-grayLine lg:pl-8 pt-6 lg:pt-0">
                   <div className="text-center">
-                    <div className="text-5xl font-bold text-ink mb-2">€3.5M</div>
+                    <div className="text-4xl sm:text-5xl font-bold text-ink mb-2">€3.5M</div>
                     <p className="text-sm text-gray-600">Cost Savings</p>
                   </div>
                 </div>
@@ -367,13 +367,13 @@ export function Home() {
             </div>
 
             {/* Chemical Processing Case Study */}
-            <div className="bg-white border border-grayLine rounded-lg p-8">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="bg-white border border-grayLine rounded-lg p-5 sm:p-6 md:p-8">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
                 <div className="lg:col-span-2">
-                  <span className="inline-block px-3 py-1 bg-grayBg text-primary text-sm font-medium rounded-md mb-4">
+                  <span className="inline-block px-3 py-1 bg-grayBg text-primary text-xs sm:text-sm font-medium rounded-md mb-3 sm:mb-4">
                     Chemical Processing
                   </span>
-                  <h3 className="text-xl md:text-2xl font-semibold text-ink mb-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-ink mb-3 sm:mb-4">
                     Unified Data Platform Drives Decisions
                   </h3>
                   <div className="mb-4">
@@ -412,9 +412,9 @@ export function Home() {
                     </ul>
                   </div>
                 </div>
-                <div className="flex items-center justify-center border-l border-grayLine pl-8">
+                <div className="flex items-center justify-center lg:border-l border-grayLine lg:pl-8 pt-6 lg:pt-0">
                   <div className="text-center">
-                    <div className="text-5xl font-bold text-ink mb-2">99.8%</div>
+                    <div className="text-4xl sm:text-5xl font-bold text-ink mb-2">99.8%</div>
                     <p className="text-sm text-gray-600">Prediction Accuracy</p>
                   </div>
                 </div>
@@ -428,21 +428,21 @@ export function Home() {
       <section
         id="blog"
         ref={blogAnimation.ref}
-        className={`py-20 bg-background border-b border-grayLine transition-all duration-1000 ${
+        className={`py-12 sm:py-16 md:py-20 bg-background border-b border-grayLine transition-all duration-1000 ${
           blogAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-ink tracking-tight leading-tight mb-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-ink tracking-tight leading-tight mb-3 sm:mb-4 px-4">
               Recent <span className="text-primary">Insights</span>
             </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto px-4">
               Analytics tips, Data strategies, Industry insights, BI best practices, and all the resources you need to do more with your data.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Event Post */}
             <article className="bg-white border border-grayLine rounded-lg overflow-hidden group">
               <div className="relative h-56 overflow-hidden">
@@ -465,16 +465,16 @@ export function Home() {
                 </div>
               </div>
 
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-ink mb-3 group-hover:text-primary transition-colors duration-200">
+              <div className="p-5 sm:p-6">
+                <h3 className="text-base sm:text-lg font-semibold text-ink mb-2 sm:mb-3 group-hover:text-primary transition-colors duration-200">
                   Agnicio at Maintenance NEXT expo
                 </h3>
-                <p className="text-sm text-gray-700 mb-4 leading-relaxed">
+                <p className="text-sm text-gray-700 mb-3 sm:mb-4 leading-relaxed">
                   We're excited to announce that Agnicio will be exhibiting at the Maintenance NEXT Expo from April 8th to 10th!
                 </p>
                 <a
                   href="/blog/maintenance-next-expo"
-                  className="inline-flex items-center gap-2 text-primary font-medium transition-colors duration-200 hover:text-primary-dark"
+                  className="inline-flex items-center gap-2 text-primary font-medium transition-colors duration-200 hover:text-primary-dark text-sm min-h-[44px]"
                 >
                   Continue reading
                   <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -510,16 +510,16 @@ export function Home() {
                 </div>
               </div>
 
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-ink mb-3 group-hover:text-primary transition-colors duration-200">
+              <div className="p-5 sm:p-6">
+                <h3 className="text-base sm:text-lg font-semibold text-ink mb-2 sm:mb-3 group-hover:text-primary transition-colors duration-200">
                   Explainability in DSA: Agnicio's Glass-Box Approach
                 </h3>
-                <p className="text-sm text-gray-700 mb-4 leading-relaxed">
+                <p className="text-sm text-gray-700 mb-3 sm:mb-4 leading-relaxed">
                   What is Demand Sensing? Well, it is all about capturing the Demand Signal. This means predicting who wants what product, where and at what...
                 </p>
                 <a
                   href="/blog/explainability-dsa"
-                  className="inline-flex items-center gap-2 text-primary font-medium transition-colors duration-200 hover:text-primary-dark"
+                  className="inline-flex items-center gap-2 text-primary font-medium transition-colors duration-200 hover:text-primary-dark text-sm min-h-[44px]"
                 >
                   Continue reading
                   <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -555,16 +555,16 @@ export function Home() {
                 </div>
               </div>
 
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-ink mb-3 group-hover:text-primary transition-colors duration-200">
+              <div className="p-5 sm:p-6">
+                <h3 className="text-base sm:text-lg font-semibold text-ink mb-2 sm:mb-3 group-hover:text-primary transition-colors duration-200">
                   How to use events' data for effective business planning
                 </h3>
-                <p className="text-sm text-gray-700 mb-4 leading-relaxed">
+                <p className="text-sm text-gray-700 mb-3 sm:mb-4 leading-relaxed">
                   Organizations of all sizes are involved in business planning. This includes setting ambitious targets on sales and other KPIs to drive growth and...
                 </p>
                 <a
                   href="/blog/events-data-business-planning"
-                  className="inline-flex items-center gap-2 text-primary font-medium transition-colors duration-200 hover:text-primary-dark"
+                  className="inline-flex items-center gap-2 text-primary font-medium transition-colors duration-200 hover:text-primary-dark text-sm min-h-[44px]"
                 >
                   Continue reading
                   <svg className="w-4 h-4" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -575,9 +575,9 @@ export function Home() {
             </article>
           </div>
 
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg" asChild>
-              <a href="/blog">
+          <div className="text-center mt-8 sm:mt-12">
+            <Button variant="outline" size="lg" className="min-h-[44px]" asChild>
+              <a href="/blog" className="inline-flex items-center gap-2">
                 View All Posts
                 <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                   <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -589,22 +589,22 @@ export function Home() {
       </section>
 
       {/* Contact Form Section */}
-      <section id="contact" className="py-20 bg-grayBg border-b border-grayLine">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-ink tracking-tight leading-tight mb-4">
+      <section id="contact" className="py-12 sm:py-16 md:py-20 bg-grayBg border-b border-grayLine">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-ink tracking-tight leading-tight mb-3 sm:mb-4 px-4">
               Get in Touch
             </h2>
-            <p className="text-lg text-gray-700">
+            <p className="text-base sm:text-lg text-gray-700 px-4">
               Have a question? Fill out the contact form. We'd love to hear from you
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {/* Contact Form */}
-            <div className="bg-white border border-grayLine rounded-lg p-8">
-              <h3 className="text-xl font-semibold text-ink mb-4">Send us a message</h3>
-              <p className="text-sm text-gray-700 mb-6">
+            <div className="bg-white border border-grayLine rounded-lg p-6 sm:p-8">
+              <h3 className="text-lg sm:text-xl font-semibold text-ink mb-3 sm:mb-4">Send us a message</h3>
+              <p className="text-sm text-gray-700 mb-4 sm:mb-6">
                 Fill out the form and our team will get back to you within 24 hours
               </p>
               <form className="space-y-4">
@@ -616,7 +616,7 @@ export function Home() {
                     name="name"
                     placeholder="Enter your name"
                     required
-                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200 min-h-[44px] text-base"
                   />
                 </div>
                 <div>
@@ -627,7 +627,7 @@ export function Home() {
                     name="email"
                     placeholder="Enter your email"
                     required
-                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200 min-h-[44px] text-base"
                   />
                 </div>
                 <div>
@@ -638,19 +638,19 @@ export function Home() {
                     rows={6}
                     placeholder="Enter your message"
                     required
-                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200 text-base"
                   ></textarea>
                 </div>
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full min-h-[44px]">
                   Send Message
                 </Button>
               </form>
             </div>
 
             {/* Contact Information */}
-            <div className="space-y-6">
-              <div className="bg-white border border-grayLine rounded-lg p-6">
-                <h4 className="text-base font-semibold text-ink mb-4 flex items-center gap-3">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="bg-white border border-grayLine rounded-lg p-5 sm:p-6">
+                <h4 className="text-sm sm:text-base font-semibold text-ink mb-3 sm:mb-4 flex items-center gap-3">
                   <svg className="w-5 h-5 text-primary" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                     <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -659,8 +659,8 @@ export function Home() {
                 </h4>
                 <p className="text-sm text-gray-700">Millennium Tower, Weena, 3012 CN Rotterdam</p>
               </div>
-              <div className="bg-white border border-grayLine rounded-lg p-6">
-                <h4 className="text-base font-semibold text-ink mb-4 flex items-center gap-3">
+              <div className="bg-white border border-grayLine rounded-lg p-5 sm:p-6">
+                <h4 className="text-sm sm:text-base font-semibold text-ink mb-3 sm:mb-4 flex items-center gap-3">
                   <svg className="w-5 h-5 text-primary" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                     <path d="M3 8l7.89 3.26a2 2 0 001.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
@@ -691,17 +691,17 @@ export function Home() {
       </section>
 
       {/* Final CTA Banner */}
-      <section className="py-20 bg-primary">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-semibold text-white tracking-tight leading-tight mb-6">
+      <section className="py-12 sm:py-16 md:py-20 bg-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-tight mb-4 sm:mb-6 px-4">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
             Join 2,500+ enterprise clients who trust Agnicio for their AI and data solutions.
             Let's build something extraordinary together.
           </p>
-          <Button size="lg" className="bg-white text-primary hover:bg-gray-100" asChild>
-            <a href="#contact">
+          <Button size="lg" className="bg-white text-primary hover:bg-gray-100 min-h-[44px]" asChild>
+            <a href="#contact" className="inline-flex items-center gap-2">
               Get in Touch
               <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M13 7l5 5m0 0l-5 5m5-5H6" />

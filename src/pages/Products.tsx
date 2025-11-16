@@ -32,13 +32,13 @@ export function Products() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 w-full px-8 md:px-12 lg:px-16 py-32">
+        <div className="relative z-10 w-full px-4 sm:px-6 md:px-12 lg:px-16 pt-32 sm:pt-40 md:pt-48 lg:pt-56 pb-16 sm:pb-20 md:pb-24">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-5xl">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-white leading-[1.1] tracking-tight mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-light text-white leading-[1.1] tracking-tight mb-6 sm:mb-8">
                 Sense, Solve, and Plan
               </h1>
-              <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl">
+              <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl">
                 A holistic approach to intelligent maintenance orchestration. Our integrated platform breaks data barriers and unleashes business power through AI-driven asset management.
               </p>
             </div>
@@ -49,50 +49,50 @@ export function Products() {
       {/* SENSE Section */}
       <section
         ref={senseAnimation.ref}
-        className={`py-20 bg-background border-b border-grayLine transition-all duration-1000 ${
+        className={`py-12 sm:py-16 md:py-20 bg-background border-b border-grayLine transition-all duration-1000 ${
           senseAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             {/* Content */}
             <div>
-              <div className="mb-6">
-                <span className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-md mb-4">
+              <div className="mb-4 sm:mb-6">
+                <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 text-primary text-xs sm:text-sm font-semibold rounded-md mb-3 sm:mb-4">
                   SENSE
                 </span>
-                <h2 className="text-3xl md:text-4xl font-semibold text-ink tracking-tight mb-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-ink tracking-tight mb-3 sm:mb-4">
                   24/7 AI-Driven Problem Detection
                 </h2>
-                <p className="text-base text-gray-700 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   Continuous monitoring and failure prediction across your entire infrastructure. Transform from reactive to proactive maintenance with AI-generated insights delivered in human language.
                 </p>
               </div>
 
-              <div className="mb-8">
-                <h3 className="text-xl font-semibold text-ink mb-4">Key Capabilities</h3>
-                <div className="space-y-4">
+              <div className="mb-6 sm:mb-8">
+                <h3 className="text-lg sm:text-xl font-semibold text-ink mb-3 sm:mb-4">Key Capabilities</h3>
+                <div className="space-y-3 sm:space-y-4">
                   <div>
-                    <h4 className="text-base font-semibold text-ink mb-2">Holistic Monitoring</h4>
+                    <h4 className="text-sm sm:text-base font-semibold text-ink mb-1.5 sm:mb-2">Holistic Monitoring</h4>
                     <p className="text-sm text-gray-700">Continuous tracking of all assets with large sensor combinations, eliminating gut-feeling based problem detection</p>
                   </div>
                   <div>
-                    <h4 className="text-base font-semibold text-ink mb-2">AI-Powered Prediction</h4>
+                    <h4 className="text-sm sm:text-base font-semibold text-ink mb-1.5 sm:mb-2">AI-Powered Prediction</h4>
                     <p className="text-sm text-gray-700">Advanced algorithms predict failures before they occur, reducing unplanned downtime by up to 42%</p>
                   </div>
                   <div>
-                    <h4 className="text-base font-semibold text-ink mb-2">LLM-Generated Insights</h4>
+                    <h4 className="text-sm sm:text-base font-semibold text-ink mb-1.5 sm:mb-2">LLM-Generated Insights</h4>
                     <p className="text-sm text-gray-700">Conclusions delivered in natural human language through advanced Large Language Models for easy understanding</p>
                   </div>
                   <div>
-                    <h4 className="text-base font-semibold text-ink mb-2">Expert Knowledge Capture</h4>
+                    <h4 className="text-sm sm:text-base font-semibold text-ink mb-1.5 sm:mb-2">Expert Knowledge Capture</h4>
                     <p className="text-sm text-gray-700">Systematize historical expert knowledge that was previously trapped in individuals' heads</p>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold text-ink mb-4">Business Impact</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-ink mb-3 sm:mb-4">Business Impact</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -137,12 +137,12 @@ export function Products() {
       {/* SOLVE Section */}
       <section
         ref={solveAnimation.ref}
-        className={`py-20 bg-grayBg border-b border-grayLine transition-all duration-1000 ${
+        className={`py-12 sm:py-16 md:py-20 bg-grayBg border-b border-grayLine transition-all duration-1000 ${
           solveAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             {/* Image */}
             <div className="rounded-lg overflow-hidden border border-grayLine order-2 lg:order-1">
               <img
@@ -154,14 +154,14 @@ export function Products() {
 
             {/* Content */}
             <div className="order-1 lg:order-2">
-              <div className="mb-6">
-                <span className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-md mb-4">
+              <div className="mb-4 sm:mb-6">
+                <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 text-primary text-xs sm:text-sm font-semibold rounded-md mb-3 sm:mb-4">
                   SOLVE
                 </span>
-                <h2 className="text-3xl md:text-4xl font-semibold text-ink tracking-tight mb-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-ink tracking-tight mb-3 sm:mb-4">
                   GenAI Powered Solution Engineering
                 </h2>
-                <p className="text-base text-gray-700 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   Transform from investigation mode to solution mode seamlessly. Tap into your enterprise knowledge with AI-powered insights and intelligent chat functionality.
                 </p>
               </div>
@@ -189,7 +189,7 @@ export function Products() {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold text-ink mb-4">Business Impact</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-ink mb-3 sm:mb-4">Business Impact</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -225,22 +225,22 @@ export function Products() {
       {/* PLAN Section */}
       <section
         ref={planAnimation.ref}
-        className={`py-20 bg-background border-b border-grayLine transition-all duration-1000 ${
+        className={`py-12 sm:py-16 md:py-20 bg-background border-b border-grayLine transition-all duration-1000 ${
           planAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             {/* Content */}
             <div>
-              <div className="mb-6">
-                <span className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-md mb-4">
+              <div className="mb-4 sm:mb-6">
+                <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 text-primary text-xs sm:text-sm font-semibold rounded-md mb-3 sm:mb-4">
                   PLAN
                 </span>
-                <h2 className="text-3xl md:text-4xl font-semibold text-ink tracking-tight mb-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-ink tracking-tight mb-3 sm:mb-4">
                   AI-Driven Maintenance Planning
                 </h2>
-                <p className="text-base text-gray-700 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   Enable cross-functional and chain-level planning with AI optimization. Generate plans that balance demand, resources, costs, and risk while maintaining complete budget control.
                 </p>
               </div>
@@ -268,7 +268,7 @@ export function Products() {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold text-ink mb-4">Business Impact</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-ink mb-3 sm:mb-4">Business Impact</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -313,12 +313,12 @@ export function Products() {
       {/* GENIX Section */}
       <section
         ref={genixAnimation.ref}
-        className={`py-20 bg-grayBg border-b border-grayLine transition-all duration-1000 ${
+        className={`py-12 sm:py-16 md:py-20 bg-grayBg border-b border-grayLine transition-all duration-1000 ${
           genixAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             {/* Image */}
             <div className="rounded-lg overflow-hidden border border-grayLine order-2 lg:order-1">
               <img
@@ -330,14 +330,14 @@ export function Products() {
 
             {/* Content */}
             <div className="order-1 lg:order-2">
-              <div className="mb-6">
-                <span className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-md mb-4">
+              <div className="mb-4 sm:mb-6">
+                <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 text-primary text-xs sm:text-sm font-semibold rounded-md mb-3 sm:mb-4">
                   GENIX™
                 </span>
-                <h2 className="text-3xl md:text-4xl font-semibold text-ink tracking-tight mb-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-ink tracking-tight mb-3 sm:mb-4">
                   Unified Data Platform
                 </h2>
-                <p className="text-base text-gray-700 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   Beyond traditional ODS - enterprise-wide asset information model that transforms scattered data into actionable intelligence. The foundation for all SSP capabilities.
                 </p>
               </div>
@@ -365,7 +365,7 @@ export function Products() {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold text-ink mb-4">Business Impact</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-ink mb-3 sm:mb-4">Business Impact</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -399,16 +399,16 @@ export function Products() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-semibold text-white tracking-tight leading-tight mb-6">
+      <section className="py-12 sm:py-16 md:py-20 bg-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-tight mb-4 sm:mb-6 px-4">
             Ready to Transform Your Maintenance Operations?
           </h2>
-          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
             Discover how the SSP Platform can drive sustainable growth and operational excellence for your organization.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-primary hover:bg-gray-100" asChild>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <Button size="lg" className="bg-white text-primary hover:bg-gray-100 min-h-[44px]" asChild>
               <a href="/#contact">
                 Schedule a Demo
                 <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -416,7 +416,7 @@ export function Products() {
                 </svg>
               </a>
             </Button>
-            <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary" asChild>
+            <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary min-h-[44px]" asChild>
               <a href="/">
                 Back to Home
                 <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
