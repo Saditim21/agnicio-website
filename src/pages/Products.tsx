@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { GlobalNav, Footer, Button } from '../components';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
@@ -13,6 +14,20 @@ export function Products() {
   const solveAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
   const planAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
   const genixAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
+
+  useEffect(() => {
+    // Handle hash navigation (e.g., /products#sense)
+    const hash = window.location.hash;
+    if (hash) {
+      // Small delay to ensure the page has rendered
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -48,6 +63,7 @@ export function Products() {
 
       {/* SENSE Section */}
       <section
+        id="sense"
         ref={senseAnimation.ref}
         className={`py-12 sm:py-16 md:py-20 bg-background border-b border-grayLine transition-all duration-1000 ${
           senseAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -136,6 +152,7 @@ export function Products() {
 
       {/* SOLVE Section */}
       <section
+        id="solve"
         ref={solveAnimation.ref}
         className={`py-12 sm:py-16 md:py-20 bg-grayBg border-b border-grayLine transition-all duration-1000 ${
           solveAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -224,6 +241,7 @@ export function Products() {
 
       {/* PLAN Section */}
       <section
+        id="plan"
         ref={planAnimation.ref}
         className={`py-12 sm:py-16 md:py-20 bg-background border-b border-grayLine transition-all duration-1000 ${
           planAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -312,6 +330,7 @@ export function Products() {
 
       {/* GENIX Section */}
       <section
+        id="genix"
         ref={genixAnimation.ref}
         className={`py-12 sm:py-16 md:py-20 bg-grayBg border-b border-grayLine transition-all duration-1000 ${
           genixAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'

@@ -73,7 +73,7 @@ export function SSPPlatform({ senseImage, solveImage, planImage, genixImage }: S
         "Holistic problem detection"
       ],
       image: senseImage,
-      link: "/products/ssp-sense"
+      link: "/products#sense"
     },
     {
       title: "SOLVE - GenAI Solution Engineering",
@@ -85,7 +85,7 @@ export function SSPPlatform({ senseImage, solveImage, planImage, genixImage }: S
         "Intelligent onboarding support"
       ],
       image: solveImage,
-      link: "/products/ssp-solve"
+      link: "/products#solve"
     },
     {
       title: "PLAN - AI-Driven Maintenance Planning",
@@ -97,7 +97,7 @@ export function SSPPlatform({ senseImage, solveImage, planImage, genixImage }: S
         "Complete budget visibility"
       ],
       image: planImage,
-      link: "/products/ssp-plan"
+      link: "/products#plan"
     },
     {
       title: "GENIX™ Unified Data Platform",
@@ -109,7 +109,7 @@ export function SSPPlatform({ senseImage, solveImage, planImage, genixImage }: S
         "API connectors & consensus layer"
       ],
       image: genixImage,
-      link: "/products/genix"
+      link: "/products#genix"
     }
   ];
 

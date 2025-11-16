@@ -18,9 +18,19 @@ export function GlobalNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-grayLine">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+    <>
+      {/* Background Overlay - only visible when mobile menu is open */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden transition-opacity duration-300"
+          onClick={() => setMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-grayLine">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+          <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo - Left side */}
           <div className="flex-shrink-0">
             <a
@@ -88,7 +98,7 @@ export function GlobalNav() {
 
       {/* Mobile Menu - Below the main nav bar */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-grayLine">
+        <div className="lg:hidden bg-white border-t border-grayLine animate-slideDown">
           <div className="px-4 sm:px-6 py-4 space-y-1">
             {navLinks.map((link) => (
               <a
@@ -112,6 +122,7 @@ export function GlobalNav() {
           </div>
         </div>
       )}
-    </nav>
+      </nav>
+    </>
   );
 }
