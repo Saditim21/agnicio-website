@@ -81,7 +81,7 @@ const serviceCategories = [
         badge: "Strategy",
         title: "AI & Data Strategy",
         icon: "strategy",
-        description: "Comprehensive strategic planning to break data barriers and align AI initiatives with your business objectives for sustainable operational growth.",
+        description: "Comprehensive strategic exercise to break data barriers and align AI initiatives with your business objectives for sustainable operational growth.",
         whatWeDo: [
           "Digital transformation roadmap development",
           "AI maturity assessment and capability building",
@@ -132,7 +132,7 @@ const serviceCategories = [
         ]
       },
       {
-        badge: "Planning",
+        badge: "Use Case",
         title: "Use Case Development",
         icon: "planning",
         description: "Design and validate high-impact use cases that address your specific challenges in asset maintenance and operational planning.",

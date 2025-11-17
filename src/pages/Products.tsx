@@ -9,7 +9,7 @@ import solveImage from '../assets/home-page/Demand_sensing_analytics_dashboard_c
 import planImage from '../assets/home-page/Maintenance_generator_interface_f929dd22.png';
 import genixImage from '../assets/home-page/UDP_data_foundation_platform_d050d38c.png';
 import pmcImage from '../assets/products-page/Pmc.png';
-import heroBackgroundImg from '../assets/products-page/planning.jpeg';
+import heroBackgroundImg from '../assets/home-page/Hero_industrial_AI_facility_10a53121.png';
 
 export function Products() {
   const senseAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
