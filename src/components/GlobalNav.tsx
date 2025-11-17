@@ -29,10 +29,10 @@ export function GlobalNav() {
       )}
 
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-grayLine">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
-          <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo - Left side */}
-          <div className="flex-shrink-0">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center h-16 sm:h-20">
+          {/* Logo - Far Left */}
+          <div className="flex-shrink-0 mr-8 lg:mr-12">
             <a
               href="/"
               className="flex items-center hover:opacity-80 transition-opacity duration-200"
@@ -45,8 +45,8 @@ export function GlobalNav() {
             </a>
           </div>
 
-          {/* Desktop Navigation - Centered */}
-          <div className="hidden lg:flex items-center justify-center flex-1 space-x-10">
+          {/* Desktop Navigation - Centered with flex-grow */}
+          <div className="hidden lg:flex items-center justify-center flex-grow space-x-10">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -58,8 +58,8 @@ export function GlobalNav() {
             ))}
           </div>
 
-          {/* Desktop CTA Button - Right side */}
-          <div className="hidden lg:flex flex-shrink-0">
+          {/* Desktop CTA Button - Far Right */}
+          <div className="hidden lg:flex flex-shrink-0 ml-8 lg:ml-12">
             <a
               href="/#contact"
               className="px-6 sm:px-8 py-2.5 sm:py-3 bg-primary text-white text-sm sm:text-base font-medium rounded-md hover:bg-primaryDark transition-colors duration-200"
@@ -67,6 +67,9 @@ export function GlobalNav() {
               Get Started
             </a>
           </div>
+
+          {/* Spacer for mobile to push button to right */}
+          <div className="flex-grow lg:hidden"></div>
 
           {/* Mobile Menu Button - Right side */}
           <div className="lg:hidden">
