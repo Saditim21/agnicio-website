@@ -81,23 +81,82 @@ export function Products() {
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.1] tracking-tight mb-6 sm:mb-8"
               >
                 <span className="bg-gradient-to-br from-white via-white to-sky-200 bg-clip-text text-transparent">
-                  Sense, Solve, and Plan
+                  SSP Platform
                 </span>
               </motion.h1>
 
-              {/* Animated Description */}
-              <motion.p
+              {/* Animated Subtitle */}
+              <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
-                className="text-lg sm:text-xl md:text-2xl text-white/70 leading-relaxed max-w-4xl"
+                className="mb-12 sm:mb-16 md:mb-20"
               >
-                A holistic approach to intelligent maintenance orchestration. Our integrated platform{' '}
-                <span className="text-transparent bg-gradient-to-r from-sky-200 via-sky-300 to-sky-400 bg-clip-text font-medium">
-                  breaks data barriers and unleashes business power
-                </span>
-                {' '}through AI-driven asset management.
-              </motion.p>
+                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-[1.4] tracking-tight">
+                  <span className="text-white/60">Break Data Barriers,</span>
+                  <br />
+                  <span className="text-transparent bg-gradient-to-r from-sky-200 via-sky-300 to-sky-400 bg-clip-text">
+                    Unleash Business Power
+                  </span>
+                </p>
+              </motion.div>
+
+              {/* Elegant process flow - SENSE, SOLVE, PLAN */}
+              <div className="mb-12 sm:mb-16">
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6">
+                  {['SENSE', 'SOLVE', 'PLAN'].map((label, index) => (
+                    <div key={label} className="flex items-center">
+                      {/* Elegant circle design */}
+                      <motion.div
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{
+                          delay: 1.0 + (index * 0.2),
+                          duration: 0.8,
+                          ease: [0.16, 1, 0.3, 1] as const
+                        }}
+                        className="relative group cursor-pointer"
+                      >
+                        {/* Outer glow ring */}
+                        <div className="absolute -inset-2 bg-gradient-to-br from-sky-400/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                        {/* Main circle */}
+                        <div className="relative flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 shadow-2xl group-hover:border-sky-400/50 transition-all duration-500">
+                          {/* Label */}
+                          <span className="text-sm sm:text-base font-bold tracking-wider text-white group-hover:text-sky-300 transition-colors duration-300">
+                            {label}
+                          </span>
+
+                          {/* Inner decorative element */}
+                          <div className="absolute inset-0 rounded-full border-2 border-dashed border-sky-400/30 group-hover:border-sky-400/60 transition-colors duration-500"
+                               style={{ animation: 'spin 30s linear infinite' }}></div>
+                        </div>
+                      </motion.div>
+
+                      {/* Elegant connector line */}
+                      {index < 2 && (
+                        <motion.div
+                          initial={{ scaleX: 0, opacity: 0 }}
+                          animate={{ scaleX: 1, opacity: 1 }}
+                          transition={{
+                            delay: 1.2 + (index * 0.2),
+                            duration: 0.6,
+                            ease: [0.16, 1, 0.3, 1] as const
+                          }}
+                          className="hidden sm:block w-8 md:w-12 lg:w-16 h-px mx-2 md:mx-3 origin-left"
+                          style={{
+                            background: 'linear-gradient(to right, rgba(56, 189, 248, 0.6), rgba(56, 189, 248, 0.2))'
+                          }}
+                        >
+                          <div className="w-full h-full relative">
+                            <div className="absolute inset-0 blur-sm bg-sky-400/40"></div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
 
             </div>
           </div>

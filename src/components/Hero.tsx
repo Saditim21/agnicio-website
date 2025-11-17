@@ -5,12 +5,6 @@ interface HeroProps {
   backgroundImage: string;
 }
 
-const steps = [
-  { key: "sense", label: "SENSE", number: "01" },
-  { key: "solve", label: "SOLVE", number: "02" },
-  { key: "plan", label: "PLAN", number: "03" },
-];
-
 // Ultra-smooth fade and slide up
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -39,36 +33,8 @@ const letterVariants = {
   })
 };
 
-// Elegant circle reveal
-const circleReveal = {
-  hidden: { scale: 0, opacity: 0 },
-  visible: (delay = 0) => ({
-    scale: 1,
-    opacity: 1,
-    transition: {
-      delay,
-      duration: 0.8,
-      ease: [0.16, 1, 0.3, 1] as const
-    }
-  })
-};
-
-// Flow line animation
-const lineVariants = {
-  hidden: { scaleX: 0, opacity: 0 },
-  visible: (delay = 0) => ({
-    scaleX: 1,
-    opacity: 1,
-    transition: {
-      delay,
-      duration: 0.6,
-      ease: [0.16, 1, 0.3, 1] as const
-    }
-  })
-};
-
 export function Hero({ backgroundImage }: HeroProps) {
-  const titleText = "SSP Platform";
+  const titleText = "Sense, Solve, and Plan";
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -138,73 +104,18 @@ export function Hero({ backgroundImage }: HeroProps) {
               animate="visible"
               className="mb-12 sm:mb-16 md:mb-20"
             >
-              <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-[1.4] tracking-tight">
-                <span className="text-white/60">Break Data Barriers,</span>
-                <br />
-                <span className="text-transparent bg-gradient-to-r from-sky-200 via-sky-300 to-sky-400 bg-clip-text">
-                  Unleash Business Power
+              <p className="text-lg sm:text-xl md:text-2xl text-white/70 leading-relaxed max-w-4xl">
+                A holistic approach to intelligent maintenance orchestration. Our integrated platform{' '}
+                <span className="text-transparent bg-gradient-to-r from-sky-200 via-sky-300 to-sky-400 bg-clip-text font-medium">
+                  breaks data barriers and unleashes business power
                 </span>
+                {' '}through AI-driven asset management.
               </p>
             </motion.div>
 
-            {/* Elegant process flow */}
-            <div className="mb-12 sm:mb-16">
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6">
-                {steps.map((step, index) => (
-                  <div key={step.key} className="flex items-center">
-                    {/* Elegant circle design */}
-                    <motion.div
-                      custom={1.4 + (index * 0.2)}
-                      variants={circleReveal}
-                      initial="hidden"
-                      animate="visible"
-                      className="relative group cursor-pointer"
-                    >
-                      {/* Outer glow ring */}
-                      <div className="absolute -inset-2 bg-gradient-to-br from-sky-400/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                      {/* Main circle */}
-                      <div className="relative flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 shadow-2xl group-hover:border-sky-400/50 transition-all duration-500">
-                        {/* Number */}
-                        <span className="text-xs sm:text-sm font-bold text-sky-400/60 mb-1">
-                          {step.number}
-                        </span>
-                        {/* Label */}
-                        <span className="text-sm sm:text-base font-bold tracking-wider text-white group-hover:text-sky-300 transition-colors duration-300">
-                          {step.label}
-                        </span>
-
-                        {/* Inner decorative element */}
-                        <div className="absolute inset-0 rounded-full border-2 border-dashed border-sky-400/30 group-hover:border-sky-400/60 transition-colors duration-500"
-                             style={{ animation: 'spin 30s linear infinite' }}></div>
-                      </div>
-                    </motion.div>
-
-                    {/* Elegant connector line */}
-                    {index < steps.length - 1 && (
-                      <motion.div
-                        custom={1.6 + (index * 0.2)}
-                        variants={lineVariants}
-                        initial="hidden"
-                        animate="visible"
-                        className="hidden sm:block w-8 md:w-12 lg:w-16 h-px mx-2 md:mx-3 origin-left"
-                        style={{
-                          background: 'linear-gradient(to right, rgba(56, 189, 248, 0.6), rgba(56, 189, 248, 0.2))'
-                        }}
-                      >
-                        <div className="w-full h-full relative">
-                          <div className="absolute inset-0 blur-sm bg-sky-400/40"></div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {/* Elegant CTA Button */}
             <motion.div
-              custom={2.4}
+              custom={1.2}
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
