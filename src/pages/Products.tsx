@@ -107,7 +107,15 @@ export function Products() {
                   {['SENSE', 'SOLVE', 'PLAN'].map((label, index) => (
                     <div key={label} className="flex items-center">
                       {/* Elegant circle design */}
-                      <motion.div
+                      <motion.a
+                        href={`#${label.toLowerCase()}`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          const element = document.getElementById(label.toLowerCase());
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                          }
+                        }}
                         initial={{ scale: 0, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{
@@ -131,7 +139,7 @@ export function Products() {
                           <div className="absolute inset-0 rounded-full border-2 border-dashed border-sky-400/30 group-hover:border-sky-400/60 transition-colors duration-500"
                                style={{ animation: 'spin 30s linear infinite' }}></div>
                         </div>
-                      </motion.div>
+                      </motion.a>
 
                       {/* Elegant connector line */}
                       {index < 2 && (
@@ -241,11 +249,11 @@ export function Products() {
             </div>
 
             {/* Image */}
-            <div className="rounded-lg overflow-hidden border border-grayLine">
+            <div className="rounded-lg overflow-hidden">
               <img
                 src={senseImage}
                 alt="SENSE interface"
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
