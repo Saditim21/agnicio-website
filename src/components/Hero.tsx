@@ -23,9 +23,14 @@ export function Hero({ backgroundImage }: HeroProps) {
         <div className="max-w-7xl mx-auto">
           <div className="max-w-5xl">
             {/* Headline - ABB.com exact style - bigger and left-aligned */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-light text-white leading-[1.1] tracking-tight mb-8 sm:mb-10 md:mb-12">
-              Break Data Barriers,<br />Unleash Business Power
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-light text-white leading-[1.1] tracking-tight mb-4 sm:mb-6">
+              SSP Platform
             </h1>
+
+            {/* Subtitle */}
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-white/90 leading-[1.2] tracking-tight mb-8 sm:mb-10 md:mb-12">
+              Break Data Barriers,<br />Unleash Business Power
+            </p>
 
             {/* CTA Button - Sleek and modern */}
             <div>

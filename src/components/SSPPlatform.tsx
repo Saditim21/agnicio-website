@@ -3,6 +3,7 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface PlatformFeature {
   title: string;
+  subtitle?: string;
   description: string;
   features: string[];
   image: string;
@@ -13,7 +14,7 @@ interface PlatformFeature {
 
 interface FeatureCardProps extends PlatformFeature {}
 
-function FeatureCard({ title, description, features, image, link, imageContain, isFullWidth }: FeatureCardProps) {
+function FeatureCard({ title, subtitle, description, features, image, link, imageContain, isFullWidth }: FeatureCardProps) {
   if (isFullWidth) {
     return (
       <Card className="p-5 sm:p-6 md:p-8 flex flex-col lg:flex-row gap-6 sm:gap-8 h-full">
@@ -28,7 +29,8 @@ function FeatureCard({ title, description, features, image, link, imageContain, 
 
         {/* Content - Half width on large screens */}
         <div className="lg:w-1/2 flex flex-col">
-          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-ink tracking-tight mb-3 sm:mb-4">{title}</h3>
+          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-ink tracking-tight mb-2">{title}</h3>
+          {subtitle && <p className="text-sm sm:text-base text-ink mb-3 sm:mb-4">{subtitle}</p>}
           <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed">
             {description}
           </p>
@@ -68,7 +70,8 @@ function FeatureCard({ title, description, features, image, link, imageContain, 
 
       {/* Content */}
       <div className="flex-1 flex flex-col">
-        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-ink tracking-tight mb-3 sm:mb-4">{title}</h3>
+        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-ink tracking-tight mb-2">{title}</h3>
+        {subtitle && <p className="text-sm sm:text-base text-ink mb-3 sm:mb-4">{subtitle}</p>}
         <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed">
           {description}
         </p>
@@ -158,7 +161,8 @@ export function SSPPlatform({ senseImage, solveImage, planImage, genixImage, pmc
       link: "/products#pmc"
     },
     {
-      title: "Unified Data Platform powered by ABB Ability Genix™",
+      title: "Unified Data Platform",
+      subtitle: "powered by ABB Genix™",
       description: "Beyond traditional ODS - enterprise-wide asset information model that integrates all your data sources into a single, unified platform for intelligent decision-making.",
       features: [
         "Enterprise asset information model",

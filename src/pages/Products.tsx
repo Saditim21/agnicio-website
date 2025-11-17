@@ -71,8 +71,8 @@ export function Products() {
           senseAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8 sm:gap-10 md:gap-12 items-center">
             {/* Content */}
             <div>
               <div className="mb-4 sm:mb-6">
@@ -141,11 +141,11 @@ export function Products() {
             </div>
 
             {/* Image */}
-            <div className="rounded-lg overflow-hidden border border-grayLine flex items-center justify-center">
+            <div className="rounded-lg overflow-hidden border border-grayLine">
               <img
                 src={senseImage}
                 alt="SENSE interface"
-                className="w-full h-auto object-contain scale-[1.12]"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
@@ -435,9 +435,12 @@ export function Products() {
                 <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 text-primary text-xs sm:text-sm font-semibold rounded-md mb-3 sm:mb-4">
                   GENIX™
                 </span>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-ink tracking-tight mb-3 sm:mb-4">
-                  Unified Data Platform powered by ABB Ability Genix™
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-ink tracking-tight mb-2">
+                  Unified Data Platform
                 </h2>
+                <p className="text-base sm:text-lg text-gray-600 mb-3 sm:mb-4">
+                  powered by ABB Ability Genix™
+                </p>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   Beyond traditional ODS - enterprise-wide asset information model that transforms scattered data into actionable intelligence. The foundation for all SSP capabilities.
                 </p>
