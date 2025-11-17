@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { GlobalNav, Footer, Button } from '../components';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
@@ -37,27 +38,67 @@ export function Products() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
+        {/* Background Image with Parallax */}
+        <motion.div
+          className="absolute inset-0 z-0"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] as const }}
+        >
           <img
             src={heroBackgroundImg}
             alt="Industrial Planning Facility"
             className="w-full h-full object-cover object-center"
           />
-          {/* Darker overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/40"></div>
-        </div>
+          {/* Elegant gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-slate-900/80 to-slate-900/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-sky-500/5 via-transparent to-transparent"></div>
+        </motion.div>
 
         {/* Content */}
-        <div className="relative z-10 w-full px-4 sm:px-6 md:px-12 lg:px-16 pt-32 sm:pt-40 md:pt-48 lg:pt-56 pb-16 sm:pb-20 md:pb-24">
+        <div className="relative z-10 w-full px-4 sm:px-6 md:px-12 lg:px-16 pt-32 sm:pt-40 md:pt-48 lg:pt-56 pb-20 sm:pb-32 md:pb-40">
           <div className="max-w-7xl mx-auto">
-            <div className="max-w-5xl">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-light text-white leading-[1.1] tracking-tight mb-6 sm:mb-8">
-                Sense, Solve, and Plan
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl">
-                A holistic approach to intelligent maintenance orchestration. Our integrated platform breaks data barriers and unleashes business power through AI-driven asset management.
-              </p>
+            <div className="max-w-6xl">
+
+              {/* Animated Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
+                className="mb-6 sm:mb-8"
+              >
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-sky-300 text-xs sm:text-sm font-medium tracking-wider">
+                  <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                  PRODUCTS
+                </span>
+              </motion.div>
+
+              {/* Animated Title */}
+              <motion.h1
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.1] tracking-tight mb-6 sm:mb-8"
+              >
+                <span className="bg-gradient-to-br from-white via-white to-sky-200 bg-clip-text text-transparent">
+                  Sense, Solve, and Plan
+                </span>
+              </motion.h1>
+
+              {/* Animated Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
+                className="text-lg sm:text-xl md:text-2xl text-white/70 leading-relaxed max-w-4xl"
+              >
+                A holistic approach to intelligent maintenance orchestration. Our integrated platform{' '}
+                <span className="text-transparent bg-gradient-to-r from-sky-200 via-sky-300 to-sky-400 bg-clip-text font-medium">
+                  breaks data barriers and unleashes business power
+                </span>
+                {' '}through AI-driven asset management.
+              </motion.p>
+
             </div>
           </div>
         </div>
