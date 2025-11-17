@@ -141,11 +141,11 @@ export function Products() {
             </div>
 
             {/* Image */}
-            <div className="rounded-lg overflow-hidden border border-grayLine">
+            <div className="rounded-lg overflow-hidden border border-grayLine flex items-center justify-center">
               <img
                 src={senseImage}
                 alt="SENSE interface"
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-contain scale-[1.12]"
               />
             </div>
           </div>
@@ -429,17 +429,8 @@ export function Products() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
-            {/* Image */}
-            <div className="rounded-lg overflow-hidden border border-grayLine order-2 lg:order-1">
-              <img
-                src={genixImage}
-                alt="GENIX™ interface"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
             {/* Content */}
-            <div className="order-1 lg:order-2">
+            <div>
               <div className="mb-4 sm:mb-6">
                 <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 text-primary text-xs sm:text-sm font-semibold rounded-md mb-3 sm:mb-4">
                   GENIX™
@@ -503,6 +494,15 @@ export function Products() {
                   </li>
                 </ul>
               </div>
+            </div>
+
+            {/* Image */}
+            <div className="rounded-lg overflow-hidden border border-grayLine flex items-center justify-center">
+              <img
+                src={genixImage}
+                alt="GENIX™ interface"
+                className="w-full h-auto object-contain scale-[1.12]"
+              />
             </div>
           </div>
         </div>
