@@ -146,7 +146,7 @@ export function Home() {
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-ink tracking-tight leading-tight mb-3 sm:mb-4 px-4 inline-flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
               <span>SSP POWERED BY GENIX™</span>
-              <img src={abbLogo} alt="ABB" className="h-8 sm:h-9 md:h-10 w-auto object-contain mix-blend-multiply" style={{ verticalAlign: 'middle' }} />
+              <img src={abbLogo} alt="ABB" className="h-[3rem] sm:h-[3.75rem] md:h-[4.5rem] lg:h-[6rem] xl:h-[7rem] w-auto object-contain mix-blend-multiply" style={{ verticalAlign: 'middle' }} />
             </h2>
             <p className="text-base sm:text-lg text-gray-700 px-4">
               A partnership that's transforming asset management and maintenance planning with AI-powered intelligence.
