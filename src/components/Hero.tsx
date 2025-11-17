@@ -20,7 +20,7 @@ const fadeInUp = {
     transition: {
       delay,
       duration: 1,
-      ease: [0.16, 1, 0.3, 1] // Elegant ease-out curve
+      ease: [0.16, 1, 0.3, 1] as const // Elegant ease-out curve
     }
   })
 };
@@ -34,7 +34,7 @@ const letterVariants = {
     transition: {
       delay: i * 0.05,
       duration: 0.8,
-      ease: [0.16, 1, 0.3, 1]
+      ease: [0.16, 1, 0.3, 1] as const
     }
   })
 };
@@ -48,7 +48,7 @@ const circleReveal = {
     transition: {
       delay,
       duration: 0.8,
-      ease: [0.16, 1, 0.3, 1]
+      ease: [0.16, 1, 0.3, 1] as const
     }
   })
 };
@@ -62,7 +62,7 @@ const lineVariants = {
     transition: {
       delay,
       duration: 0.6,
-      ease: [0.16, 1, 0.3, 1]
+      ease: [0.16, 1, 0.3, 1] as const
     }
   })
 };
@@ -77,7 +77,7 @@ export function Hero({ backgroundImage }: HeroProps) {
         className="absolute inset-0 z-0"
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] as const }}
       >
         <img
           src={backgroundImage}

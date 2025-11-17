@@ -11,7 +11,6 @@ export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
 export { Hero } from './Hero';
 export { Stats } from './Stats';
 export { SSPPlatform } from './SSPPlatform';
-export { SenseSolvePlanSection } from './SenseSolvePlanSection';
 export { Footer } from './Footer';
 
 // Navigation & Layout
