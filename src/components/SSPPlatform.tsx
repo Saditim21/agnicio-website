@@ -8,11 +8,53 @@ interface PlatformFeature {
   image: string;
   link: string;
   imageContain?: boolean;
+  isFullWidth?: boolean;
 }
 
 interface FeatureCardProps extends PlatformFeature {}
 
-function FeatureCard({ title, description, features, image, link, imageContain }: FeatureCardProps) {
+function FeatureCard({ title, description, features, image, link, imageContain, isFullWidth }: FeatureCardProps) {
+  if (isFullWidth) {
+    return (
+      <Card className="p-5 sm:p-6 md:p-8 flex flex-col lg:flex-row gap-6 sm:gap-8 h-full">
+        {/* Image - Half width on large screens */}
+        <div className="lg:w-1/2 h-48 sm:h-56 md:h-64 lg:h-full rounded-lg overflow-hidden border border-grayLine">
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover scale-110"
+          />
+        </div>
+
+        {/* Content - Half width on large screens */}
+        <div className="lg:w-1/2 flex flex-col">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-ink tracking-tight mb-3 sm:mb-4">{title}</h3>
+          <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed">
+            {description}
+          </p>
+          <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6 flex-1">
+            {features.map((feature, index) => (
+              <li key={index} className="flex items-start gap-2">
+                <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-sm text-gray-700">{feature}</span>
+              </li>
+            ))}
+          </ul>
+          <Button variant="link" className="p-0 justify-start min-h-[44px]" asChild>
+            <a href={link} className="inline-flex items-center gap-2">
+              Learn More
+              <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </Button>
+        </div>
+      </Card>
+    );
+  }
+
   return (
     <Card className="p-5 sm:p-6 md:p-8 flex flex-col h-full">
       {/* Image */}
@@ -125,7 +167,8 @@ export function SSPPlatform({ senseImage, solveImage, planImage, genixImage, pmc
         "API connectors & consensus layer"
       ],
       image: genixImage,
-      link: "/products#genix"
+      link: "/products#genix",
+      isFullWidth: true
     }
   ];
 
@@ -148,7 +191,7 @@ export function SSPPlatform({ senseImage, solveImage, planImage, genixImage, pmc
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-          {features.map((feature, index) => (
+          {features.slice(0, 4).map((feature, index) => (
             <div
               key={index}
               className="transition-all duration-700 hover:scale-[1.02]"
@@ -159,6 +202,18 @@ export function SSPPlatform({ senseImage, solveImage, planImage, genixImage, pmc
               <FeatureCard {...feature} />
             </div>
           ))}
+        </div>
+
+        {/* Full-width Genix card */}
+        <div className="mt-6 sm:mt-8">
+          <div
+            className="transition-all duration-700 hover:scale-[1.02]"
+            style={{
+              transitionDelay: '400ms'
+            }}
+          >
+            <FeatureCard {...features[4]} />
+          </div>
         </div>
       </div>
     </section>
