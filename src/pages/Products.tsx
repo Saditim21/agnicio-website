@@ -7,12 +7,14 @@ import senseImage from '../assets/home-page/SSP_dashboard_interface_7891374e.png
 import solveImage from '../assets/home-page/Demand_sensing_analytics_dashboard_c69079df.png';
 import planImage from '../assets/home-page/Maintenance_generator_interface_f929dd22.png';
 import genixImage from '../assets/home-page/UDP_data_foundation_platform_d050d38c.png';
+import pmcImage from '../assets/products-page/Pmc.png';
 import heroBackgroundImg from '../assets/products-page/planning.jpeg';
 
 export function Products() {
   const senseAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
   const solveAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
   const planAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
+  const pmcAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
   const genixAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
 
   useEffect(() => {
@@ -328,11 +330,100 @@ export function Products() {
         </div>
       </section>
 
+      {/* PMC Section */}
+      <section
+        id="pmc"
+        ref={pmcAnimation.ref}
+        className={`py-12 sm:py-16 md:py-20 bg-grayBg border-b border-grayLine transition-all duration-1000 ${
+          pmcAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
+            {/* Image */}
+            <div className="rounded-lg overflow-hidden border border-grayLine order-2 lg:order-1">
+              <img
+                src={pmcImage}
+                alt="Periodic Maintenance Generator interface"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="order-1 lg:order-2">
+              <div className="mb-4 sm:mb-6">
+                <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 text-primary text-xs sm:text-sm font-semibold rounded-md mb-3 sm:mb-4">
+                  PMC
+                </span>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-ink tracking-tight mb-3 sm:mb-4">
+                  Periodic Maintenance Generator
+                </h2>
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                  GenAI-Driven Schedule Optimization. Automatically generate and optimize maintenance schedules by extracting theoretical schedules from supplier manuals and applying real-world context intelligence for maximum efficiency.
+                </p>
+              </div>
+
+              <div className="mb-6 sm:mb-8">
+                <h3 className="text-lg sm:text-xl font-semibold text-ink mb-3 sm:mb-4">Key Capabilities</h3>
+                <div className="space-y-3 sm:space-y-4">
+                  <div>
+                    <h4 className="text-sm sm:text-base font-semibold text-ink mb-1.5 sm:mb-2">Intelligent Schedule Extraction</h4>
+                    <p className="text-sm text-gray-700">Use Large Language Models to automatically extract maintenance schedules from supplier manuals and documentation</p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm sm:text-base font-semibold text-ink mb-1.5 sm:mb-2">Asset-Specific Application</h4>
+                    <p className="text-sm text-gray-700">Apply theoretical schedules to actual assets through seamless integration with Enterprise Management Systems</p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm sm:text-base font-semibold text-ink mb-1.5 sm:mb-2">Context-Aware Refinement</h4>
+                    <p className="text-sm text-gray-700">Refine schedules based on real operating conditions including utilization rates, environmental factors, and equipment age</p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm sm:text-base font-semibold text-ink mb-1.5 sm:mb-2">Optimized Output Generation</h4>
+                    <p className="text-sm text-gray-700">Generate optimized, executable maintenance schedules that balance manufacturer recommendations with actual asset conditions</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-lg sm:text-xl font-semibold text-ink mb-3 sm:mb-4">Business Impact</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                      <path d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-sm text-gray-700">Eliminate manual schedule creation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                      <path d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-sm text-gray-700">Ensure compliance with OEM guidelines</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                      <path d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-sm text-gray-700">Reduce over-maintenance costs</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                      <path d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-sm text-gray-700">Adapt schedules to real conditions</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* GENIX Section */}
       <section
         id="genix"
         ref={genixAnimation.ref}
-        className={`py-12 sm:py-16 md:py-20 bg-grayBg border-b border-grayLine transition-all duration-1000 ${
+        className={`py-12 sm:py-16 md:py-20 bg-background border-b border-grayLine transition-all duration-1000 ${
           genixAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
@@ -354,7 +445,7 @@ export function Products() {
                   GENIX™
                 </span>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-ink tracking-tight mb-3 sm:mb-4">
-                  Unified Data Platform
+                  Unified Data Platform powered by ABB Ability Genix™
                 </h2>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   Beyond traditional ODS - enterprise-wide asset information model that transforms scattered data into actionable intelligence. The foundation for all SSP capabilities.

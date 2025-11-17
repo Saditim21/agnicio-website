@@ -7,11 +7,12 @@ interface PlatformFeature {
   features: string[];
   image: string;
   link: string;
+  imageContain?: boolean;
 }
 
 interface FeatureCardProps extends PlatformFeature {}
 
-function FeatureCard({ title, description, features, image, link }: FeatureCardProps) {
+function FeatureCard({ title, description, features, image, link, imageContain }: FeatureCardProps) {
   return (
     <Card className="p-5 sm:p-6 md:p-8 flex flex-col h-full">
       {/* Image */}
@@ -19,7 +20,7 @@ function FeatureCard({ title, description, features, image, link }: FeatureCardP
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover"
+          className={`w-full h-full ${imageContain ? 'object-contain scale-125' : 'object-cover scale-110'}`}
         />
       </div>
 
@@ -57,23 +58,25 @@ interface SSPPlatformProps {
   solveImage: string;
   planImage: string;
   genixImage: string;
+  pmcImage: string;
 }
 
-export function SSPPlatform({ senseImage, solveImage, planImage, genixImage }: SSPPlatformProps) {
+export function SSPPlatform({ senseImage, solveImage, planImage, genixImage, pmcImage }: SSPPlatformProps) {
   const platformAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
 
   const features: PlatformFeature[] = [
     {
       title: "SENSE - AI-Driven Problem Detection",
-      description: "24/7 continuous monitoring and failure prediction across your entire infrastructure. AI-generated maintenance schedules delivered in human language through advanced Large Language Models.",
+      description: "Holistic problem detection and failure prediction across your entire infrastructure. AI-generated maintenance schedules delivered in human language through advanced Large Language Models.",
       features: [
-        "Continuous monitoring across all assets",
+        "24/7 continuous monitoring",
         "AI-powered failure prediction",
         "LLM-generated insights in human language",
-        "Holistic problem detection"
+        "Continuous monitoring across all assets"
       ],
       image: senseImage,
-      link: "/products#sense"
+      link: "/products#sense",
+      imageContain: true
     },
     {
       title: "SOLVE - GenAI Solution Engineering",
@@ -85,7 +88,8 @@ export function SSPPlatform({ senseImage, solveImage, planImage, genixImage }: S
         "Intelligent onboarding support"
       ],
       image: solveImage,
-      link: "/products#solve"
+      link: "/products#solve",
+      imageContain: true
     },
     {
       title: "PLAN - AI-Driven Maintenance Planning",
@@ -100,7 +104,19 @@ export function SSPPlatform({ senseImage, solveImage, planImage, genixImage }: S
       link: "/products#plan"
     },
     {
-      title: "GENIX™ Unified Data Platform",
+      title: "Periodic Maintenance Generator - GenAI-Driven Schedule Optimization",
+      description: "Automatically generate and optimize maintenance schedules by extracting theoretical schedules from supplier manuals and applying real-world context intelligence for maximum efficiency.",
+      features: [
+        "Intelligent schedule extraction using LLMs",
+        "Asset-specific application through EMS integration",
+        "Context-aware refinement based on operating conditions",
+        "Optimized executable maintenance schedules"
+      ],
+      image: pmcImage,
+      link: "/products#pmc"
+    },
+    {
+      title: "Unified Data Platform powered by ABB Ability Genix™",
       description: "Beyond traditional ODS - enterprise-wide asset information model that integrates all your data sources into a single, unified platform for intelligent decision-making.",
       features: [
         "Enterprise asset information model",

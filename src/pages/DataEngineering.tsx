@@ -411,7 +411,7 @@ export function DataEngineering() {
                     <div>
                       <span className="inline-block px-3 py-1 bg-cyan-100 text-cyan-700 text-xs font-bold rounded-full mb-2">TRANSFORM</span>
                       <h3 className="text-2xl font-heading font-black text-neutral-text-primary">
-                        Unified Data Platform
+                        Unified Data Platform powered by ABB Ability Genix™
                       </h3>
                     </div>
                   </div>

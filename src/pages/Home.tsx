@@ -8,7 +8,9 @@ import senseImg from '../assets/home-page/SSP_dashboard_interface_7891374e.png';
 import solveImg from '../assets/home-page/Demand_sensing_analytics_dashboard_c69079df.png';
 import planImg from '../assets/home-page/Maintenance_generator_interface_f929dd22.png';
 import genixImg from '../assets/home-page/UDP_data_foundation_platform_d050d38c.png';
+import pmcImg from '../assets/products-page/Pmc.png';
 import abbPartnershipImg from '../assets/home-page/Industrial_partnership_collaboration_photo_2af4c618.png';
+import abbLogo from '../assets/home-page/ABB-logo.png';
 
 // Blog Images
 import blogImage1 from '../assets/home-page/blog-image-1.png';
@@ -54,6 +56,7 @@ export function Home() {
         solveImage={solveImg}
         planImage={planImg}
         genixImage={genixImg}
+        pmcImage={pmcImg}
       />
 
       {/* Services Section */}
@@ -81,7 +84,7 @@ export function Home() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <div className="bg-white border border-grayLine rounded-lg p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <h4 className="text-base sm:text-lg font-semibold text-ink mb-2 sm:mb-3">AI & Data Strategy</h4>
-                  <p className="text-sm text-gray-700">Strategic planning to break data barriers and align AI initiatives with your business objectives for sustainable operational growth.</p>
+                  <p className="text-sm text-gray-700">Strategic exercise to break data barriers and align AI initiatives with your business objectives for sustainable operational growth.</p>
                 </div>
                 <div className="bg-white border border-grayLine rounded-lg p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <h4 className="text-base sm:text-lg font-semibold text-ink mb-2 sm:mb-3">Data & Document Governance</h4>
@@ -141,8 +144,9 @@ export function Home() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-ink tracking-tight leading-tight mb-3 sm:mb-4 px-4">
-              ABB Certified Technology Partner
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-ink tracking-tight leading-tight mb-3 sm:mb-4 px-4 inline-flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
+              <img src={abbLogo} alt="ABB" className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain mix-blend-multiply" style={{ verticalAlign: 'middle' }} />
+              <span>Certified Technology Partner</span>
             </h2>
             <p className="text-base sm:text-lg text-gray-700 px-4">
               Delivering world-class AI-powered asset management through strategic partnership with ABB
@@ -151,9 +155,9 @@ export function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center mb-8 sm:mb-12">
             <div className="bg-white border border-grayLine rounded-lg p-6 sm:p-8">
-              <h3 className="text-xl sm:text-2xl font-semibold text-ink mb-4 sm:mb-6">ABB Partnership</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold text-ink mb-4 sm:mb-6">Our Partnership</h3>
               <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed">
-                Our strategic partnership with ABB enables seamless integration with their industry-leading automation and electrification solutions, providing comprehensive asset management across the entire industrial ecosystem.
+                Our strategic partnership with <img src={abbLogo} alt="ABB" className="h-6 sm:h-7 inline-block mx-1 align-middle object-contain mix-blend-multiply" /> enables seamless integration with their industry-leading automation and electrification solutions, providing comprehensive asset management across the entire industrial ecosystem.
               </p>
               <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                 <li className="flex items-start gap-2">
@@ -212,7 +216,7 @@ export function Home() {
                 <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                   <path d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                <span className="text-sm text-gray-700">Seamless integration with ABB automation systems</span>
+                <span className="text-sm text-gray-700">Seamless integration with <img src={abbLogo} alt="ABB" className="h-5 sm:h-6 inline-block mx-1 align-middle object-contain mix-blend-multiply" /> automation systems</span>
               </div>
               <div className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -224,13 +228,13 @@ export function Home() {
                 <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                   <path d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                <span className="text-sm text-gray-700">Access to ABB's global industrial expertise</span>
+                <span className="text-sm text-gray-700">Access to <img src={abbLogo} alt="ABB" className="h-5 sm:h-6 inline-block mx-1 align-middle object-contain mix-blend-multiply" />'s global industrial expertise</span>
               </div>
               <div className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                   <path d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                <span className="text-sm text-gray-700">Certified compatibility with ABB electrification portfolio</span>
+                <span className="text-sm text-gray-700">Certified compatibility with <img src={abbLogo} alt="ABB" className="h-5 sm:h-6 inline-block mx-1 align-middle object-contain mix-blend-multiply" /> electrification portfolio</span>
               </div>
               <div className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -385,7 +389,7 @@ export function Home() {
                   <div className="mb-4">
                     <h4 className="text-base font-semibold text-ink mb-2">Solution</h4>
                     <p className="text-sm text-gray-700">
-                      Integrated GENIX™ Unified Data Platform with enterprise asset information model
+                      Integrated Unified Data Platform powered by ABB Ability Genix™ with enterprise asset information model
                     </p>
                   </div>
                   <div>
@@ -697,7 +701,7 @@ export function Home() {
             Ready to Transform Your Business?
           </h2>
           <p className="text-base sm:text-lg text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-            Join 2,500+ enterprise clients who trust Agnicio for their AI and data solutions.
+            Join enterprise clients who trust Agnicio for their AI and data solutions.
             Let's build something extraordinary together.
           </p>
           <Button size="lg" className="bg-white text-primary hover:bg-gray-100 min-h-[44px]" asChild>

@@ -294,12 +294,12 @@ export function Home() {
                   <div className="order-2 lg:order-1 h-80 rounded-lg overflow-hidden shadow-xl">
                     <img
                       src={genixImg}
-                      alt="GENIX™ Unified Data Platform"
+                      alt="Unified Data Platform powered by ABB Ability Genix"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="order-1 lg:order-2">
-                    <h3 className="text-h3 font-heading font-bold text-primary mb-4">GENIX™ Unified Data Platform</h3>
+                    <h3 className="text-h3 font-heading font-bold text-primary mb-4">Unified Data Platform powered by ABB Ability Genix</h3>
                     <p className="text-body font-body text-neutral-text-secondary mb-6 leading-relaxed">
                       Beyond traditional ODS - enterprise-wide asset information model that integrates all your data sources into a single, unified platform for intelligent decision-making.
                     </p>
@@ -684,7 +684,7 @@ export function Home() {
                     <div className="mb-6">
                       <h4 className="text-body font-heading font-semibold text-neutral-text-primary mb-2">Solution</h4>
                       <p className="text-body font-body text-neutral-text-secondary">
-                        Integrated GENIX™ Unified Data Platform with enterprise asset information model
+                        Integrated Unified Data Platform powered by ABB Ability Genix with enterprise asset information model
                       </p>
                     </div>
                     <div>
