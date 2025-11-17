@@ -1,6 +1,7 @@
 import { GlobalNav, Footer, SmoothScrollReveal, SmoothStaggeredGrid } from '../components';
 import hichamImage from '../assets/about-us/hicham.jpg';
 import derekImage from '../assets/about-us/derek.jpg';
+import anilImage from '../assets/about-us/Anil.jpg';
 import agnicioLogo from '../assets/about-us/agnicio-logo.webp';
 
 export function AboutUs() {
@@ -68,7 +69,7 @@ export function AboutUs() {
                   staggerDelay={0.1}
                   animation="fade-up"
                   distance={30}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
                 >
                   {/* Hicham El Arfaoui */}
                   <div className="bg-neutral-surface rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-neutral-border hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-xl text-center">
@@ -107,6 +108,26 @@ export function AboutUs() {
                     </p>
                     <p className="text-sm sm:text-body font-body text-neutral-text-secondary leading-relaxed">
                       Derek is a Data expert who drives product innovation. He has consulted companies like Lidl, Jumbo, PostNL & ProRail around data & planning products. He is able to seamlessly combine product thinking, data and analytics to improve operational excellence
+                    </p>
+                  </div>
+
+                  {/* Anıl */}
+                  <div className="bg-neutral-surface rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-neutral-border hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-xl text-center">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden mx-auto mb-4 sm:mb-6 border-4 border-primary/20">
+                      <img
+                        src={anilImage}
+                        alt="Anıl"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 className="text-lg sm:text-h4 font-heading font-bold text-neutral-text-primary mb-2">
+                      Anıl
+                    </h3>
+                    <p className="text-sm sm:text-body font-body text-primary font-semibold mb-3 sm:mb-4">
+                      Data & AI Solutions Architect
+                    </p>
+                    <p className="text-sm sm:text-body font-body text-neutral-text-secondary leading-relaxed">
+                      Anıl transforms data infrastructure into strategic assets. With 10+ years of experience architecting enterprise data platforms, he helps organizations unlock competitive advantages through AI-powered analytics and cloud solutions.
                     </p>
                   </div>
                 </SmoothStaggeredGrid>
