@@ -111,23 +111,23 @@ export function AboutUs() {
                     </p>
                   </div>
 
-                  {/* Anıl */}
+                  {/* Anil Bayraktar */}
                   <div className="bg-neutral-surface rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-neutral-border hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-xl text-center">
                     <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden mx-auto mb-4 sm:mb-6 border-4 border-primary/20">
                       <img
                         src={anilImage}
-                        alt="Anıl"
+                        alt="Anil Bayraktar"
                         className="w-full h-full object-cover"
                       />
                     </div>
                     <h3 className="text-lg sm:text-h4 font-heading font-bold text-neutral-text-primary mb-2">
-                      Anıl
+                      Anil Bayraktar
                     </h3>
                     <p className="text-sm sm:text-body font-body text-primary font-semibold mb-3 sm:mb-4">
                       Data & AI Solutions Architect
                     </p>
                     <p className="text-sm sm:text-body font-body text-neutral-text-secondary leading-relaxed">
-                      Anıl transforms data infrastructure into strategic assets. With 10+ years of experience architecting enterprise data platforms, he helps organizations unlock competitive advantages through AI-powered analytics and cloud solutions.
+                      Anil transforms data infrastructure into strategic assets. With 10+ years of experience architecting enterprise data platforms, he helps organizations unlock competitive advantages through AI-powered analytics and cloud solutions.
                     </p>
                   </div>
                 </SmoothStaggeredGrid>
