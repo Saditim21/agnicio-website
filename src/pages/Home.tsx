@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useRef, FormEvent } from 'react';
+import emailjs from '@emailjs/browser';
 import { GlobalNav, Hero, Stats, SSPPlatform, Footer, Button } from '../components';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
@@ -24,6 +25,37 @@ export function Home() {
   const servicesAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
   const partnershipAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
   const blogAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
+
+  // Contact form state
+  const formRef = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!formRef.current) return;
+
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      await emailjs.sendForm(
+        'service_39bviny',
+        'template_agft2eg',
+        formRef.current,
+        'YIajUs3ec9YZgsvRN'
+      );
+
+      setSubmitStatus('success');
+      formRef.current.reset();
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   useEffect(() => {
     // Handle hash navigation (e.g., /#contact)
@@ -602,16 +634,17 @@ export function Home() {
               <p className="text-sm text-gray-700 mb-4 sm:mb-6">
                 Fill out the form and our team will get back to you within 24 hours
               </p>
-              <form className="space-y-4">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-ink mb-2">Name</label>
                   <input
                     type="text"
                     id="name"
-                    name="name"
+                    name="from_name"
                     placeholder="Enter your name"
                     required
-                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200 min-h-[44px] text-base"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200 min-h-[44px] text-base disabled:bg-gray-100 disabled:cursor-not-allowed"
                   />
                 </div>
                 <div>
@@ -619,10 +652,11 @@ export function Home() {
                   <input
                     type="email"
                     id="email"
-                    name="email"
+                    name="from_email"
                     placeholder="Enter your email"
                     required
-                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200 min-h-[44px] text-base"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200 min-h-[44px] text-base disabled:bg-gray-100 disabled:cursor-not-allowed"
                   />
                 </div>
                 <div>
@@ -633,11 +667,41 @@ export function Home() {
                     rows={6}
                     placeholder="Enter your message"
                     required
-                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200 text-base"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-grayLine rounded-md focus:border-primary focus:outline-none transition-colors duration-200 text-base disabled:bg-gray-100 disabled:cursor-not-allowed"
                   ></textarea>
                 </div>
-                <Button type="submit" className="w-full min-h-[44px]">
-                  Send Message
+
+                {/* Success Message */}
+                {submitStatus === 'success' && (
+                  <div className="p-4 bg-green-50 border border-green-200 rounded-md">
+                    <p className="text-sm text-green-800 font-medium">
+                      Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                    </p>
+                  </div>
+                )}
+
+                {/* Error Message */}
+                {submitStatus === 'error' && (
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-md">
+                    <p className="text-sm text-red-800 font-medium">
+                      Sorry, something went wrong. Please try again or email us directly at info@agnicio.com
+                    </p>
+                  </div>
+                )}
+
+                <Button type="submit" className="w-full min-h-[44px]" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </span>
+                  ) : (
+                    'Send Message'
+                  )}
                 </Button>
               </form>
             </div>
