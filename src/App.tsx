@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Home } from './pages/Home';
 import { Products } from './pages/Products';
 import { Services } from './pages/Services';
@@ -21,29 +22,32 @@ import { AzureCC } from './pages/AzureCC';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/maintenance-next-expo" element={<MaintenanceNextExpo />} />
-        <Route path="/blog/explainability-dsa" element={<ExplainabilityDSA />} />
-        <Route path="/blog/events-data-business-planning" element={<EventsDataBusinessPlanning />} />
-        <Route path="/blog/agnicio-envision-event" element={<AgnicioEnvisionEvent />} />
-        <Route path="/blog/post-lockdown-workshop" element={<PostLockdownWorkshop />} />
-        <Route path="/blog/agnicio-cubewise-webinar" element={<AgniciocubewiseWebinar />} />
-        <Route path="/blog/dynamic-pricing-disruption" element={<DynamicPricingDisruption />} />
-        <Route path="/products/ai-maintenance" element={<AIDrivenMaintenance />} />
-        <Route path="/products/demand-sensing" element={<DemandSensing />} />
-        <Route path="/services/ai" element={<AIService />} />
-        <Route path="/services/data-strategy" element={<DataStrategy />} />
-        <Route path="/services/data-engineering" element={<DataEngineering />} />
-        <Route path="/services/azure-cc" element={<AzureCC />} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/maintenance-next-expo" element={<MaintenanceNextExpo />} />
+          <Route path="/blog/explainability-dsa" element={<ExplainabilityDSA />} />
+          <Route path="/blog/events-data-business-planning" element={<EventsDataBusinessPlanning />} />
+          <Route path="/blog/agnicio-envision-event" element={<AgnicioEnvisionEvent />} />
+          <Route path="/blog/post-lockdown-workshop" element={<PostLockdownWorkshop />} />
+          <Route path="/blog/agnicio-cubewise-webinar" element={<AgniciocubewiseWebinar />} />
+          <Route path="/blog/dynamic-pricing-disruption" element={<DynamicPricingDisruption />} />
+          <Route path="/products/ai-maintenance" element={<AIDrivenMaintenance />} />
+          <Route path="/products/demand-sensing" element={<DemandSensing />} />
+          <Route path="/services/ai" element={<AIService />} />
+          <Route path="/services/data-strategy" element={<DataStrategy />} />
+          <Route path="/services/data-engineering" element={<DataEngineering />} />
+          <Route path="/services/azure-cc" element={<AzureCC />} />
+        </Routes>
+      </Router>
+      <SpeedInsights />
+    </>
   );
 }
 
