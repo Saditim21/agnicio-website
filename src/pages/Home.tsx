@@ -10,20 +10,14 @@ import solveImg from '../assets/home-page/Demand_sensing_analytics_dashboard_c69
 import planImg from '../assets/home-page/Maintenance_generator_interface_f929dd22.png';
 import genixImg from '../assets/home-page/UDP_data_foundation_platform_d050d38c.png';
 import pmcImg from '../assets/products-page/Pmc.png';
-import abbPartnershipImg from '../assets/home-page/Industrial_partnership_collaboration_photo_2af4c618.png';
-import abbLogo from '../assets/home-page/ABB-logo.png';
 
 // Blog Images
 import blogImage1 from '../assets/home-page/blog-image-1.png';
 import blogImage2 from '../assets/home-page/blog-image-2.jpg';
 import blogImage3 from '../assets/home-page/blog-image-3.jpg';
 
-// Brochure PDF
-import brochurePdf from '../assets/home-page/Brochure_A4_Agnicio+ABB_2025rev3.pdf';
-
 export function Home() {
   const servicesAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
-  const partnershipAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
   const blogAnimation = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
 
   // Contact form state
@@ -167,118 +161,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* ABB Partnership Section */}
-      <section
-        ref={partnershipAnimation.ref}
-        className={`py-12 sm:py-16 md:py-20 bg-grayBg border-b border-grayLine transition-all duration-1000 ${
-          partnershipAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-ink tracking-tight leading-tight mb-3 sm:mb-4 px-4 inline-flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
-              <span>SSP POWERED BY GENIX™</span>
-              <img src={abbLogo} alt="ABB" className="h-[3rem] sm:h-[3.75rem] md:h-[4.5rem] lg:h-[6rem] xl:h-[7rem] w-auto object-contain mix-blend-multiply" style={{ verticalAlign: 'middle' }} />
-            </h2>
-            <p className="text-base sm:text-lg text-gray-700 px-4">
-              A partnership that's transforming asset management and maintenance planning with AI-powered intelligence.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center mb-8 sm:mb-12">
-            <div className="bg-white border border-grayLine rounded-lg p-6 sm:p-8">
-              <h3 className="text-xl sm:text-2xl font-semibold text-ink mb-4 sm:mb-6">Our Partnership</h3>
-              <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed">
-                Our strategic partnership with ABB enables seamless integration with their industry-leading automation and electrification solutions, providing comprehensive asset management across the entire industrial ecosystem.
-              </p>
-              <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
-                <li className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm text-gray-700">15+ years of industrial AI expertise</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm text-gray-700">200+ successful deployments globally</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm text-gray-700">24/7 dedicated support and monitoring</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm text-gray-700">ISO 27001 certified data security</span>
-                </li>
-              </ul>
-
-              <Button
-                size="lg"
-                className="bg-primary text-white hover:bg-primary-hover w-full sm:w-auto min-h-[44px]"
-                asChild
-              >
-                <a href={brochurePdf} download="Agnicio_ABB_Brochure_2025.pdf" className="inline-flex items-center justify-center gap-2 px-6">
-                  <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  Download Brochure
-                </a>
-              </Button>
-            </div>
-
-            <div className="rounded-lg overflow-hidden border border-grayLine aspect-video lg:aspect-auto">
-              <img
-                src={abbPartnershipImg}
-                alt="ABB Industrial Partnership Collaboration"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          <div className="bg-white border border-grayLine rounded-lg p-6 sm:p-8">
-            <h4 className="text-lg sm:text-xl font-semibold text-ink mb-4 sm:mb-6 text-center">Partnership Benefits</h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              <div className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                  <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-                <span className="text-sm text-gray-700">Seamless integration with ABB automation systems</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                  <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-                <span className="text-sm text-gray-700">Joint development of AI-powered solutions</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                  <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-                <span className="text-sm text-gray-700">Access to ABB's global industrial expertise</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                  <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-                <span className="text-sm text-gray-700">Certified compatibility with ABB electrification portfolio</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                  <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-                <span className="text-sm text-gray-700">Industrial partnership collaboration</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Case Studies Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-background border-b border-grayLine">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
@@ -412,7 +294,7 @@ export function Home() {
                   <div className="mb-4">
                     <h4 className="text-base font-semibold text-ink mb-2">Solution</h4>
                     <p className="text-sm text-gray-700">
-                      Integrated Unified Data Platform powered by ABB Genix™ with enterprise asset information model
+                      Integrated Unified Data Platform with enterprise asset information model
                     </p>
                   </div>
                   <div>

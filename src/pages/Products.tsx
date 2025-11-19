@@ -543,12 +543,9 @@ export function Products() {
                 <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 text-primary text-xs sm:text-sm font-semibold rounded-md mb-3 sm:mb-4">
                   UDP
                 </span>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-ink tracking-tight mb-2">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-ink tracking-tight mb-3 sm:mb-4">
                   Unified Data Platform
                 </h2>
-                <p className="text-base sm:text-lg text-gray-600 mb-3 sm:mb-4">
-                  powered by ABB Genix™
-                </p>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   Beyond traditional ODS - enterprise-wide asset information model that transforms scattered data into actionable intelligence. The foundation for all SSP capabilities.
                 </p>

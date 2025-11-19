@@ -162,7 +162,7 @@ export function SSPPlatform({ senseImage, solveImage, planImage, genixImage, pmc
     },
     {
       title: "Unified Data Platform",
-      subtitle: "powered by ABB Genix™",
+      subtitle: "",
       description: "Beyond traditional ODS - enterprise-wide asset information model that integrates all your data sources into a single, unified platform for intelligent decision-making.",
       features: [
         "Enterprise asset information model",

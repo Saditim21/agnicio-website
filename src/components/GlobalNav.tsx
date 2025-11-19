@@ -58,24 +58,8 @@ export function GlobalNav() {
             ))}
           </div>
 
-          {/* Desktop CTA Buttons - Far Right */}
-          <div className="hidden lg:flex flex-shrink-0 ml-8 lg:ml-12 gap-3">
-            <a
-              href="https://sensesolveplan.ai/registratiepagina/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-primary border-2 border-primary text-sm sm:text-base font-medium rounded-md hover:bg-primary hover:text-white transition-colors duration-200 overflow-visible"
-            >
-              {/* Live Badge with Pulse */}
-              <span className="absolute -top-2 -right-2 flex items-center gap-1 px-2 py-0.5 bg-sky-500 text-white text-xs font-bold rounded-full shadow-lg">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-300 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
-                </span>
-                LIVE
-              </span>
-              Our Event
-            </a>
+          {/* Desktop CTA Button - Far Right */}
+          <div className="hidden lg:flex flex-shrink-0 ml-8 lg:ml-12">
             <a
               href="/#contact"
               className="px-6 sm:px-8 py-2.5 sm:py-3 bg-primary text-white text-sm sm:text-base font-medium rounded-md hover:bg-primaryDark transition-colors duration-200"
@@ -130,24 +114,7 @@ export function GlobalNav() {
               </a>
             ))}
 
-            {/* Mobile CTA Buttons */}
-            <a
-              href="https://sensesolveplan.ai/registratiepagina/"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileMenuOpen(false)}
-              className="relative block mt-4 px-6 py-3 bg-white text-primary border-2 border-primary text-center text-base font-medium rounded-md hover:bg-primary hover:text-white transition-colors duration-200 min-h-[44px] flex items-center justify-center overflow-visible"
-            >
-              {/* Live Badge with Pulse */}
-              <span className="absolute -top-2 -right-2 flex items-center gap-1 px-2 py-0.5 bg-sky-500 text-white text-xs font-bold rounded-full shadow-lg">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-300 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
-                </span>
-                LIVE
-              </span>
-              Our Event
-            </a>
+            {/* Mobile CTA Button */}
             <a
               href="/#contact"
               onClick={() => setMobileMenuOpen(false)}
